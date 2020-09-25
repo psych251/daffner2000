@@ -1,6 +1,6 @@
 ---
-title: "Replication of Study X by Sample & Sample (200x, Psychological Science)"
-author: "Replication Author[s] (contact information)"
+title: "Replication of the Behavioral Experiment by Daffner et al (2000, Journal of Cognitive Neuroscience)"
+author: "Anjie Cao (anjiecao@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document:
@@ -12,14 +12,54 @@ output:
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
 
-##Introduction
-
-[No abstract is needed.]  Each replication project will have a straightforward, no frills report of the study and results.  These reports will be publicly available as supplementary material for the aggregate report(s) of the project as a whole.  Also, to maximize project integrity, the intro and methods will be written and critiqued in advance of data collection.  Introductions can be just 1-2 paragraphs clarifying the main idea of the original study, the target finding for replication, and any other essential information.  It will NOT have a literature review -- that is in the original publication. You can write both the introduction and the methods in past tense.  
+## Introduction
 
 
-##Methods
+This particular experiment is chosen because I wanted to test the plausibility of using a subject-controlled visual oddball paradigm (VOP) in a web-based experiment, in the hope of using it as an avenue to explore factors influencing people's looking time. In the infant literature, looking time is an extremely valuable measurement due to infants' limited behavioral repertoire.  Although it has been taken as indices for many perceptual and cognitive constructs, the field has not agreed on the best interpretations for looking time. The same results are often open to different interpretations, some even leading to opposite conclusions. This contention is due to the underexplored underlying mechanisms responsible for infants' looking duration toward different stimuli. But due to the difficulty of recruiting infants participants, it is often quite challenging, if not impossible, to reach a sufficient sample size for well-powered analysis. In my project, I am hoping to first develop an analog paradigm in adults to explore the different factors responsible for looking time, and eventually import the insights back to the infant literature. VOP is one promising candidate for such analog. In Daffner et al. (2000), the researchers used this paradigm to show that adult viewing time was influenced by the complexity of the visual stimuli and the amount of exposure they received. These two factors were also considered to be highly relevant to infants' looking time (Hunter & Ames, 1988). As a result, this paper was chosen. 
 
-###Power Analysis
+The stimuli were a set of unique figures. They either came from a set of simple geometric shapes (simple), or a collection of unusual/unfamiliar figures (unusual). Each participant was tested in three tasks, the order of which was counterbalanced across participants. The three tasks were identical in the procedure but differed in the compositions of the stimuli.  Each task contains 250 figures, presented in five blocks of 50 figures. Blocks were separated by a brief break, and tasks were separated by a longer break. In a given task, there are three types of stimuli in the 250 figures: background (175 out of 250, 70% frequency), target (37~ out of 250, about 15% frequency), and deviant (38 out of 250, about 15% frequency). The three tasks are All Simple Task, All Unusual Task, and the Mixed Stimuli Task. In the All Simple Task, background, target, and deviant stimuli all came from the simple geometric shapes set. In the All Unusual Task, all came from the unusual figure set. In the Mixed Stimuli Task, the background and target came from the unusual setting and the deviant came from the geometric set. In all three tasks, participants were instructed to view the figures on the screen. They were told that they can "look at each picture for however long or short they liked"(Daffner et al., 2000, pg 402). When they were done viewing a picture, they can push a button and triggered the onset of the next stimulus. Each stimulus was presented for a minimum of 600 msec. Two stimuli were separated by an interval ranged between 800 msec and 1300 msec. In the original study, they were also told to press a foot pedal when seeing the target stimuli because they served as "Sequence Markers" to help participants keep track of the progress of the experiments. In this replication, pressing the foot pedal would be substituted with a different key on the keyboard. 
+
+There are two potential challenges for replicating this study. First, the accuracy of the results. The web-based experiment can be noisier than a laboratory experiment when other things are being equal. The nature of this experiment calls for recording accurate response time (the average looking time is on the scale of milliseconds). In response to this challenge, I am hoping to use the "jspsych-psychophysics" plugin, which can deliver stimuli with more accurate onset time (Kuroki, 2000). Second, the engagement of participants. The original study tested participants in the laboratory setting with EEG caps. Naturally, they were less likely to be distracted and more likely to remain engaged throughout the experiment. It is unclear whether the participants in the online experiment would remain at the same level of engagement throughout. Web-version may need additional incentives in-between block or task to keep participants motivated. 
+
+Link to the [repo](https://github.com/psych251/daffner2000)
+
+Link to the [paper](https://github.com/psych251/daffner2000/blob/master/original_paper/daffner2000.pdf) 
+
+
+## Methods
+
+### Power Analysis
+...haaaaalp
+Original main findings: 
+  - task by stimulus interaction 
+  - Unusual deviant in all unusual longer than simple deviant in all simple task OR the mixed stimuli tasks
+  - no diffrence in viewing duration on the simple deviant in the latter two tasks 
+  - main effect of stimulus type 
+  - viewing duration shorter on the simple background stimuli in the mixed stimuli task 
+  
++ Original Stats measured from plot   
+```{r}
+library(rpsychi)
+deviant_simple_mean <- (85.9 / 31.59) * 500
+deviant_unusual_mean <- (181.44 / 31.59) * 500
+deviant_mixed_mean <- (98.88 / 31.59) * 500
+
+deviant_simple_sem <- (9.92 / 31.59) * 500
+deviant_unusual_sem <- (26.1 / 31.59) * 500
+deviant_mixed_sem <- (15.6 / 31.59) * 500
+
+
+bkgd_simple_mean <- (48.02 / 31.59) * 500
+bkgd_unusual_mean <- (53.6 / 31.59) * 500
+bkgd_mixed_mean <- (58.53 / 31.59) * 500
+
+bkgd_simple_sem <- (10.52 / 31.59) * 500
+bkgd_unusual_sem <- (4.27 / 31.59) * 500
+bkgd_mixed_sem <- (16.94 / 31.59) * 500
+
+
+```
+
 
 Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
 
