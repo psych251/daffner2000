@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="js/jspsych.js"></script>
+  <script src="js/jspsych-image-button-response.js"></script>
+    <script src="js/jspsych-html-keyboard-response.js"></script>
+    <script src="js/jspsych-image-keyboard-response.js"></script>
+  <link rel="stylesheet" href="css/jspsych.css"></link>
+</head>
+<body></body>
+<script>
+    
+    
+    var timenum = Date.now();
+    var turkInfo = jsPsych.turk.turkInfo();
+    //$.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
+      //console.log(JSON.stringify(data, null, 2));
+     // jsPsych.data.addProperties({ IP: data.ip, country_code: data.country_code });
+    //});
+
+    // if we're not on MTurk, create a timestamp-based subject number; otherwise use turker ID
+    var subject_id = 'SS' + timenum;
+    /*    
+    if(turkInfo==null) {
+      var subject_id = 'SS' + timenum;
+    } else {
+      var subject_id = 'MT-' + turkInfo.workerId;
+    }
+*/
+    // store subject in data on every trial
+    jsPsych.data.addProperties({ subject: subject_id });
+
+    
+  var timeline = []
+    
+  var trial_1 = {
+    type: 'html-keyboard-response',
+    stimulus: '<p style="color: red; font-size: 48px; font-weight: bold;">GREEN</p>',
+    choices: ['y', 'n'],
+    prompt: '<p>Does the color match the word? (Y or N)</p>'
+  }
+
+  
+  
+ var pic_procedure = {
+    timeline: [
+        {
+            type: 'html-keyboard-response',
+            stimulus: '+',
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 500
+        },
+        {
+            type: 'html-keyboard-response',
+            stimulus: jsPsych.timelineVariable('name'),
+            trial_duration: 1000,
+            choices: jsPsych.NO_KEYS
+        },
+        {
+            type: 'html-keyboard-response',
+            stimulus: function(){
+                var html="<img src='"+jsPsych.timelineVariable('face', true)+"'>";
+                html += "<p>"+jsPsych.timelineVariable('name', true)+"</p>";
+                return html;
+            },          
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 2500
+        }
+    ],
+    timeline_variables: [
+        { face: 'images/bkgd_1.jpeg', name: 'Alex' },
+        { face: 'images/target_1.jpeg', name: 'Beth' },
+        { face: 'images/dvt_1.jpeg', name: 'Chad' }
+    ]
+}
+  
+  
+  
+  
+
+  
+  timeline.push(pic_procedure)
+  
+  
+  
+    
+    
+    //TO FIX!!!
+    function saveData(name, data){
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '../../../cgi-bin/RR_adults/write_data.php'); // langcog server path
+        //xhr.open('POST', 'write_data.php'); // 'write_data.php' is the path to the php file described above.
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({filename: name, filedata: data}));
+    }
+    
+    
+jsPsych.init({
+        timeline: timeline,
+        //use_webaudio: true, // this won't work for local testing (CORS), but maybe on server
+        //preload_audio: audio,
+        //preload_images: images,
+        //preload_video: video,
+        on_trial_finish: function(){
+            saveData("cultureRR1-" + subject_id, jsPsych.data.get().csv());
+            jsPsych.data.displayData();
+            //setTimeout(function() { turk.submit(jsPsych.data.get().ignore('external-html').json()); }, 5000);
+      }
+    })
+
+    </script>
+</html>
