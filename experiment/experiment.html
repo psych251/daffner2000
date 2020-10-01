@@ -42,6 +42,9 @@
 
   
   
+  
+  
+  
  var pic_procedure = {
     timeline: [
         {
@@ -70,9 +73,60 @@
     timeline_variables: [
         { face: 'images/bkgd_1.jpeg', name: 'Alex' },
         { face: 'images/target_1.jpeg', name: 'Beth' },
+        { face: 'images/dvt_1.jpeg', name: 'Chad' },
+        { face: 'images/dvt_1.jpeg', name: 'Chad' },
+        { face: 'images/dvt_1.jpeg', name: 'Chad' },
+        { face: 'images/dvt_1.jpeg', name: 'Chad' },
         { face: 'images/dvt_1.jpeg', name: 'Chad' }
-    ]
-}
+    ], 
+    sample: {
+        
+        type: "custom",
+        //size: 10, 
+        //weights: [3,1,1,1]
+        //type: 'custom',
+        fn: function(){
+            
+            var groups = [[0,1],[2,3,4,5,6]]
+            console.log('???')
+            var all_items = [];
+            
+            for (var i = 0; i < groups.length; i++){
+                for (var j = 0; j < groups[i].length; j++){
+                    all_items.push({group:i, trial_num: groups[i][j]})
+                }
+            }
+            console.log(all_items)
+            
+            //order = jsPsych.randomization.shuffule(all_items)
+            
+            console.log("fancy stuff!")
+            
+            order = all_items.map(function(x){return x.trial_num})
+            console.log(order)
+            return (order)
+            
+            /*
+            for (var i = 0; i < groups.length; i++){
+                for (var j = 0; j < groups[i].length; j++){
+                    all_items.push({group:i, trial_num:groups[i][j]})
+                }
+            }
+            console.log(all_items)
+
+            var order = jsPsych.randomization.shuffleNoRepeats(all_items, function(a,b){
+                                                               
+                                                               return a.group == b.group
+                                                               
+                                                               }) 
+            
+            return order.map(function(x){return x.trial_num})*/
+                                                               }
+            
+        }
+     
+    }
+
   
   
   
