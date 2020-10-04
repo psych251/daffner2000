@@ -56,42 +56,58 @@ function getRandomSubarray(arr, size) {
 //type is either simple or complex, for building directories purpose 
 //assume we know how many items are there in each folder 
 // this function random selects [number] of path in the [type] folder and return them in an array    
-function get_stimuli(type, number){
+// the returned array represents all stimuli to be used in a task (5 blocks)
+
+var SIMPLE_NUM = 40
+var COMPLEX_NUM = 40
+
+var NUM_SIMPLE_STIMULI = 120
+var NUM_COMPLEX_STIMULI = 120
+
+
+function get_all_stimuli(){
     
-    SIMPLE_NUM = 40 
-    SIMPLE_DIR = "images/simple/"
-    COMPLEX_NUM = 10 
+    ALL_STIMULI_PATH = []
+    SIMPLE_DIR = "images/simple/" 
     COMPLEX_DIR = "images/complex/"
     
-    
-    stimuli_path = []
-    
-    // read all the files in the folder 
-    if (type === "simple"){
-        for (var i = 1; i < SIMPLE_NUM + 1; i++){
+    for (var i = 1; i < NUM_SIMPLE_STIMULI + 1; i++){
             path = SIMPLE_DIR + i + ".png"
-            stimuli_path.push(path)
-        }
-        
-    }else if (type === "complex"){
-        for (var i = 1; i < COMPLEX_NUM + 1; i++){
-            path = COMPLEX_DIR + i + ".png"
-            stimuli_path.push(path)
-        }
-    }else{
-        alert("wrong input in get_stimuli!")
+            ALL_STIMULI_PATH.push(path)
     }
     
-    stimuli_path = getRandomSubarray(stimuli_path, number)
+    for (var i = 1; i < NUM_COMPLEX_STIMULI + 1; i++){
+        path = COMPLEX_DIR + i + ".png"
+        ALL_STIMULI_PATH.push(path)
+    }
     
-    return stimuli_path 
+    return ALL_STIMULI_PATH
+    
+}
+    
+
+// only has simple and complex 
+// randomly select [number] of stimuli from the [type] array
+function get_from_stimuli(type, number , meta_stimuli_paths){
+    
+    
+    if (type !== "simple" && type !== "complex"){
+        alert("get_from_stimuli wrong argument!")
+    }else{
+        
+        var selected = meta_stimuli_paths.filter(function(item){
+            return item.includes(type)})
+        var return_array = getRandomSubarray(selected, number)
+        return return_array
+        } 
+    
+    
+
 }  
     
     
-    
-var files = get_stimuli("simple",40)    
-console.log(files)
-    
+// currently using all the stimuli
+
 function fillArray(value, len) {
   if (len == 0) return [];
   var a = [value];
@@ -159,74 +175,139 @@ function pop_multiple(array, n){
    
 // currently assuming everyone sees different stimulus as target and background, need to double check with authors 
 // assuming same tg and bckgd across 5 blocks, only varying the dvt 
-function create_all_simple_stimuli(stim_path_array,
+// The deviant stimuli in each of the tasks were only shown one time each.==> unique across three tasks?     
+
+
+
+
+// meta_stimuli_path will keep track of all the stimuli that have not been selected
+function create_all_stimuli(meta_stimuli_path, 
+                            type, 
                                     n_trial = 250, 
                                     n_block = 5, 
                                     bkgd_freq = 0.7,
                                     tg_freq = 0.15, 
                                     dvt_freq = 0.15){
+                                
+   
     
     // calculate total number of unique deviant stimuli needed 
+    //var num_bkgd_stimuli = n_trial * bkgd_freq
     var num_dvt_stimuli = Math.ceil(n_trial * dvt_freq)
     var max_num_per_block = Math.ceil(num_dvt_stimuli / n_block)
     var min_num_per_block = num_dvt_stimuli % n_block
     var n_max_block = Math.floor(num_dvt_stimuli / n_block)
     var n_min_block = n_block - n_max_block
     
+    var bkgd_tg_array // array
     var bkgd_stim; //str
     var tg_stim; //str 
-    var dvt_stim; //array 
+    
+    var dvt_array; //array 
+    
+    if (type === "all_simple"){
+        console.log("all simple")
+        bkgd_tg_array = get_from_stimuli("simple",NUM_SIMPLE_STIMULI, meta_stimuli_path) 
+        //choose from full
+        
+    }else if(type === "all_complex"){
+        console.log("all_complex")
+        bkgd_tg_array = get_from_stimuli("complex",NUM_COMPLEX_STIMULI, meta_stimuli_path)
+    }else if(type === "mixed"){
+        bkgd_tg_array = get_from_stimuli("complex",NUM_COMPLEX_STIMULI, meta_stimuli_path)
+    }else(
+        alert("wrong type in create_all_stimuli!")
+    )
     
     // randomly select one as bckgrd stimulus
-    bkgd_stim = stim_path_array[Math.floor(Math.random() * stim_path_array.length)]
+    bkgd_stim = bkgd_tg_array[Math.floor(Math.random() * bkgd_tg_array.length)]
     
-    // drop this one from the array so we don't repeat
-    var stimuli_index = stim_path_array.indexOf(bkgd_stim);
-    if (stimuli_index > -1) {
-        stim_path_array.splice(stimuli_index, 1);
+    // drop this one from both the bkgd_tg array and the metaarray so we don't repeat
+    var meta_stimuli_index = meta_stimuli_path.indexOf(bkgd_stim);
+    var bkgd_tg_array_index = bkgd_tg_array.indexOf(bkgd_stim)
+    if (bkgd_tg_array_index > -1){
+        console.log("bkgd: Exclude in bkgd_tg")
+        bkgd_tg_array.splice(bkgd_tg_array_index,1)
     }else{
-        alert("index error in create_all_simple_stimuli!")
+        alert("index error in create_all_stimuli!")
     }
+    
+    if (meta_stimuli_index > -1){
+        console.log("bkgd: Exclude in meta")
+        meta_stimuli_path.splice(meta_stimuli_index, 1);
+    }
+    
+    console.log("dropped bckgd!")
+    console.log(meta_stimuli_path.length)
+    
     
     // randomly select another one as tg stimulus
-    tg_stim = stim_path_array[Math.floor(Math.random() * stim_path_array.length)]
+    tg_stim = bkgd_tg_array[Math.floor(Math.random() * bkgd_tg_array.length)]
     
-    // drop this one from the array so we don't repeat
-    stimuli_index = stim_path_array.indexOf(tg_stim);
-    if (stimuli_index > -1) {
-        stim_path_array.splice(stimuli_index, 1);
+    // drop this one both the bkgd_tg array and the metaarray so we don't repeat
+    meta_stimuli_index = meta_stimuli_path.indexOf(tg_stim);
+    bkgd_tg_array_index = bkgd_tg_array.indexOf(tg_stim)
+    if (bkgd_tg_array_index > -1){
+        console.log("TARGET: Exclude in bkgd_tg")
+        bkgd_tg_array.splice(bkgd_tg_array_index, 1)
     }else{
         alert("index error in create_all_simple_stimuli!")
     }
+    
+    if (meta_stimuli_index > -1){
+        console.log("bkgd: Exclude in meta")
+        meta_stimuli_path.splice(meta_stimuli_index, 1);
+    }
+    
+    console.log("dropped target!")
+    console.log(meta_stimuli_path.length)
+    
+    
+    
     
     // randomly select the dvt stimuli 
     // current parameter should lead to 38[8, 8, 8, 8, 6]
-    dvt_stim = getRandomSubarray(stim_path_array, num_dvt_stimuli)
+                                
+    if (type === "all_simple" | type === "all_complex"){                 
+        dvt_stim_selected = getRandomSubarray(bkgd_tg_array, num_dvt_stimuli)        
+    }else if(type === "mixed"){
+        // If type mixed get from simple array 
+        simple_stimuli_for_mixed = get_from_stimuli("simple",NUM_SIMPLE_STIMULI, meta_stimuli_path)
+        dvt_stim_selected = getRandomSubarray(simple_stimuli_for_mixed, num_dvt_stimuli)
+    }
+                         
+                                
     // create an array of array to record block structure 
     var block_stim_array = []
     
+    dvt_stim = dvt_stim_selected
+    
+    // drop the selected array from meta array 
+    
+    meta_stimuli_path = meta_stimuli_path.filter(function(item){
+        return dvt_stim.indexOf(item) === -1  
+    })
+    console.log("dvt length!")
+    console.log(dvt_stim.length)
+    console.log("dropped dvt!")
+    console.log(meta_stimuli_path.length)
+    
     for (var i = 0; i < n_block; i ++){
         current_block = []
-        max_block_counter = 0
-        if (max_block_counter < n_max_block){
-            // pacakge max number of stimuli
+      
+            
             
             //get max number of stimuli from array 
-            current_block_dvt_stim = getRandomSubarray(dvt_stim, max_num_per_block)
+        current_block_dvt_stim = getRandomSubarray(dvt_stim, max_num_per_block)
             
-            block_stim_array.push(current_block_dvt_stim)
+        block_stim_array.push(current_block_dvt_stim)
             
             //get rid of the chosen stimuli to prevent double selection 
-            dvt_stim = dvt_stim.filter(function(item){
+        dvt_stim = dvt_stim.filter(function(item){
                 return current_block_dvt_stim.indexOf(item) === -1; // not in the sampled array 
             })
             
-            max_block_counter += 1 
-        }else{
-            // the remaining in the dvt should have the equal number of min num 
-            assert(dvt_stim.length === min_num_per_block)
-            block_stim_array.push(dvt_stim)
-        }
+       
     }
     
     
@@ -252,9 +333,8 @@ function create_all_simple_stimuli(stim_path_array,
         console.log(tg_array)
         */
         
-        var bkgd_tg_array = bkgd_array.concat(tg_array)
-        shuffleArray(bkgd_tg_array)
-        console.log(bkgd_tg_array)
+        var randomized_bkgd_tg_array = bkgd_array.concat(tg_array)
+        shuffleArray(randomized_bkgd_tg_array)
 
         
         
@@ -265,18 +345,16 @@ function create_all_simple_stimuli(stim_path_array,
             var current_dvt = current_block[i]
             gap_filled_array.push(current_dvt)
             // because we have already shuffled the array, so we can just pop from the last 
-            var filler_item = bkgd_tg_array.pop()
+            var filler_item = randomized_bkgd_tg_array.pop()
             gap_filled_array.push(filler_item)
         }
         
-        console.log(bkgd_tg_array)
-        console.log(gap_filled_array)
+       
         // generate an array that indicates how many items go into each blank space 
         // the number here keep track of the number of elements in the filler array 
         // number of gaps is 1 greater than the length of array 
-        var tracker_array = generate_random_num_array(bkgd_tg_array.length, gap_filled_array.length + 1)
+        var tracker_array = generate_random_num_array(randomized_bkgd_tg_array.length, gap_filled_array.length + 1)
         
-        console.log(tracker_array)
         
         // just double check the sum of array is correct 
         
@@ -284,7 +362,7 @@ function create_all_simple_stimuli(stim_path_array,
         return a + b;
         }, 0);
         
-        if (sum_array != bkgd_tg_array.length){
+        if (sum_array != randomized_bkgd_tg_array.length){
             alert("Problem in create_all_simple_stimuli, the sum of tracker array does not equal to the actual length of the item to be filled")
         } else if (gap_filled_array.length + 1 != tracker_array.length){
             alert("Problem in create_all_simple_stimuli, the number of item in the tracker_array does not correspond to the number of actual gaps to be filled")
@@ -293,7 +371,7 @@ function create_all_simple_stimuli(stim_path_array,
         // finally fill in remaining
         var final_randomized_block = []
         for (var i = 0; i < tracker_array.length; i++){
-            current_chunk = pop_multiple(bkgd_tg_array,tracker_array[i])
+            current_chunk = pop_multiple(randomized_bkgd_tg_array,tracker_array[i])
             final_randomized_block = final_randomized_block.concat(current_chunk)
             
             if (i < gap_filled_array.length){
@@ -309,11 +387,88 @@ function create_all_simple_stimuli(stim_path_array,
     
     // finally, shuffle blocks
     shuffleArray(randomized_blocks)
-    return(randomized_blocks)
+                                
+    var task_info = {
+        background: bkgd_stim,
+        target: tg_stim,
+        deviant: dvt_stim_selected,
+        blocks_info: randomized_blocks,
+        remaining_stimuli:meta_stimuli_path
+    }
+    return(task_info)
+        
+        
 }
     
-var test_blocks = create_all_simple_stimuli(files) 
+ALL_STIMULI_PATH = get_all_stimuli() // all stimuli 
+stimuli_tracker = ALL_STIMULI_PATH // make a copy to keep track of stimuli that has been chosen
 
+console.log("Stimuli tracker!")
+console.log(stimuli_tracker)    
+    
+var simple_test_blocks = create_all_stimuli( stimuli_tracker, "all_simple")
+stimuli_tracker = simple_test_blocks.remaining_stimuli
+console.log("Stimuli tracker!")
+console.log(stimuli_tracker) 
+var complex_test_blocks = create_all_stimuli( stimuli_tracker,"all_complex")
+stimuli_tracker = complex_test_blocks.remaining_stimuli
+console.log("Stimuli tracker!")
+console.log(stimuli_tracker) 
+var mixed_test_blocks = create_all_stimuli(stimuli_tracker,"mixed")
+stimuli_tracker = mixed_test_blocks.remaining_stimuli
+console.log("Stimuli tracker!")
+console.log(stimuli_tracker) 
+console.log(simple_test_blocks)
+console.log(complex_test_blocks)
+console.log(mixed_test_blocks)
+    
+    
+function get_all_stim(task_info){
+    all_stimuli = []
+    target = task_info.target
+    background = task_info.background
+    all_stimuli.push(target)
+    all_stimuli.push(background)
+    deviant = task_info.deviant
+    all_stimuli = all_stimuli.concat(deviant)
+    
+    return (all_stimuli)
+    
+    
+}    
+
+    
+simple_all_stimuli = get_all_stim(simple_test_blocks)  
+complex_all_stimuli = get_all_stim(complex_test_blocks)
+mixed_all_stimuli = get_all_stim(mixed_test_blocks)
+all_stimuli = []
+all_stimuli = simple_all_stimuli.concat(complex_all_stimuli,
+                                       mixed_all_stimuli) 
+    
+function hasDuplicates(array) {
+    return (new Set(array)).size !== array.length;
+}
+
+duplicate = hasDuplicates(all_stimuli)
+console.log(duplicate)
+    
+const findDuplicates = (arr) => {
+  let sorted_arr = arr.slice().sort(); // You can define the comparing function here. 
+  // JS by default uses a crappy string compare.
+  // (we use slice to clone the array so the
+  // original array won't be modified)
+  let results = [];
+  for (let i = 0; i < sorted_arr.length - 1; i++) {
+    if (sorted_arr[i + 1] == sorted_arr[i]) {
+      results.push(sorted_arr[i]);
+    }
+  }
+  return results;
+}
+var d = findDuplicates(all_stimuli)
+console.log(d)
+
+    
 function convert_path_to_timeline_variables(item_array){
     var timeline_variable = []
     for (var i = 0; i < item_array.length; i++){
@@ -324,36 +479,38 @@ function convert_path_to_timeline_variables(item_array){
     return timeline_variable
 }
 
-var time_var = convert_path_to_timeline_variables(test_blocks[0])
-console.log("time_var!!")
-console.log(time_var)
+    
+var simple_task_stimuli = simple_test_blocks.blocks_info.map(function(item){
+    return convert_path_to_timeline_variables(item)
+})
+var complex_task_stimuli = complex_test_blocks.blocks_info.map(function(item){
+    return convert_path_to_timeline_variables(item)
+})
+var mixed_task_stimuli = mixed_test_blocks.blocks_info.map(function(item){
+    return convert_path_to_timeline_variables(item)
+})
+
+console.log(simple_task_stimuli)
+console.log(complex_task_stimuli)
+console.log(mixed_task_stimuli)
+//assert("ha")    
 
 
 
+
     
-    
-function create_all_complex_stimuli(){
-    
-}
-    
-function create_mixed_stimuli(){
-    
-    
-}
-    
-    
-var pic_timeline_variables = [
-    
-    
-]
   
   
- var pic_procedure = {
+
+
+const NUM_BLOCK = 5
+ for (var i = 0; i < NUM_BLOCK; i++){
+     var task_block = {
     timeline: [
         
         {
             type: 'html-keyboard-response',
-            stimulus: jsPsych.timelineVariable('name'),
+            stimulus: "",
             trial_duration: 1000,
             choices: jsPsych.NO_KEYS
         },
@@ -368,18 +525,23 @@ var pic_timeline_variables = [
             
         }
     ],
-    timeline_variables: time_var, 
+    timeline_variables: simple_task_stimuli[i], 
     
      
     }
+     
+     
+     
+     
+     
+     timeline.push(task_block)
+ }
+  
+  
+  
 
   
   
-  
-  
-
-  
-  timeline.push(pic_procedure)
   
   
   
