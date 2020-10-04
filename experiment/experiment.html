@@ -41,8 +41,205 @@
   }
 
   
-  
-  
+
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, temp, index;
+    while (i--) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
+}
+
+//type is either simple or complex, for building directories purpose 
+//assume we know how many items are there in each folder 
+// this function random selects [number] of path in the [type] folder and return them in an array    
+function get_stimuli(type, number){
+    
+    SIMPLE_NUM = 40 
+    SIMPLE_DIR = "/images/simple/"
+    COMPLEX_NUM = 10 
+    COMPLEX_DIR = "/images/complex/"
+    
+    
+    stimuli_path = []
+    
+    // read all the files in the folder 
+    if (type === "simple"){
+        for (var i = 1; i < SIMPLE_NUM + 1; i++){
+            path = SIMPLE_DIR + i + ".png"
+            stimuli_path.push(path)
+        }
+        
+    }else if (type === "complex"){
+        for (var i = 1; i < COMPLEX_NUM + 1; i++){
+            path = COMPLEX_DIR + i + ".png"
+            stimuli_path.push(path)
+        }
+    }else{
+        alert("wrong input in get_stimuli!")
+    }
+    
+    stimuli_path = getRandomSubarray(stimuli_path, number)
+    
+    return stimuli_path 
+}  
+    
+    
+    
+var files = get_stimuli("simple",40)    
+console.log(files)
+    
+function fillArray(value, len) {
+  if (len == 0) return [];
+  var a = [value];
+  while (a.length * 2 <= len) a = a.concat(a);
+  if (a.length < len) a = a.concat(a.slice(0, len - a.length));
+  return a;
+}
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+   
+// currently assuming everyone sees different stimulus as target and background, need to double check with authors 
+// assuming same tg and bckgd across 5 blocks, only varying the dvt 
+function create_all_simple_stimuli(stim_path_array,
+                                    n_trial = 250, 
+                                    n_block = 5, 
+                                    bkgd_freq = 0.7,
+                                    tg_freq = 0.15, 
+                                    dvt_freq = 0.15){
+    
+    // calculate total number of unique deviant stimuli needed 
+    var num_dvt_stimuli = Math.ceil(n_trial * dvt_freq)
+    var max_num_per_block = Math.ceil(num_dvt_stimuli / n_block)
+    var min_num_per_block = num_dvt_stimuli % n_block
+    var n_max_block = Math.floor(num_dvt_stimuli / n_block)
+    var n_min_block = n_block - n_max_block
+    
+    var bkgd_stim; //str
+    var tg_stim; //str 
+    var dvt_stim; //array 
+    
+    // randomly select one as bckgrd stimulus
+    bkgd_stim = stim_path_array[Math.floor(Math.random() * stim_path_array.length)]
+    
+    // drop this one from the array so we don't repeat
+    var stimuli_index = stim_path_array.indexOf(bkgd_stim);
+    if (stimuli_index > -1) {
+        stim_path_array.splice(stimuli_index, 1);
+    }else{
+        alert("index error in create_all_simple_stimuli!")
+    }
+    
+    // randomly select another one as tg stimulus
+    tg_stim = stim_path_array[Math.floor(Math.random() * stim_path_array.length)]
+    
+    // drop this one from the array so we don't repeat
+    stimuli_index = stim_path_array.indexOf(tg_stim);
+    if (stimuli_index > -1) {
+        stim_path_array.splice(stimuli_index, 1);
+    }else{
+        alert("index error in create_all_simple_stimuli!")
+    }
+    
+    // randomly select the dvt stimuli 
+    // current parameter should lead to 38[8, 8, 8, 7, 7]
+    dvt_stim = getRandomSubarray(stim_path_array, num_dvt_stimuli)
+    // create an array of array to record block structure 
+    var block_stim_array = []
+    
+    for (var i = 0; i < n_block; i ++){
+        current_block = []
+        max_block_counter = 0
+        if (max_block_counter < n_max_block){
+            // pacakge max number of stimuli
+            
+            //get max number of stimuli from array 
+            current_block_dvt_stim = getRandomSubarray(dvt_stim, max_num_per_block)
+            
+            block_stim_array.push(current_block_dvt_stim)
+            
+            //get rid of the chosen stimuli to prevent double selection 
+            dvt_stim = dvt_stim.filter(function(item){
+                return current_block_dvt_stim.indexOf(item) === -1; // not in the sampled array 
+            })
+            
+            max_block_counter += 1 
+        }else{
+            // the remaining in the dvt should have the equal number of min num 
+            assert(dvt_stim.length === min_num_per_block)
+            block_stim_array.push(dvt_stim)
+        }
+    }
+    
+    
+    // next randomize each block
+    
+    for (var b = 0; b < block_stim_array.length; b++){
+    
+    // this is a little bit indirect. because we don't want to have two consecutive dvt stimuli, so we will first insert one random tgt or bkgd in between each pair of dvt stimuli 
+        var current_block = block_stim_array[b]
+        
+        // first create corresponding dvt and tgt list, corresponding lengths
+        var num_bkgd = bkgd_freq * (n_trial / n_block)
+        var num_tg = (n_trial / n_block) - num_bckgd - current_block.length
+        
+        var bkgd_array = fillArray(bkgd_stim, num_bckgd)
+        var tg_array = fillArray(tg_stim, num_tg)
+        
+        var bkgd_tg_array = bkgd_array.concat(tg_array)
+        bkgd_tg_array = shuffleArray(bkgd_tg_array)
+        
+        
+        // then randomly insert tgt and bgkrd in between 
+        gap_filled_array = [] // the array that with one item in between every dvt stimuli 
+        
+        for (var i = 0; i < current_block.length; i++){
+            var current_dvt = current_block[i]
+            gap_filled_array.push(current_dvt)
+            // because we have already shuffled the array, so we can just pop from the last 
+            var filler_item = bkgd_tg_array.pop()
+            gap_filled_array.push(filler_item)
+        }
+        
+        
+        
+        // finally fill in remaining 
+    
+    }
+    
+    // finally, shuffle blocks
+    
+}
+    
+var test = create_all_simple_stimuli(files) 
+console.log(test)
+    
+    
+function create_all_complex_stimuli(){
+    
+}
+    
+function create_mixed_stimuli(){
+    
+    
+}
+    
+    
+var pic_timeline_variables = [
+    
+    
+]
   
   
  var pic_procedure = {
@@ -73,11 +270,39 @@
     timeline_variables: [
         { face: 'images/bkgd_1.jpeg', name: 'Alex' },
         { face: 'images/target_1.jpeg', name: 'Beth' },
-        { face: 'images/dvt_1.jpeg', name: 'Chad' },
-        { face: 'images/dvt_1.jpeg', name: 'Chad' },
-        { face: 'images/dvt_1.jpeg', name: 'Chad' },
-        { face: 'images/dvt_1.jpeg', name: 'Chad' },
-        { face: 'images/dvt_1.jpeg', name: 'Chad' }
+        { face: 'images/deviant/1.png', name: 'Chad' },
+        { face: 'images/deviant/2.png', name: 'Chad' },
+        { face: 'images/deviant/3.png', name: 'Chad' },
+        { face: 'images/deviant/4.png', name: 'Chad' },
+        { face: 'images/deviant/5.png', name: 'Chad' },
+        { face: 'images/deviant/6.png', name: 'Chad' },
+        { face: 'images/deviant/7.png', name: 'Chad' },
+        { face: 'images/deviant/8.png', name: 'Chad' },
+        { face: 'images/deviant/9.png', name: 'Chad' },
+        { face: 'images/deviant/10.png', name: 'Chad' },
+        { face: 'images/deviant/11.png', name: 'Chad' },
+        { face: 'images/deviant/12.png', name: 'Chad' },
+        { face: 'images/deviant/13.png', name: 'Chad' },
+        { face: 'images/deviant/14.png', name: 'Chad' },
+        { face: 'images/deviant/15.png', name: 'Chad' },
+        { face: 'images/deviant/16.png', name: 'Chad' },
+        { face: 'images/deviant/17.png', name: 'Chad' },
+        { face: 'images/deviant/18.png', name: 'Chad' },
+        { face: 'images/deviant/19.png', name: 'Chad' },
+        { face: 'images/deviant/20.png', name: 'Chad' },
+        { face: 'images/deviant/21.png', name: 'Chad' },
+        { face: 'images/deviant/22.png', name: 'Chad' },
+        { face: 'images/deviant/23.png', name: 'Chad' },
+        { face: 'images/deviant/24.png', name: 'Chad' },
+        { face: 'images/deviant/25.png', name: 'Chad' },
+        { face: 'images/deviant/26.png', name: 'Chad' },
+        { face: 'images/deviant/27.png', name: 'Chad' },
+        { face: 'images/deviant/28.png', name: 'Chad' },
+        { face: 'images/deviant/29.png', name: 'Chad' },
+        { face: 'images/deviant/30.png', name: 'Chad' },
+        
+        
+        
     ], 
     sample: {
         
@@ -87,8 +312,18 @@
         //type: 'custom',
         fn: function(){
             
-            var groups = [[0,1],[2,3,4,5,6]]
-            console.log('???')
+            var groups = [[0,1],[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]]
+            var num_bkgd = 5 * 5
+            var num_target = 5 
+            
+            // insert elem at array[index]
+            function insertAt(array, index, elem) {
+                array.splice(index, 0, elem);
+            }
+            
+            var devt = groups[1]
+            
+            console.log(devt)
             var all_items = [];
             
             for (var i = 0; i < groups.length; i++){
@@ -98,7 +333,11 @@
             }
             console.log(all_items)
             
-            //order = jsPsych.randomization.shuffule(all_items)
+            all_items = jsPsych.randomization.shuffleNoRepeats(all_items, function(a,b){
+                return (a.trial_num === b.trial_num)
+                
+            });
+
             
             console.log("fancy stuff!")
             
