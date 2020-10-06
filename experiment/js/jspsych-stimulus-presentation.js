@@ -48,6 +48,14 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
         default: null,
         description: 'How long to show trial before it ends.'
       },
+        
+      minimum_viewing_duration:{
+        type: jsPsych.plugins.parameterType.INT,
+        pretty_name: 'minimum viewing time duration',
+        default: 0,
+        description: 'minimum time the participants need to look at the stimuli'
+          
+      },
       response_ends_trial: {
         type: jsPsych.plugins.parameterType.BOOL,
         pretty_name: 'Response ends trial',
@@ -141,7 +149,9 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
         "task_background_stimulus":trial.task_background_stimulus,
         "task_deviant_stimuli": trial.task_deviant_stimulus,
         "task_order_number": trial.task_order_number,
-        "blcok_order_number": trial.block_order_number
+        "blcok_order_number": trial.block_order_number,
+        "minimum_viewing_duration":trial.minimum_viewing_duration,
+        "trial_looking_time": trial.minimum_viewing_duration + response.rt
       };
 
       // clear the display
@@ -152,7 +162,7 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
     };
 
     // function to handle responses by the subject
-    var after_response = function(info) {
+   var after_response = function(info) {
 
       // after a valid response, the stimulus will have the CSS class 'responded'
       // which can be used to provide visual feedback that a response was recorded
@@ -170,13 +180,20 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
 
     // start the response listener
     if (trial.choices != jsPsych.NO_KEYS) {
-      var keyboardListener = jsPsych.pluginAPI.getKeyboardResponse({
+      
+      jsPsych.pluginAPI.setTimeout(function() {
+        var keyboardListener = jsPsych.pluginAPI.getKeyboardResponse({
         callback_function: after_response,
         valid_responses: trial.choices,
         rt_method: 'performance',
         persist: false,
         allow_held_key: false
       });
+             
+      }, trial.minimum_viewing_duration)    
+        
+        
+      
     }
 
     // hide stimulus if stimulus_duration is set

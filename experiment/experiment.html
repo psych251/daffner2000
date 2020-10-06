@@ -3,6 +3,7 @@
 <head>
   <script src="js/jspsych.js"></script>
   <script src="js/jspsych-stimulus-presentation.js"></script>
+  <script src="js/jspsych-instructions.js"></script>
     <script src="js/jspsych-html-keyboard-response.js"></script>
     <script src="js/jspsych-image-keyboard-response.js"></script>
     <script src="js/helper_for_generating_stimuli_array.js"></script>
@@ -92,10 +93,10 @@ shuffleArray(ALL_TASKS)
 
     
 
-// minimum presentation time 
+// minimum presentation time - done 
 // various inter stimulus interval -- Done  
-// presenting the target stimulus
-// presenting the target stimulus response 
+// presenting the target stimulus - done 
+// presenting the target stimulus response => need to get conditional responses 
 
 var current_block = ALL_TASKS[0] // this will be embedded in a larger loop 
 
@@ -104,7 +105,38 @@ const NUM_BLOCK = 5
 
 for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
 
+ current_task = ALL_TASKS[task_num]
+ console.log(current_task)
+ current_target = current_task.target
+ console.log(current_task.target)
+ task_order_print = ""
+ if (task_num === 0){
+     task_order_print = "first"
+ }else if (task_num === 1){
+     task_order_print = "second"
+ }else if (task_num === 2){
+     task_order_print = "last"
+ }
+    
+ var task_instruction = {
+     type: "instructions",
+     pages:[
+         "hello!!!!",
+         "look at pictures hahaha it's boring just press the down key", 
+         "this is the target picture though press space bar pls" + '<p><img src="'+ current_target + '"></img></p>',
+         "three tasks in total, you can take relatively longer break in between, each task has 5 small block, small break haha",
+         "nope we will not test you just chill",
+     ],
+     show_clickable_nav: true
+     
+ }
+ 
+ timeline.push(task_instruction)
+
+
  for (var block_num = 0; block_num < NUM_BLOCK; block_num++){
+     
+     
     var task_block = {
     timeline: [
         
@@ -124,10 +156,12 @@ for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
                 return html;
             },          
             choices: [40],
-            task_type:current_block.type,
-            task_target_stimulus:current_block.tg_stim,
-            task_background_stimulus:current_block.bkgd_stim,
-            task_deviant_stimulus:current_block.dvt_stim_selected,
+            minimum_viewing_duration: 600, // daffner2000's info
+            response_ends_trial: true, 
+            task_type:current_task.type,
+            task_target_stimulus:current_task.target,
+         task_background_stimulus:current_task.background,
+            task_deviant_stimulus:current_task.deviant,
             task_order_number:0,//to be fixed with larger loop
             block_order_number:block_num
             
@@ -135,16 +169,19 @@ for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
         }
     ],
         
-    timeline_variables: current_block.blocks_info.map(function(item){
+    timeline_variables: current_task.blocks_info.map(function(item){
     return convert_path_to_timeline_variables(item)
 })[block_num], 
     
      
     }
+    
+   
      
+    var break_order = block_num + 1
     var break_block = {
         type: 'html-keyboard-response',
-        stimulus: "here's the " + (task_block+1) + " break block!",
+        stimulus: "here's the " + break_order + " break block!",
         trial_duration: 1000,
         choices: jsPsych.NO_KEYS
         
