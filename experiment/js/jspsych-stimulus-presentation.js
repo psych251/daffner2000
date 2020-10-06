@@ -136,13 +136,37 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
         jsPsych.pluginAPI.cancelKeyboardResponse(keyboardListener);
       }
         
+      // gather the stimulus trial type
+        
+      var trial_stimulus_type = ""  
+      var deviant = trial.task_deviant_stimulus
+      if (trial.stimulus.includes(trial.task_target_stimulus)){
+          
+          trial_stimulus_type = "target"
+          
+      }else if(trial.stimulus.includes(trial.task_background_stimulus)){
+          
+          trial_stimulus_type = "background"
+          
+      }else if (deviant.filter(function(item){
+          return (trial.stimulus.includes(item))
+      }).length === 1){
+                    
+          trial_stimulus_type = "deviant"
+      }else{
+          alert("stimulus selection in stimulus presentation! not belonging to any category!")
+      }
+        
+      trial.trial_stimulus_type = trial_stimulus_type
+        
         
       
 
       // gather the data to store for the trial
       var trial_data = {
         "rt": response.rt,
-        "stimulus": trial.stimulus,
+        "trial_stimulus": trial.stimulus,
+        "trial_stimulus_type": trial_stimulus_type,//TO FIX,
         "key_press": response.key, 
         "task_type": trial.task_type, 
         "task_target_stimulus": trial.task_target_stimulus,
@@ -180,7 +204,6 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
 
     // start the response listener
     if (trial.choices != jsPsych.NO_KEYS) {
-      
       jsPsych.pluginAPI.setTimeout(function() {
         var keyboardListener = jsPsych.pluginAPI.getKeyboardResponse({
         callback_function: after_response,
