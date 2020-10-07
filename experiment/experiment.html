@@ -140,7 +140,9 @@ for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
 
  for (var block_num = 0; block_num < NUM_BLOCK; block_num++){
      
-     
+     current_target = current_task.target
+     console.log("inner loop")
+     console.log(current_target)
     var task_block = {
     timeline: [
         
@@ -162,22 +164,8 @@ for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
                 
                 return html;
             },
-            choices: function(){
-                //BUG: TARGET NOT UP-TO-DATE
-                var current_stimulus = jsPsych.timelineVariable('pic', true)
-                console.log("i'm in choice")
-                console.log("this is the current")
-                console.log(current_stimulus)
-                console.log("this is the target")
-                console.log(current_task.target)
-                if (current_stimulus === current_task.target){
-                    console.log("hey i'm target press blanksapce")
-                    return [40, 32]
-                }else{
-                    return [40]
-                }
-                
-            },
+            choices_for_target: [32],
+            choices: [40],
             minimum_viewing_duration: 600, // daffner2000's info
             response_ends_trial: true, 
             task_type:current_task.type,

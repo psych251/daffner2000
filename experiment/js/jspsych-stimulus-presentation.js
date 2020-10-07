@@ -30,6 +30,15 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
         default: jsPsych.ALL_KEYS,
         description: 'The keys the subject is allowed to press to respond to the stimulus.'
       },
+      choices_for_target:{
+          type: jsPsych.plugins.parameterType.KEYCODE,
+        array: true,
+        pretty_name: 'Choices',
+        default: jsPsych.ALL_KEYS,
+        description: 'The key the subjects supposed to press when seeing the target'
+          
+      },
+        
       prompt: {
         type: jsPsych.plugins.parameterType.STRING,
         pretty_name: 'Prompt',
@@ -166,7 +175,7 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
       var trial_data = {
         "rt": response.rt,
         "trial_stimulus": trial.stimulus,
-        "trial_stimulus_type": trial_stimulus_type,//TO FIX,
+        "trial_stimulus_type": trial_stimulus_type,
         "key_press": response.key, 
         "task_type": trial.task_type, 
         "task_target_stimulus": trial.task_target_stimulus,
@@ -202,9 +211,33 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
       }
     };
 
-    // start the response listener
-    if (trial.choices != jsPsych.NO_KEYS) {
-      jsPsych.pluginAPI.setTimeout(function() {
+    if (trial.choices_for_target != jsPsych.NO_KEYS && trial.choices != jsPsych.NO_KEYS){
+        
+        var key_for_target = trial.choices_for_target.concat(trial.choices)
+        
+        // if it is the target trial 
+         if(trial.stimulus.includes(trial.task_target_stimulus)){
+             
+             jsPsych.pluginAPI.setTimeout(function() {
+        var keyboardListener = jsPsych.pluginAPI.getKeyboardResponse({
+        callback_function: after_response,
+        valid_responses: key_for_target,
+        rt_method: 'performance',
+        persist: false,
+        allow_held_key: false
+      });
+             
+      }, trial.minimum_viewing_duration)  
+          
+          
+    // if it is the background OR the deviant      
+      } else if (trial.stimulus.includes(trial.task_background_stimulus) || (trial.task_deviant_stimulus.filter(function(item){
+          return (trial.stimulus.includes(item))
+      }).length === 1)
+      ){
+          
+          
+          jsPsych.pluginAPI.setTimeout(function() {
         var keyboardListener = jsPsych.pluginAPI.getKeyboardResponse({
         callback_function: after_response,
         valid_responses: trial.choices,
@@ -213,7 +246,26 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
         allow_held_key: false
       });
              
-      }, trial.minimum_viewing_duration)    
+      }, trial.minimum_viewing_duration)  
+          
+          
+          
+      } else{
+          
+          alert("error in target selection for keyboard responses!")
+          
+      }
+        
+        
+        
+        
+        
+        
+    }  
+      
+    // start the response listener
+    if (trial.choices != jsPsych.NO_KEYS) {
+        
         
         
       
