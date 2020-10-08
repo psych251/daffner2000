@@ -53,7 +53,7 @@ stimuli_tracker = ALL_STIMULI_PATH // make a copy to keep track of stimuli that 
 
 var simple_test_blocks = create_all_stimuli(meta_stimuli_path = stimuli_tracker, 
                                             type = "all_simple", 
-                                            n_trial = 5, 
+                                            n_trial = 15, 
                                             n_block = 5, 
                                             bkgd_freq = 0.7,
                                             tg_freq = 0.15, 
@@ -62,7 +62,7 @@ stimuli_tracker = simple_test_blocks.remaining_stimuli
 
 var complex_test_blocks = create_all_stimuli(meta_stimuli_path = stimuli_tracker,
                                              type = "all_complex", 
-                                            n_trial = 5, 
+                                            n_trial = 15, 
                                             n_block = 5, 
                                             bkgd_freq = 0.7,
                                             tg_freq = 0.15, 
@@ -71,7 +71,7 @@ stimuli_tracker = complex_test_blocks.remaining_stimuli
 
 var mixed_test_blocks = create_all_stimuli(meta_stimuli_path = stimuli_tracker,
                                            type = "mixed", 
-                                           n_trial = 5, 
+                                           n_trial = 15, 
                                             n_block = 5, 
                                             bkgd_freq = 0.7,
                                             tg_freq = 0.15, 
@@ -99,7 +99,6 @@ shuffleArray(ALL_TASKS)
 
 var current_block = ALL_TASKS[0] // this will be embedded in a larger loop 
 
-console.log(current_block)
 const NUM_BLOCK = 5
 
 for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
@@ -107,6 +106,9 @@ for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
 var current_task = ALL_TASKS[task_num]
 var current_target = current_task.target    
     
+console.log("current task")
+     console.log(current_task)
+
  task_order_print = ""
  if (task_num === 0){
      task_order_print = "first"
@@ -120,7 +122,7 @@ var current_target = current_task.target
      type: "instructions",
      pages:[
          "hello!!!!",
-         "look at pictures hahaha it's boring just press the down key", 
+         "look at pictures hahaha it's boring just press the down arrow", 
          "this is the target picture though press space bar pls" + '<p><img src="'+ current_target + '"></img></p>',
          "three tasks in total, you can take relatively longer break in between, each task has 5 small block, small break haha",
          "nope we will not test you just chill",
@@ -134,9 +136,8 @@ var current_target = current_task.target
 
  for (var block_num = 0; block_num < NUM_BLOCK; block_num++){
      
-     current_target = current_task.target
-     console.log("inner loop")
-     console.log(current_target)
+    current_target = current_task.target
+     
     var task_block = {
     timeline: [
         
