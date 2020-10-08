@@ -23,13 +23,12 @@
 
     // if we're not on MTurk, create a timestamp-based subject number; otherwise use turker ID
     var subject_id = 'SS' + timenum;
-    /*    
+       
     if(turkInfo==null) {
       var subject_id = 'SS' + timenum;
     } else {
       var subject_id = 'MT-' + turkInfo.workerId;
-    }
-*/
+ 
     // store subject in data on every trial
     jsPsych.data.addProperties({ subject: subject_id });
 
@@ -72,7 +71,7 @@ stimuli_tracker = complex_test_blocks.remaining_stimuli
 
 var mixed_test_blocks = create_all_stimuli(meta_stimuli_path = stimuli_tracker,
                                            type = "mixed", 
-                                           n_trial = 25, 
+                                           n_trial = 15, 
                                             n_block = 5, 
                                             bkgd_freq = 0.7,
                                             tg_freq = 0.15, 
@@ -216,7 +215,7 @@ for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
     //TO FIX!!!
     function saveData(name, data){
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '../../../cgi-bin/RR_adults/write_data.php'); // langcog server path
+        xhr.open('POST', '../../../cgi-bin/daffner2000/write_data.php'); // langcog server path
         //xhr.open('POST', 'write_data.php'); // 'write_data.php' is the path to the php file described above.
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({filename: name, filedata: data}));
@@ -230,7 +229,7 @@ jsPsych.init({
         //preload_images: images,
         //preload_video: video,
         on_trial_finish: function(){
-            saveData("cultureRR1-" + subject_id, jsPsych.data.get().csv());
+            saveData("daffnerrep-" + subject_id, jsPsych.data.get().csv());
             jsPsych.data.displayData();
             //setTimeout(function() { turk.submit(jsPsych.data.get().ignore('external-html').json()); }, 5000);
       }
