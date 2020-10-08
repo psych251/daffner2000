@@ -28,7 +28,7 @@
       var subject_id = 'SS' + timenum;
     } else {
       var subject_id = 'MT-' + turkInfo.workerId;
- 
+    }
     // store subject in data on every trial
     jsPsych.data.addProperties({ subject: subject_id });
 
@@ -104,13 +104,6 @@ const NUM_BLOCK = 5
 
 for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
 
- current_task = ALL_TASKS[task_num] 
- console.log(current_task)
- current_target = current_task.target
- console.log("current task target! for task")
- console.log(task_num)
- console.log(current_task.target)
- 
     
  task_order_print = ""
  if (task_num === 0){
