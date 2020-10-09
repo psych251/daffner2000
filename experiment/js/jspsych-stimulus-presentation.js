@@ -184,7 +184,8 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
         "task_order_number": trial.task_order_number,
         "blcok_order_number": trial.block_order_number,
         "minimum_viewing_duration":trial.minimum_viewing_duration,
-        "trial_looking_time": trial.minimum_viewing_duration + response.rt
+        "trial_looking_time": trial.minimum_viewing_duration + response.rt,
+        "trial_pressed_space_bar": trial.press_space_bar
       };
 
       // clear the display
@@ -202,60 +203,67 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
       display_element.querySelector('#jspsych-html-keyboard-response-stimulus').className += ' responded';
 
       // only record the first response
-      if (response.key == null) {
-        response = info;
-      }
+      
+      
+      console.log(info)
+      
+      // if the does not press the space bar but the down arrow, 
+      if (info.key !== 32){
+          if (response.key == null){
+          response = info 
+          }   
+          jsPsych.pluginAPI.cancelAllKeyboardResponses()
+          if(trial.response_ends_trial) {
+            end_trial();
+          }
+      // if pressed the space bar      
+      }else{
+          
+          trial.press_space_bar = "yes"
+          // if it is the target trial 
+          
+          console.log(trial.stimulus)
+          console.log(trial.task_target_stimulus)
+          
+          if (trial.stimulus.includes(trial.task_target_stimulus)){
+              console.log("this is the target!")
+          var black_border_display = display_element.innerHTML
+          var flashing_red_border_display = black_border_display.replace("black", "red")
+          display_element.innerHTML = flashing_red_border_display
+          jsPsych.pluginAPI.setTimeout(function() {
+                                    display_element.innerHTML = black_border_display ;
+                                    }, 300);
+              
+          }
+      
+      
+      }   
+       
+      
+       
+      
 
-      if (trial.response_ends_trial) {
-        end_trial();
-      }
+       
     };
 
-    if (trial.choices_for_target != jsPsych.NO_KEYS && trial.choices != jsPsych.NO_KEYS){
+
+if (trial.choices_for_target != jsPsych.NO_KEYS && trial.choices != jsPsych.NO_KEYS){
         
         var key_for_target = trial.choices_for_target.concat(trial.choices)
-        
-        // if it is the target trial 
-         if(trial.stimulus.includes(trial.task_target_stimulus)){
-             
-             jsPsych.pluginAPI.setTimeout(function() {
+        jsPsych.pluginAPI.setTimeout(function() {
         var keyboardListener = jsPsych.pluginAPI.getKeyboardResponse({
         callback_function: after_response,
         valid_responses: key_for_target,
         rt_method: 'performance',
-        persist: false,
+        persist: true,
         allow_held_key: false
       });
              
-      }, trial.minimum_viewing_duration)  
-          
-          
-    // if it is the background OR the deviant      
-      } else if (trial.stimulus.includes(trial.task_background_stimulus) || (trial.task_deviant_stimulus.filter(function(item){
-          return (trial.stimulus.includes(item))
-      }).length === 1)
-      ){
-          
-          
-          jsPsych.pluginAPI.setTimeout(function() {
-        var keyboardListener = jsPsych.pluginAPI.getKeyboardResponse({
-        callback_function: after_response,
-        valid_responses: trial.choices,
-        rt_method: 'performance',
-        persist: false,
-        allow_held_key: false
-      });
-             
-      }, trial.minimum_viewing_duration)  
-          
-          
-          
-      } else{
-          
-          alert("error in target selection for keyboard responses!")
-          
-      }
+      }, trial.minimum_viewing_duration) 
         
+          
+        
+
         
         
         
@@ -263,13 +271,7 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
         
     }  
       
-    // start the response listener
-    if (trial.choices != jsPsych.NO_KEYS) {
-        
-        
-        
-      
-    }
+    
 
     // hide stimulus if stimulus_duration is set
     if (trial.stimulus_duration !== null) {

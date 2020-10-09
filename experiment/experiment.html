@@ -143,7 +143,7 @@ console.log("current task")
         
         {
             type: 'html-keyboard-response',
-            stimulus: "",
+            stimulus: '<img src=images/blank.png width ="500" height = "600" style="border:5px solid black">',
             trial_duration: function(){ 
                 var random_duration = 800 + 500 * Math.random()
                 return random_duration  } , //The interval between the offset of one stimulus and the onset of the next stimulus ranged between 800 and 1300 msec
@@ -155,7 +155,7 @@ console.log("current task")
         {
             type: 'stimulus-presentation',
             stimulus: function(){
-                var html="<img src='"+jsPsych.timelineVariable('pic', true)+"'>";
+                var html="<img src='"+jsPsych.timelineVariable('pic', true)+"' width ='500' height = '600' style='border:5px solid black'>";
                 
                 return html;
             },
