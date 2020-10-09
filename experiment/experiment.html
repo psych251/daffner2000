@@ -54,7 +54,6 @@ var NUM_COMPLEX_STIMULI = 120
 
 ALL_STIMULI_PATH = get_all_stimuli() // all stimuli 
 stimuli_tracker = ALL_STIMULI_PATH // make a copy to keep track of stimuli that has been chosen
-    
 
 
 var simple_test_blocks = create_all_stimuli(meta_stimuli_path = stimuli_tracker, 
@@ -282,7 +281,7 @@ jsPsych.init({
         timeline: timeline,
         //use_webaudio: true, // this won't work for local testing (CORS), but maybe on server
         //preload_audio: audio,
-        //preload_images: images,
+        preload_images: ALL_STIMULI_PATH,
         //preload_video: video,
         on_trial_finish: function(){
             saveData("daffnerrep-" + subject_id, jsPsych.data.get().csv());
