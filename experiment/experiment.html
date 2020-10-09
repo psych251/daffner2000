@@ -26,12 +26,14 @@
 
     // if we're not on MTurk, create a timestamp-based subject number; otherwise use turker ID
     var subject_id = 'SS' + timenum;
-       
+   
+/*    
     if(turkInfo==null) {
       var subject_id = 'SS' + timenum;
     } else {
       var subject_id = 'MT-' + turkInfo.workerId;
     }
+    */
     // store subject in data on every trial
     jsPsych.data.addProperties({ subject: subject_id });
 
@@ -269,9 +271,8 @@ var final_instructions = {
     //'../../../cgi-bin/RR_adults/write_data.php')
     //TO FIX!!!
     function saveData(name, data){
-        console.log("hello i'm saving data")
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'afs/ir.stanford.edu/write_data.php'); 
+        xhr.open('POST', 'https://web.stanford.edu/~anjiecao/cgi-bin/daffner2000/write_data.php'); 
         //xhr.open('POST', 'write_data.php'); // 'write_data.php' is the path to the php file described above.
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({filename: name, filedata: data}));
