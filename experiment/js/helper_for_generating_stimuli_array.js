@@ -168,16 +168,19 @@ function create_all_stimuli(meta_stimuli_path,
     var dvt_array; //array 
     
     if (type === "all_simple"){
+        console.log("all_simple")
         bkgd_tg_array = get_from_stimuli("simple",NUM_SIMPLE_STIMULI, meta_stimuli_path) 
         //choose from full
         
     }else if(type === "all_complex"){
         bkgd_tg_array = get_from_stimuli("complex",NUM_COMPLEX_STIMULI, meta_stimuli_path)
-    }else if(type === "mixed"){
+    }else if(type === "mixed_simple_deviant"){
         bkgd_tg_array = get_from_stimuli("complex",NUM_COMPLEX_STIMULI, meta_stimuli_path)
-    }else(
+    }else if (type === "mixed_complex_deviant"){
+        bkgd_tg_array = get_from_stimuli("simple", NUM_SIMPLE_STIMULI, meta_stimuli_path)   
+    }else{(
         alert("wrong type in create_all_stimuli!")
-    )
+    )}
     
     // randomly select one as bckgrd stimulus
     bkgd_stim = bkgd_tg_array[Math.floor(Math.random() * bkgd_tg_array.length)]
@@ -221,10 +224,13 @@ function create_all_stimuli(meta_stimuli_path,
                                 
     if (type === "all_simple" | type === "all_complex"){                 
         dvt_stim_selected = getRandomSubarray(bkgd_tg_array, num_dvt_stimuli)        
-    }else if(type === "mixed"){
+    }else if(type === "mixed_simple_deviant"){
         // If type mixed get from simple array 
         simple_stimuli_for_mixed = get_from_stimuli("simple",NUM_SIMPLE_STIMULI, meta_stimuli_path)
         dvt_stim_selected = getRandomSubarray(simple_stimuli_for_mixed, num_dvt_stimuli)
+    }else if (type === "mixed_complex_deviant"){
+        complex_stimuli_for_mixed = get_from_stimuli("complex", NUM_COMPLEX_STIMULI, meta_stimuli_path)
+        dvt_stim_selected = getRandomSubarray(complex_stimuli_for_mixed, num_dvt_stimuli)
     }
                          
                                 

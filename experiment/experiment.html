@@ -6,6 +6,9 @@
   <script src="js/jspsych-instructions.js"></script>
     <script src="js/jspsych-html-keyboard-response.js"></script>
     <script src="js/jspsych-image-keyboard-response.js"></script>
+    <script src= "js/jspsych-demog-age.js"></script>
+    <script src= "js/jspsych-demog-ethnic-US.js"></script>
+    <script src= "js/jspsych-demog-gender-and-education.js"></script>
     <script src="js/helper_for_generating_stimuli_array.js"></script>
     <script src="js/helper_for_checking_duplicate_stimuli.js"></script>
   <link rel="stylesheet" href="css/jspsych.css"></link>
@@ -69,8 +72,16 @@ var complex_test_blocks = create_all_stimuli(meta_stimuli_path = stimuli_tracker
                                             dvt_freq = 0.15)
 stimuli_tracker = complex_test_blocks.remaining_stimuli
 
-var mixed_test_blocks = create_all_stimuli(meta_stimuli_path = stimuli_tracker,
-                                           type = "mixed", 
+var mixed_simple_test_blocks = create_all_stimuli(meta_stimuli_path = stimuli_tracker,
+                                           type = "mixed_simple_deviant", 
+                                           n_trial = 15, 
+                                            n_block = 5, 
+                                            bkgd_freq = 0.7,
+                                            tg_freq = 0.15, 
+                                            dvt_freq = 0.15)
+
+var mixed_complex_test_blocks = create_all_stimuli(meta_stimuli_path = stimuli_tracker,
+                                           type = "mixed_complex_deviant", 
                                            n_trial = 15, 
                                             n_block = 5, 
                                             bkgd_freq = 0.7,
@@ -78,14 +89,14 @@ var mixed_test_blocks = create_all_stimuli(meta_stimuli_path = stimuli_tracker,
                                             dvt_freq = 0.15)
 
 // just double check there were no duplicates
-var duplicate = check_duplicates([simple_test_blocks, complex_test_blocks, mixed_test_blocks])   
+var duplicate = check_duplicates([simple_test_blocks, complex_test_blocks, mixed_simple_test_blocks,mixed_complex_test_blocks])   
 if (duplicate){
     alert("sampling script broken! detect duplicates!")
     assert()    
 }
 
 var ALL_TASKS = [simple_test_blocks,
-                       complex_test_blocks, mixed_test_blocks]
+                       complex_test_blocks, mixed_simple_test_blocks,mixed_complex_test_blocks]
 
 shuffleArray(ALL_TASKS)
     
@@ -115,7 +126,9 @@ console.log("current task")
  }else if (task_num === 1){
      task_order_print = "second"
  }else if (task_num === 2){
-     task_order_print = "last"
+     task_order_print = "third"
+ }else if (task_num === 3){
+     task_order_print ="last"
  }
     
  var task_instruction = {
@@ -199,12 +212,58 @@ console.log("current task")
  }
   
 }
-  
+    
+    
+    
+var final_instructions = {
+     type: "instructions",
+     pages:[
+         "Finnally, we'd like to ask a few questions about you"
+     ],
+     show_clickable_nav: true
+     
+ }
 
+
+
+    var demog_question_age = {
+        type: 'demog-age',
+        questions: [
+        {prompt: "How old are you?", name: "age", required: true}
+        ],
+    }
+    
+     var demog_question_ethnicity = {
+        type: "demog-ethnic-US", 
+        button_label: "Done", 
+        questions: [
+            {prompt: "What is your racial or ethnic identification? Check all that apply.", name: "gender", options:  ["American Indian or Alaska Native", "Asian", "Black or African American", "Hispanic or Latino", "Native Hawaiian or Other Pacific Islander", "White", "Other"], required: true}
+        ]
+    }
+     
+    var demog_gender_and_education = {
+        type: "demog-gender-and-education", 
+        button_label: "Done", 
+        questions: [
+            {prompt: "What is your gender?", name: "gender", options: ["Female", "Male", "Non-binary", "Decline to Answer"], required: true}, 
+            {prompt: "What is the highest degree or the higest level of school you have completed? If you are currently enrolled as a student, then please select the highest degree or education you have received.", name: "education", options: ["Some high school", "High school diploma", "Associate Degree/Technical certification", "Bachelor's Degree",  "Master's Degree", "Doctorate/Professional degree", "Other"], required: true}
+        ]
+    }
   
+   var final_thank_you = {
+     type: "instructions",
+     pages:[
+         "You are all done, thank you!"
+     ],
+     show_clickable_nav: false
+     
+ }    
   
-  
-  
+   timeline.push(final_instructions)
+   timeline.push(demog_question_age)
+   timeline.push(demog_gender_and_education)
+   timeline.push(demog_question_ethnicity)
+   timeline.push(final_thank_you)
    ///afs/ir.stanford.edu/users/a/n/anjiecao/cgi-bin/daffner2020/write_data.php
    
     //'../../../cgi-bin/RR_adults/write_data.php')
