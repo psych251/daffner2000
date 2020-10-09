@@ -169,6 +169,9 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
       trial.trial_stimulus_type = trial_stimulus_type
         
         
+        
+      
+        
       
 
       // gather the data to store for the trial
@@ -183,9 +186,11 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
         "task_deviant_stimuli": trial.task_deviant_stimulus,
         "task_order_number": trial.task_order_number,
         "blcok_order_number": trial.block_order_number,
+        "trial_order_number": trial.trial_order_number,
         "minimum_viewing_duration":trial.minimum_viewing_duration,
         "trial_looking_time": trial.minimum_viewing_duration + response.rt,
-        "trial_pressed_space_bar": trial.press_space_bar
+        "trial_pressed_space_bar": trial.press_space_bar,
+         "trial_pressed_space_bar": trial.space_bar_rt 
       };
 
       // clear the display
@@ -220,6 +225,10 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
       }else{
           
           trial.press_space_bar = "yes"
+          // record the first reaction time of the space bar press
+          if (trial.space_bar_rt == null){
+              trial.space_bar_rt = info.rt
+          }
           // if it is the target trial 
           
           console.log(trial.stimulus)

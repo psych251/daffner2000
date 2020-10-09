@@ -26,14 +26,15 @@
 
     // if we're not on MTurk, create a timestamp-based subject number; otherwise use turker ID
     var subject_id = 'SS' + timenum;
-   
-/*    
-    if(turkInfo==null) {
+
+    //console.log(turkInfo.workerId)
+    if(turkInfo.workerId === "") {
+      console.log(turkInfo.workerId)
       var subject_id = 'SS' + timenum;
     } else {
       var subject_id = 'MT-' + turkInfo.workerId;
     }
-    */
+    
     // store subject in data on every trial
     jsPsych.data.addProperties({ subject: subject_id });
 
@@ -182,12 +183,10 @@ console.log("current task")
             task_target_stimulus:current_task.target,
          task_background_stimulus:current_task.background,
             task_deviant_stimulus:current_task.deviant,
-            task_order_number:0,//to be fixed with larger loop
-            block_order_number:block_num
-            
-            
-        }
-    ],
+            task_order_number:task_num,
+            block_order_number:block_num,
+
+        }],
         
     timeline_variables: current_task.blocks_info.map(function(item){
     return convert_path_to_timeline_variables(item)
