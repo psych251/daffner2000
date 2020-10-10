@@ -12,8 +12,7 @@ output:
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
 
-## Introduction
-
+## Proposal 
 
 This particular experiment is chosen because I wanted to test the plausibility of using a subject-controlled visual oddball paradigm (VOP) in a web-based experiment, in the hope of using it as an avenue to explore factors influencing people's looking time. In the infant literature, looking time is an extremely valuable measurement due to infants' limited behavioral repertoire.  Although it has been taken as indices for many perceptual and cognitive constructs, the field has not agreed on the best interpretations for looking time. The same results are often open to different interpretations, some even leading to opposite conclusions. This contention is due to the underexplored underlying mechanisms responsible for infants' looking duration toward different stimuli. But due to the difficulty of recruiting infants participants, it is often quite challenging, if not impossible, to reach a sufficient sample size for well-powered analysis. In my project, I am hoping to first develop an analog paradigm in adults to explore the different factors responsible for looking time, and eventually import the insights back to the infant literature. VOP is one promising candidate for such analog. In Daffner et al. (2000), the researchers used this paradigm to show that adult viewing time was influenced by the complexity of the visual stimuli and the amount of exposure they received. These two factors were also considered to be highly relevant to infants' looking time (Hunter & Ames, 1988). As a result, this paper was chosen. 
 
@@ -24,6 +23,24 @@ There are two potential challenges for replicating this study. First, the accura
 Link to the [repo](https://github.com/psych251/daffner2000)
 
 Link to the [paper](https://github.com/psych251/daffner2000/blob/master/original_paper/daffner2000.pdf) 
+
+
+## Introduction
+
+<!-- [No abstract is needed.]  Each replication project will have a straightforward, no frills report of the study and results.  These reports will be publicly available as supplementary material for the aggregate report(s) of the project as a whole.  Also, to maximize project integrity, the intro and methods will be written and critiqued in advance of data collection.  Introductions can be just 1-2 paragraphs clarifying the main idea of the original study, the target finding for replication, and any other essential information.  It will NOT have a literature review -- that is in the original publication. You can write both the introduction and the methods in past tense.   -->
+
+
+In Daffner et al., (2000), the authors used a subject-controlled visual oddball paradigm (VOP) to test healthy adults participants' veiwing time toward stimuli. Participants were instructed to look at pictures for as long as they wanted. They were also told to pressed a foot pedal when a "target stimulus" occured on the screen. With a within-subject design, the experiment manipulated the visual complexity and occuring frequencies of the stimuli. There were three tasks for each participant. In each task, the participatns viewed 250 pictures across five blocks. Of the 250 pictures, 70% of them were the background stimulus, which was one selected figure repeatedly appeared. 15% of the pictures were the target stimulus. The target stimulus had similar level of visual complexity as the background stimuli. Like background stimuli, it also repeatedly appear. the participants were told to press a foot pedal UPON SEEING THEM. The remaining 15% of the pictures were the deviant stimuli, which were a unique set of figures, each appeared only once on the screen. The stimuli were drawn from two groups of stimuli, one with high visual complexity (unusual) and the other with low visual complexity (simple). The three tasks differed in the stimuli groups for the background, the target and the deviant stimuli. In the "All simple task" and "All unusual task", the three categoreis of stimuli were all drawn from the simple group or the unusual group. The "Mixed stimuli task" drawn the background and the target stimuli from the complex group, and the deviant stimuli from the simple group. The authors found: a) an interaction effect between task and stimulus type. Participants spent longer time looking at the unusual deviant stimuli in the All Unusual task than the simple deviant stimuli in the All simple task and the Mixed Stimuli task. b) a main effect of stimulus type. Across all three tasks, the participants looked longer at the deviant stimuli than the background stimuli. and c) a main effect of task type. In the All simple task, the participants looked shorter at the background stimuli comparing to when they were looking at the background stimuli in the All unusual task and the Mixed stimuli task. 
+
+These three findings will also be the target findings for the current replication. Note that there would be one crucial design difference in the current replication, in addition to the format difference: the current replication includes an additional task. The three tasks of the origianl design belong to a two (target and background versus deviant) by two (simple versus unusual) design. Since the goal of the current replication is to test the feasibility of this testing paradigm, we decided to include the omitted desgin from the two by two matrix. The fourth, "Mixed stimuli with complex deviant task", mirrored the components of the "Mixed task", such that we drawn the background and target stimuli from the simple stimuli group and the deviant from the unusual group. This addition of new task leads the predictions as following: a) in the interaction effect, we should see participants in the mixed stimuli with complex deviant task look similarly long at the deviant stimuli as in the All Complex task. The deivant stimuli in both tasks should have longer looking time than the deviant stimuli in the All Simple and Mixed tasks. b) The main effect applies to the new task as well, such that participants also looked longer at the deviatn stimuli than the background stimuli. c) the participants in the new task should showed similar looking pattern as the ones in the All simple task, such that they looked shorter at the background stimuli comparing to when they were looking at the rest of two tasks. 
+
+
+
+
+
+
+
+
 
 
 ## Methods
@@ -65,35 +82,70 @@ Original effect size, power analysis for samples to achieve 80%, 90%, 95% power 
 
 ###Planned Sample
 
-Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.
+<!-- Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any. -->
+
+The planned sample size is [???depends on the power analysis]. They should be heatlhy adults without any known history of neurological problems or learning disabilities.
+
 
 ###Materials
 
-All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+<!-- All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article. -->
+
+> “All stimuli either came from a set of simple geometric figures or a set of unusual/unfamiliar figures (e.g., fragmented or ‘‘impossible’’ objects), many of which were from the collection of drawings that have been used by Kosslyn et al. (1994) and Kroll and Potter (1984). The particular stimuli assigned to each task were randomly chosen from the two sets of figures noted above.” (Daffner et al., 2000, pg 402)
+
+Note: if I can not obtain the origianl stimuli in time I will substitute the stimuli with two different sets that differ in their visual complexity. 
+
 
 ###Procedure	
 
-Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article.
+<!-- Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article. -->
+
+> "Subjects were introduced to the laboratory setting and, following electrode placement (see below), were seated in front of a computer monitor in a sound attenuated room. Subjects were told that the experiment involved the study of brain wave responses as they looked at different kinds of pictures. They were informed that they would be viewing a set of pictures and that they could look at each picture for however long or short they liked. They controlled the viewing duration by a button press that triggered the onset of the next stimulus. They were explicitly informed that they would not be asked questions about the pictures at the conclusion of the experiment. Subjects also were asked to respond to the designated target stimulus by pressing a foot pedal (ipsilateral to the button press). The targets were called ‘‘Sequence Markers’’ and subjects were told that they were included in the task to help the experimenters keep track of where they were in the sequence of drawings. As with the other stimuli, subjects controlled how long they looked at each of the targets. The 250 stimuli for each task were presented in five blocks of 50 stimuli each, with a brief break between each block. Longer breaks were taken between each task. The laterality of the responding hand and foot was counter- balanced across subjects. Although viewing durations were calculated by subtracting the stimulus onset time from the button press time, all stimuli were displayed for a minimum duration of 600 msec. The interval between the offset of one stimulus and the onset of the next stimulus ranged between 800 and 1300 msec." (Daffner et al., 2000, pg 402 - 403)
+
+Note: Because the current replication will be done online, I made modifications as following
+- The current replication includes four tasks instead of three for reasons exlained in the introduction section. 
+- Instead of pressing foot pedal, the participants were prompted to press the space bar when seeing the target stimuli. When the participants press the space bar in the target trial, the fixation window's border will flash red to indicate the participant has reacted. Participants can press the space bar in other trials as well but they will not see the visual feedback. 
+- The current format of breaks between blocks are prespecified intervals, and the breaks between tasks are self-paced. This is subject to change untill the authors respond with more specifics. 
+
+
+
+
 
 ###Analysis Plan
 
-Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.  
+<!-- Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.   -->
+
+- Data cleaning rules: the script for extracting and aggregating relevant data from the raw csv will be available in the SI. 
+- Data exclusion rules: In Daffner et al.(2000) the exclusion rule is based on criteria related to the EEG measurement, which is unobtainable with the online format. The current replication experiment will exclude a trial if the RT is more than 3 standard deviation away, and we will exclude the participant if a) one presses space bar for more than 25% trials or b) indicate one has history of neurological disorder or learning disabilities or c) missing more than 25% trials. 
 
 **Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
+- 2 stimuli type x 4 task type repeated measures ANOVA
+- Mixed effects linear regression: RT ~ stimuli_type * task_type + (trial | participant)
+- Exploratory analysis: 
+  - Demographics: RT ~ age + (trial | participant); RT ~ age + stimuli_type * task_type + (trial | participant); RT ~ education_level + (trial | participant); RT ~ education_level + stimuli_type * task_type + (trial | participant)
+  - Target reaction time: target_rt ~ target_type * task_type + (trial | participant)
+  - Number of consecutive background stimuli before deviant: RT_at_deviant ~ number_of_consecutive_background_before_deviant + background_type * task_type + (trial | participant);   
+  - distance to the target trial before deviant: RT_at_deviant ~ number_of_trials_between_deviant_and_last_target + background_type * task_type + (trial | participant);   
 
 ###Differences from Original Study
 
 Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study.  The goal, of course, is to minimize those differences, but differences will inevitably occur.  Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.
 
-### Methods Addendum (Post Data Collection)
+- Sample differences: the origianl study tested 24 right hadned undergraduate students with mean age 20.54 years. I anticipated the current sample will have a higher mean age and a wider range of age. Because of the within-subject design, the age should not alter the claimed effects. 
+- Setting differences: the origianl study was conducted in lab with the participants wearing EEG caps. The current setting is an online browser-based experiment. The setting difference can lead current participants to be less motivated and engaged. It can increase the noise in the data. 
+- Procedure differences: There are two differences. First, the origianl study ask the participant to press a foot pedal as response to the target trial, and the current study changes it to be the space bar and also add visual feedback when the response is provided. Second, the origianl study includes three tasks and the current includes four. Neither of the change should make a difference on the effects. 
+- Analysis differences: for the confirmatory analysis, there is no difference. The exclusion rule is changed because the current replication effort will not collect EEG data. 
 
-You can comment this section out prior to final report with data collection.
 
-#### Actual Sample
-  Sample size, demographics, data exclusions based on rules spelled out in analysis plan
+<!-- ### Methods Addendum (Post Data Collection) -->
 
-#### Differences from pre-data collection methods plan
-  Any differences from what was described as the original plan, or “none”.
+<!-- You can comment this section out prior to final report with data collection. -->
+
+<!-- #### Actual Sample -->
+<!--   Sample size, demographics, data exclusions based on rules spelled out in analysis plan -->
+
+<!-- #### Differences from pre-data collection methods plan -->
+<!--   Any differences from what was described as the original plan, or “none”. -->
 
 
 ##Results
@@ -101,6 +153,7 @@ You can comment this section out prior to final report with data collection.
 
 ### Data preparation
 
+The 
 Data preparation following the analysis plan.
 	
 ```{r include=F}
