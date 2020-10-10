@@ -9,6 +9,7 @@
     <script src= "js/jspsych-demog-age.js"></script>
     <script src= "js/jspsych-demog-ethnic-US.js"></script>
     <script src= "js/jspsych-demog-gender-and-education.js"></script>
+    <script src= "js/jspsych-demog-disorder-history.js"></script>
     <script src="js/helper_for_generating_stimuli_array.js"></script>
     <script src="js/helper_for_checking_duplicate_stimuli.js"></script>
   <link rel="stylesheet" href="css/jspsych.css"></link>
@@ -250,6 +251,17 @@ var final_instructions = {
         ]
     }
   
+    var demog_disorder_history = {
+        type: "demog-disorder-history", 
+        button_label: "Done", 
+        questions: [
+            {prompt: "Do you currently have any neurological disorders?", name: "current_neuro", options: ["Yes", "No"], required: true}, 
+            {prompt: "Have you had any neurological disorders in the past?", name: "past_neuro", options: ["Yes", "No"], required: true},
+            {prompt: "Do you currently have any learning disabilities?", name: "current_ld", options: ["Yes", "No"], required: true},
+            {prompt: "Have you had any history of learning disabilities in the past?", name: "past_ld", options: ["Yes", "No"], required: true}}
+        ]
+    }
+    
    var final_thank_you = {
      type: "instructions",
      pages:[
@@ -263,6 +275,7 @@ var final_instructions = {
    timeline.push(demog_question_age)
    timeline.push(demog_gender_and_education)
    timeline.push(demog_question_ethnicity)
+   timeline.push(demog_disorder_history)
    timeline.push(final_thank_you)
    ///afs/ir.stanford.edu/users/a/n/anjiecao/cgi-bin/daffner2020/write_data.php
    
