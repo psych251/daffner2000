@@ -116,7 +116,7 @@ Note: Because the current replication will be done online, I made modifications 
 <!-- Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.   -->
 
 - Data cleaning rules: the script for extracting and aggregating relevant data from the raw csv will be available in the SI. 
-- Data exclusion rules: In Daffner et al.(2000) the exclusion rule is based on criteria related to the EEG measurement, which is unobtainable with the online format. The current replication experiment will exclude a trial if the RT is more than 3 standard deviation away, and we will exclude the participant if a) one presses space bar for more than 25% trials or b) indicate one has history of neurological disorder or learning disabilities or c) missing more than 25% trials. 
+- Data exclusion rules: In Daffner et al.(2000) the exclusion rule is based on criteria related to the EEG measurement, which is unobtainable with the online format. The current replication experiment will exclude a trial if the RT is more than 3 standard deviation away, and we will exclude the participant if a) one presses space bar for more than non-target 25% trials or b) one does not press the space bar for more than 25% of the target trial or c) indicate one has history of neurological disorder or learning disabilities or d) missing data from more than 25% trials after applying the trial-based exclusion rule. 
 
 **Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
 - 2 stimuli type x 4 task type repeated measures ANOVA
