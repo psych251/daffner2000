@@ -185,7 +185,7 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
         "task_background_stimulus":trial.task_background_stimulus,
         "task_deviant_stimuli": trial.task_deviant_stimulus,
         "task_order_number": trial.task_order_number,
-        "blcok_order_number": trial.block_order_number,
+        "block_order_number": trial.block_order_number,
         "trial_order_number": trial.trial_order_number,
         "minimum_viewing_duration":trial.minimum_viewing_duration,
         "trial_looking_time": trial.minimum_viewing_duration + response.rt,
