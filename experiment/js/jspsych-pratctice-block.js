@@ -9,12 +9,12 @@
  **/
 
 
-jsPsych.plugins["stimulus-presentation"] = (function() {
+jsPsych.plugins["practice-block"] = (function() {
 
   var plugin = {};
 
   plugin.info = {
-    name: 'stimulus-presentation',
+    name: 'practice-block',
     description: '',
     parameters: {
       stimulus: {
@@ -147,26 +147,8 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
         
       // gather the stimulus trial type
         
-      var trial_stimulus_type = ""  
-      var deviant = trial.task_deviant_stimulus
-      if (trial.stimulus.includes(trial.task_target_stimulus)){
-          
-          trial_stimulus_type = "target"
-          
-      }else if(trial.stimulus.includes(trial.task_background_stimulus)){
-          
-          trial_stimulus_type = "background"
-          
-      }else if (deviant.filter(function(item){
-          return (trial.stimulus.includes(item))
-      }).length === 1){
-                    
-          trial_stimulus_type = "deviant"
-      }else{
-          alert("stimulus selection in stimulus presentation! not belonging to any category!")
-      }
+      
         
-      trial.trial_stimulus_type = trial_stimulus_type
         
         
         
@@ -178,7 +160,6 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
       var trial_data = {
         "rt": response.rt,
         "trial_stimulus": trial.stimulus,
-        "trial_stimulus_type": trial_stimulus_type,
         "key_press": response.key, 
         "task_type": trial.task_type, 
         "task_target_stimulus": trial.task_target_stimulus,
@@ -210,7 +191,6 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
       // only record the first response
       
       
-      console.log(info)
       
       // if the does not press the space bar but the down arrow, 
       if (info.key !== 32){
@@ -231,17 +211,22 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
           }
           // if it is the target trial 
           
-          console.log(trial.stimulus)
-          console.log(trial.task_target_stimulus)
+         
           
           if (trial.stimulus.includes(trial.task_target_stimulus)){
-              console.log("this is the target!")
-          var black_border_display = display_element.innerHTML
+              
+          alert("Great! You correctly responded to the target!")      
+          var black_border_display = display_element.innerHTML1
           var flashing_red_border_display = black_border_display.replace("black", "red")
           display_element.innerHTML = flashing_red_border_display
           jsPsych.pluginAPI.setTimeout(function() {
                                     display_element.innerHTML = black_border_display ;
                                     }, 300);
+          
+              
+          }else{
+            
+              alert("Oops! You just pressed the space bar on a non-target trial. Make sure you only press the space bar when you see the target trial picture!")
               
           }
       
