@@ -196,7 +196,14 @@ jsPsych.plugins["practice-block"] = (function() {
       if (info.key !== 32){
           if (response.key == null){
           response = info 
-          }   
+          }
+          
+          // press down arrow without pressing the space bar first 
+          if (trial.stimulus.includes(trial.task_target_stimulus) && 
+             trial.press_space_bar != "yes"){
+              alert("This is the target trial, but you haven't pressed the space bar yet. Please try again!")
+          }
+          
           jsPsych.pluginAPI.cancelAllKeyboardResponses()
           if(trial.response_ends_trial) {
             end_trial();
@@ -215,14 +222,15 @@ jsPsych.plugins["practice-block"] = (function() {
           
           if (trial.stimulus.includes(trial.task_target_stimulus)){
               
-          alert("Great! You correctly responded to the target!")      
-          var black_border_display = display_element.innerHTML1
+          alert("Great! You correctly responded to the target!")   
+          var black_border_display = display_element.innerHTML
           var flashing_red_border_display = black_border_display.replace("black", "red")
           display_element.innerHTML = flashing_red_border_display
           jsPsych.pluginAPI.setTimeout(function() {
                                     display_element.innerHTML = black_border_display ;
                                     }, 300);
           
+        
               
           }else{
             

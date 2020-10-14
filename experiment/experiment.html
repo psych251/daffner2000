@@ -189,12 +189,21 @@ var practice_trial_target = {
         }
 
 //fix while loop!!
+        
+    
 var practice_trial_target_while_loop = {
-    
-    
-    
-    
+    timeline: [practice_trial_target], 
+        loop_function: function(){
+            var data = jsPsych.data.get().last(1).values()[0];
+            if(data.trial_pressed_space_bar == "yes"){
+                
+                return false;
+            } else {
+                return true;
+        }}
+   
 }
+
     
 var practice_trial_e = {
             type: 'practice-block',
@@ -208,8 +217,18 @@ var practice_trial_e = {
 
 
 
+var practice_block = [
+    practice_trial_a,
+    practice_trial_b,
+    practice_trial_deviant, 
+    practice_trial_target_while_loop,
+    practice_trial_e
+]
 
-//maybe add while loop 
+
+
+
+/*
 var practice_block = {
     timeline: [
         
@@ -252,16 +271,17 @@ var practice_block = {
      
     }
 
-
+*/
 
 timeline.push(main_instruction)
 timeline.push(prepractice_instruction)
-timeline.push(practice_block)
+timeline = timeline.concat(practice_block)
+//timeline.push(practice_block)
 
     
     
     
-/*
+
 
 
 for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
@@ -433,7 +453,7 @@ var final_instructions = {
    timeline.push(demog_gender_and_education)
    timeline.push(demog_question_ethnicity)
    timeline.push(demog_disorder_history)
-   timeline.push(final_thank_you)*/
+   timeline.push(final_thank_you)
    ///afs/ir.stanford.edu/users/a/n/anjiecao/cgi-bin/daffner2020/write_data.php
    
     //'../../../cgi-bin/RR_adults/write_data.php')
