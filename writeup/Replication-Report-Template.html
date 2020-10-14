@@ -11,7 +11,7 @@
 
 <meta name="author" content="Anjie Cao (anjiecao@stanford.edu)" />
 
-<meta name="date" content="2020-09-26" />
+<meta name="date" content="2020-10-11" />
 
 <title>Replication of the Behavioral Experiment by Daffner et al (2000, Journal of Cognitive Neuroscience)</title>
 
@@ -1531,19 +1531,27 @@ div.tocify {
 
 <h1 class="title toc-ignore">Replication of the Behavioral Experiment by Daffner et al (2000, Journal of Cognitive Neuroscience)</h1>
 <h4 class="author">Anjie Cao (<a href="mailto:anjiecao@stanford.edu" class="email">anjiecao@stanford.edu</a>)</h4>
-<h4 class="date">September 26, 2020</h4>
+<h4 class="date">October 11, 2020</h4>
 
 </div>
 
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
+<p>Link to <a href="https://github.com/psych251/daffner2000">github</a></p>
+<p>Link to <a href="https://web.stanford.edu/~anjiecao/daffner2000/experiment/experiment.html">experiment</a></p>
+<div id="proposal" class="section level2">
+<h2>Proposal</h2>
 <p>This particular experiment is chosen because I wanted to test the plausibility of using a subject-controlled visual oddball paradigm (VOP) in a web-based experiment, in the hope of using it as an avenue to explore factors influencing people’s looking time. In the infant literature, looking time is an extremely valuable measurement due to infants’ limited behavioral repertoire. Although it has been taken as indices for many perceptual and cognitive constructs, the field has not agreed on the best interpretations for looking time. The same results are often open to different interpretations, some even leading to opposite conclusions. This contention is due to the underexplored underlying mechanisms responsible for infants’ looking duration toward different stimuli. But due to the difficulty of recruiting infants participants, it is often quite challenging, if not impossible, to reach a sufficient sample size for well-powered analysis. In my project, I am hoping to first develop an analog paradigm in adults to explore the different factors responsible for looking time, and eventually import the insights back to the infant literature. VOP is one promising candidate for such analog. In Daffner et al. (2000), the researchers used this paradigm to show that adult viewing time was influenced by the complexity of the visual stimuli and the amount of exposure they received. These two factors were also considered to be highly relevant to infants’ looking time (Hunter &amp; Ames, 1988). As a result, this paper was chosen.</p>
 <p>The stimuli were a set of unique figures. They either came from a set of simple geometric shapes (simple), or a collection of unusual/unfamiliar figures (unusual). Each participant was tested in three tasks, the order of which was counterbalanced across participants. The three tasks were identical in the procedure but differed in the compositions of the stimuli. Each task contains 250 figures, presented in five blocks of 50 figures. Blocks were separated by a brief break, and tasks were separated by a longer break. In a given task, there are three types of stimuli in the 250 figures: background (175 out of 250, 70% frequency), target (37~ out of 250, about 15% frequency), and deviant (38 out of 250, about 15% frequency). The three tasks are All Simple Task, All Unusual Task, and the Mixed Stimuli Task. In the All Simple Task, background, target, and deviant stimuli all came from the simple geometric shapes set. In the All Unusual Task, all came from the unusual figure set. In the Mixed Stimuli Task, the background and target came from the unusual setting and the deviant came from the geometric set. In all three tasks, participants were instructed to view the figures on the screen. They were told that they can “look at each picture for however long or short they liked”(Daffner et al., 2000, pg 402). When they were done viewing a picture, they can push a button and triggered the onset of the next stimulus. Each stimulus was presented for a minimum of 600 msec. Two stimuli were separated by an interval ranged between 800 msec and 1300 msec. In the original study, they were also told to press a foot pedal when seeing the target stimuli because they served as “Sequence Markers” to help participants keep track of the progress of the experiments. In this replication, pressing the foot pedal would be substituted with a different key on the keyboard.</p>
 <p>There are two potential challenges for replicating this study. First, the accuracy of the results. The web-based experiment can be noisier than a laboratory experiment when other things are being equal. The nature of this experiment calls for recording accurate response time (the average looking time is on the scale of milliseconds). In response to this challenge, I am hoping to use the “jspsych-psychophysics” plugin, which can deliver stimuli with more accurate onset time (Kuroki, 2000). Second, the engagement of participants. The original study tested participants in the laboratory setting with EEG caps. Naturally, they were less likely to be distracted and more likely to remain engaged throughout the experiment. It is unclear whether the participants in the online experiment would remain at the same level of engagement throughout. Web-version may need additional incentives in-between block or task to keep participants motivated.</p>
 <p>Link to the <a href="https://github.com/psych251/daffner2000">repo</a></p>
 <p>Link to the <a href="https://github.com/psych251/daffner2000/blob/master/original_paper/daffner2000.pdf">paper</a></p>
+</div>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<!-- [No abstract is needed.]  Each replication project will have a straightforward, no frills report of the study and results.  These reports will be publicly available as supplementary material for the aggregate report(s) of the project as a whole.  Also, to maximize project integrity, the intro and methods will be written and critiqued in advance of data collection.  Introductions can be just 1-2 paragraphs clarifying the main idea of the original study, the target finding for replication, and any other essential information.  It will NOT have a literature review -- that is in the original publication. You can write both the introduction and the methods in past tense.   -->
+<p>In Daffner et al., (2000), the authors used a subject-controlled visual oddball paradigm (VOP) to test healthy adult participants’ viewing time toward stimuli. Participants were instructed to look at pictures for as long as they wanted. They were also told to press a foot pedal when a “target stimulus” occurred on the screen. With a within-subject design, the experiment manipulated the visual complexity and occurring frequencies of the stimuli. There were three tasks for each participant. In each task, the participants viewed 250 pictures across five blocks. Of the 250 pictures, 70% of them were the background stimulus, which was one selected figure repeatedly appeared. 15% of the pictures were the target stimulus. The target stimulus had a similar level of visual complexity as the background stimuli. Like background stimuli, it also repeatedly appear. the participants were told to press a foot pedal upon seeing them. The remaining 15% of the pictures were the deviant stimuli, which were a unique set of figures, each appeared only once on the screen. The stimuli were drawn from two groups of stimuli, one with high visual complexity (unusual) and the other with low visual complexity (simple). The three tasks differed in the stimuli groups for the background, the target, and the deviant stimuli. In the “All simple task” and “All unusual task”, the three categories of stimuli were all drawn from the simple group or the unusual group. The “Mixed stimuli task” drawn the background and the target stimuli from the complex group, and the deviant stimuli from the simple group. The authors found: a) an interaction effect between task and stimulus type. Participants spent longer time looking at the unusual deviant stimuli in the All Unusual task than the simple deviant stimuli in the All simple task and the Mixed Stimuli task. b) a main effect of stimulus type. Across all three tasks, the participants looked longer at the deviant stimuli than the background stimuli. and c) a main effect of task type. In the All simple task, the participants looked shorter at the background stimuli comparing to when they were looking at the background stimuli in the All unusual task and the Mixed stimuli task.</p>
+<p>These three findings will also be the target findings for the current replication. Note that there would be one crucial design difference in the current replication, in addition to the format difference: the current replication includes an additional task. The three tasks of the original design belong to a two (target and background versus deviant) by two (simple versus unusual) design. Since the goal of the current replication is to test the feasibility of this testing paradigm, I decided to include the omitted design from the two by two matrix. The fourth, “Mixed stimuli with the complex deviant task”, mirrored the components of the “Mixed task”, such that I will draw the background and target stimuli from the simple stimuli group and the deviant from the unusual group. This addition of new task leads to the predictions as following: a) in the interaction effect, we should see participants in the mixed stimuli with complex deviant tasks look similarly long at the deviant stimuli as in the All Complex task. The deviant stimuli in both tasks should have longer looking time than the deviant stimuli in the All Simple and Mixed tasks. b) The main effect applies to the new task as well, such that participants also looked longer at the deviant stimuli than the background stimuli. c) the participants in the new task should show a similar looking pattern like the ones in the All simple task, such that they looked shorter at the background stimuli comparing to when they were looking at the rest of the two tasks.</p>
 </div>
 <div id="methods" class="section level2">
 <h2>Methods</h2>
@@ -1572,40 +1580,91 @@ bkgd_simple_sem &lt;- (10.52 / 31.59) * 500
 bkgd_unusual_sem &lt;- (4.27 / 31.59) * 500
 bkgd_mixed_sem &lt;- (16.94 / 31.59) * 500</code></pre>
 <p>Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size. Considerations of feasibility for selecting planned sample size.</p>
-<p>###Planned Sample</p>
-<p>Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.</p>
-<p>###Materials</p>
-<p>All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely. Or, quote directly and just point out exceptions to what was described in the original article.</p>
-<p>###Procedure</p>
-<p>Can quote directly from original article - just put the text in quotations and note that this was followed precisely. Or, quote directly and just point out exceptions to what was described in the original article.</p>
-<p>###Analysis Plan</p>
-<p>Can also quote directly, though it is less often spelled out effectively for an analysis strategy section. The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.</p>
+</div>
+<div id="planned-sample" class="section level3">
+<h3>Planned Sample</h3>
+<!-- Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any. -->
+<p>The planned sample size is [??? depends on the power analysis]. They should be healthy adults without any known history of neurological problems or learning disabilities.</p>
+</div>
+<div id="materials" class="section level3">
+<h3>Materials</h3>
+<!-- All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article. -->
+<blockquote>
+<p>“All stimuli either came from a set of simple geometric figures or a set of unusual/unfamiliar figures (e.g., fragmented or ‘‘impossible’’ objects), many of which were from the collection of drawings that have been used by Kosslyn et al. (1994) and Kroll and Potter (1984). The particular stimuli assigned to each task were randomly chosen from the two sets of figures noted above.” (Daffner et al., 2000, pg 402)</p>
+</blockquote>
+<p>Note: if I can not obtain the original stimuli in time I will substitute the stimuli with two different sets that differ in their visual complexity.</p>
+</div>
+<div id="procedure" class="section level3">
+<h3>Procedure</h3>
+<!-- Can quote directly from original article - just put the text in quotations and note that this was followed precisely.  Or, quote directly and just point out exceptions to what was described in the original article. -->
+<blockquote>
+<p>“Subjects were introduced to the laboratory setting and, following electrode placement (see below), were seated in front of a computer monitor in a sound attenuated room. Subjects were told that the experiment involved the study of brain wave responses as they looked at different kinds of pictures. They were informed that they would be viewing a set of pictures and that they could look at each picture for however long or short they liked. They controlled the viewing duration by a button press that triggered the onset of the next stimulus. They were explicitly informed that they would not be asked questions about the pictures at the conclusion of the experiment. Subjects also were asked to respond to the designated target stimulus by pressing a foot pedal (ipsilateral to the button press). The targets were called ‘‘Sequence Markers’’ and subjects were told that they were included in the task to help the experimenters keep track of where they were in the sequence of drawings. As with the other stimuli, subjects controlled how long they looked at each of the targets. The 250 stimuli for each task were presented in five blocks of 50 stimuli each, with a brief break between each block. Longer breaks were taken between each task. The laterality of the responding hand and foot was counter- balanced across subjects. Although viewing durations were calculated by subtracting the stimulus onset time from the button press time, all stimuli were displayed for a minimum duration of 600 msec. The interval between the offset of one stimulus and the onset of the next stimulus ranged between 800 and 1300 msec.” (Daffner et al., 2000, pg 402 - 403)</p>
+</blockquote>
+<p>Note: Because the current replication will be done online, I made modifications as following - The current replication includes four tasks instead of three for reasons explained in the introduction section. - Instead of pressing the foot pedal, the participants were prompted to press the space bar when seeing the target stimuli. When the participants press the space bar in the target trial, the fixation window’s border will flash red to indicate the participant has reacted. Participants can press the space bar in other trials as well but they will not see the visual feedback. - The current format of breaks between blocks are prespecified intervals, and the breaks between tasks are self-paced. This is subject to change until the authors respond with more specifics.</p>
+</div>
+<div id="analysis-plan" class="section level3">
+<h3>Analysis Plan</h3>
+<!-- Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.   -->
+<ul>
+<li>Data cleaning rules: the script for extracting and aggregating relevant data from the raw CSV will be available in the SI.</li>
+<li>Data exclusion rules: In Daffner et al.(2000) the exclusion rule is based on criteria related to the EEG measurement, which is unobtainable with the online format. The current replication experiment will exclude a trial if the RT is more than 3 standard deviation away, and we will exclude the participant if a) one presses the space bar for more than non-target 25% trials or b) one does not press the space bar for more than 25% of the target trial or c) indicate one has a history of neurological disorder or learning disabilities or d) missing data from more than 25% trials after applying the trial-based exclusion rule.</li>
+</ul>
 <p><strong>Clarify key analysis of interest here</strong> You can also pre-specify additional analyses you plan to do.</p>
-<p>###Differences from Original Study</p>
-<p>Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study. The goal, of course, is to minimize those differences, but differences will inevitably occur. Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.</p>
+<ul>
+<li>2 stimuli type x 4 task type repeated measures ANOVA</li>
+<li>Mixed effects linear regression: RT ~ stimuli_type * task_type + (trial | participant)</li>
+<li>Exploratory analysis:
+<ul>
+<li>Demographics: RT ~ age + (trial | participant); RT ~ age + stimuli_type * task_type + (trial | participant); RT ~ education_level + (trial | participant); RT ~ education_level + stimuli_type * task_type + (trial | participant)</li>
+<li>Target reaction time: target_rt ~ target_type * task_type + (trial | participant)</li>
+<li>Number of consecutive background stimuli before deviant: RT_at_deviant ~ number_of_consecutive_background_before_deviant + background_type * task_type + (trial | participant);<br />
+</li>
+<li>distance to the target trial before deviant: RT_at_deviant ~ number_of_trials_between_deviant_and_last_target + background_type * task_type + (trial | participant);</li>
+</ul></li>
+</ul>
 </div>
-<div id="methods-addendum-post-data-collection" class="section level3">
-<h3>Methods Addendum (Post Data Collection)</h3>
-<p>You can comment this section out prior to final report with data collection.</p>
-<div id="actual-sample" class="section level4">
-<h4>Actual Sample</h4>
-<p>Sample size, demographics, data exclusions based on rules spelled out in analysis plan</p>
+<div id="differences-from-original-study" class="section level3">
+<h3>Differences from Original Study</h3>
+<p>Explicitly describe known differences in sample, setting, procedure, and analysis plan from the original study. The goal, of course, is to minimize those differences, but differences will inevitably occur. Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.</p>
+<ul>
+<li><strong>Sample differences</strong>: the original study tested 24 right handed undergraduate students with a mean age 20.54 years. I anticipated the current sample will have a higher mean age and a wider range of age. Because of the within-subject design, the age should not alter the claimed effects.</li>
+<li><strong>Setting differences</strong>: the original study was conducted in the lab with the participants wearing EEG caps. The current setting is an online browser-based experiment. The setting difference can lead current participants to be less motivated and engaged. It can increase the noise in the data.</li>
+<li><strong>Procedure differences</strong>: There are two differences. First, the original study asks the participant to press a foot pedal as a response to the target trial, and the current study changes it to be the space bar and also add visual feedback when the response is provided. Second, the original study includes three tasks and the current includes four. Neither of the change should make a difference in the effects.</li>
+<li><strong>Analysis differences</strong>: for the confirmatory analysis, there is no difference. The exclusion rule is changed because the current replication effort will not collect EEG data.</li>
+</ul>
+<!-- ### Methods Addendum (Post Data Collection) -->
+<!-- You can comment this section out prior to final report with data collection. -->
+<!-- #### Actual Sample -->
+<!--   Sample size, demographics, data exclusions based on rules spelled out in analysis plan -->
+<!-- #### Differences from pre-data collection methods plan -->
+<!--   Any differences from what was described as the original plan, or “none”. -->
 </div>
-<div id="differences-from-pre-data-collection-methods-plan" class="section level4">
-<h4>Differences from pre-data collection methods plan</h4>
-<p>Any differences from what was described as the original plan, or “none”.</p>
-<p>##Results</p>
 </div>
-</div>
+<div id="results" class="section level2">
+<h2>Results</h2>
 <div id="data-preparation" class="section level3">
 <h3>Data preparation</h3>
-<p>Data preparation following the analysis plan.</p>
+<p>Data preparation following the analysis plan. See <a href="https://github.com/psych251/daffner2000/blob/master/writeup/daffner2000_analysis/script/00_read_raw_data.R">00_read_raw_data</a></p>
 </div>
 <div id="confirmatory-analysis" class="section level3">
 <h3>Confirmatory analysis</h3>
-<p>The analyses as specified in the analysis plan.</p>
+<p>Confirmatory analysis:</p>
+<pre class="r"><code>anova_test(data = data_for_analysis, 
+           formula = trial_looking_time ~ stimuli_type * task_type,
+           dv = trial_looking_time)</code></pre>
+<pre><code>## Coefficient covariances computed by hccm()</code></pre>
+<pre><code>## Note: model has aliased coefficients
+##       sums of squares computed by model comparison</code></pre>
+<pre><code>## ANOVA Table (type II tests)
+## 
+##                   Effect DFn  DFd     F        p p&lt;.05      ges
+## 1           stimuli_type   1 1994 0.571 4.50e-01       0.000286
+## 2              task_type   3 1994 8.010 2.63e-05     * 0.012000
+## 3 stimuli_type:task_type   1 1994 2.209 1.37e-01       0.001000</code></pre>
 <p><em>Side-by-side graph with original graph is ideal here</em></p>
-<p>###Exploratory analyses</p>
+</div>
+<div id="exploratory-analyses" class="section level3">
+<h3>Exploratory analyses</h3>
 <p>Any follow-up analyses desired (not required).</p>
 </div>
 </div>
