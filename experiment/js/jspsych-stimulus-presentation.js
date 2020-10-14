@@ -163,6 +163,7 @@ jsPsych.plugins["stimulus-presentation"] = (function() {
                     
           trial_stimulus_type = "deviant"
       }else{
+          console.log(trial.stimulus)
           alert("stimulus selection in stimulus presentation! not belonging to any category!")
       }
         

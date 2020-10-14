@@ -1,5 +1,16 @@
 // ---------- General Helper functions ---------- //
 
+// function returning an object with the frequency of it occurrences in the array 
+
+function count_occurence(array){
+    var occurences = {}
+    for (var i = 0; i < array.length; i++){
+        occurences[array[i]] = (occurences[array[i]] || 0) +1
+    }
+    return occurences
+    
+    
+}
 
 // This function return a random subarray of [arr] of [size] length 
 function getRandomSubarray(arr, size) {
@@ -133,7 +144,170 @@ function get_from_stimuli(type, number , meta_stimuli_paths){
 
 
 
+// creating stimuli path pacakges without the block structure 
+function create_all_stimuli_no_block(meta_stimuli_path, 
+                                     type, 
+                                     n_trial, 
+                                     bkgd_freq, 
+                                     tg_freq, 
+                                     dvt_freq){
     
+    
+    var num_bkgd_trial = Math.floor(n_trial * bkgd_freq)
+    var num_tg_trial = Math.floor(n_trial * tg_freq)
+    var num_dvt_trial = Math.floor(n_trial * dvt_freq)
+    
+    var bkgd_tg_array // array
+    var bkgd_stim; //str
+    var tg_stim; //str 
+    
+    var dvt_array; //array 
+    
+    
+    if (type === "all_simple"){
+        console.log("all_simple")
+        bkgd_tg_array = get_from_stimuli("simple",NUM_SIMPLE_STIMULI, meta_stimuli_path) 
+        //choose from full
+        
+    }else if(type === "all_complex"){
+        bkgd_tg_array = get_from_stimuli("complex",NUM_COMPLEX_STIMULI, meta_stimuli_path)
+    }else if(type === "mixed_simple_deviant"){
+        bkgd_tg_array = get_from_stimuli("complex",NUM_COMPLEX_STIMULI, meta_stimuli_path)
+    }else if (type === "mixed_complex_deviant"){
+        bkgd_tg_array = get_from_stimuli("simple", NUM_SIMPLE_STIMULI, meta_stimuli_path)   
+    }else{(
+        alert("wrong type in create_all_stimuli!")
+    )}
+    
+    // randomly select one as bckgrd stimulus
+    bkgd_stim = bkgd_tg_array[Math.floor(Math.random() * bkgd_tg_array.length)]
+    
+    // drop this one from both the bkgd_tg array and the metaarray so we don't repeat
+    var meta_stimuli_index = meta_stimuli_path.indexOf(bkgd_stim);
+    var bkgd_tg_array_index = bkgd_tg_array.indexOf(bkgd_stim)
+    if (bkgd_tg_array_index > -1){
+        bkgd_tg_array.splice(bkgd_tg_array_index,1)
+    }else{
+        alert("index error in create_all_stimuli!")
+    }
+    
+    if (meta_stimuli_index > -1){
+        meta_stimuli_path.splice(meta_stimuli_index, 1);
+    }
+    
+   
+    
+    // randomly select another one as tg stimulus
+    tg_stim = bkgd_tg_array[Math.floor(Math.random() * bkgd_tg_array.length)]
+    
+    // drop this one both the bkgd_tg array and the metaarray so we don't repeat
+    meta_stimuli_index = meta_stimuli_path.indexOf(tg_stim);
+    bkgd_tg_array_index = bkgd_tg_array.indexOf(tg_stim)
+    if (bkgd_tg_array_index > -1){
+        bkgd_tg_array.splice(bkgd_tg_array_index, 1)
+    }else{
+        alert("index error in create_all_simple_stimuli!")
+    }
+    
+    if (meta_stimuli_index > -1){
+        meta_stimuli_path.splice(meta_stimuli_index, 1);
+    }
+    
+    if (type === "all_simple" | type === "all_complex"){                 
+        dvt_stim_selected = getRandomSubarray(bkgd_tg_array, num_dvt_trial)        
+    }else if(type === "mixed_simple_deviant"){
+        // If type mixed get from simple array 
+        simple_stimuli_for_mixed = get_from_stimuli("simple",NUM_SIMPLE_STIMULI, meta_stimuli_path)
+        dvt_stim_selected = getRandomSubarray(simple_stimuli_for_mixed, num_dvt_trial)
+    }else if (type === "mixed_complex_deviant"){
+        complex_stimuli_for_mixed = get_from_stimuli("complex", NUM_COMPLEX_STIMULI, meta_stimuli_path)
+        dvt_stim_selected = getRandomSubarray(complex_stimuli_for_mixed, num_dvt_trial)
+    }
+    
+    
+    
+    var stim_array = []
+    
+    dvt_stim = dvt_stim_selected
+    
+    // drop the selected array from meta array 
+    meta_stimuli_path = meta_stimuli_path.filter(function(item){
+        return dvt_stim.indexOf(item) === -1  
+    })
+  
+    selected_dvt_stim = getRandomSubarray(dvt_stim, num_dvt_trial)
+    stim_array = stim_array.concat(selected_dvt_stim)
+    
+    //get rid of the chosen stimuli to prevent double selection 
+    dvt_stim = dvt_stim.filter(function(item){
+                return selected_dvt_stim.indexOf(item) === -1; // not in the sampled array 
+            })
+    
+
+    
+    //CONTINUE: INSERT THE TRIALS IN BETWEEN
+    var bkgd_array = fillArray(bkgd_stim, num_bkgd_trial)
+    var tg_array = fillArray(tg_stim, num_tg_trial)
+    
+    var randomized_bkgd_tg_array = bkgd_array.concat(tg_array)
+    shuffleArray(randomized_bkgd_tg_array)
+        
+   
+    gap_filled_array = [] // the array that with one item in between every dvt stimuli 
+        
+    for (var i = 0; i < stim_array.length; i++){
+            var current_dvt = stim_array[i]
+            gap_filled_array.push(current_dvt)
+            // because we have already shuffled the array, so we can just pop from the last 
+            var filler_item = randomized_bkgd_tg_array.pop()
+            gap_filled_array.push(filler_item)
+    }
+    
+        // generate an array that indicates how many items go into each blank space 
+        // the number here keep track of the number of elements in the filler array 
+        // number of gaps is 1 greater than the length of array 
+    var tracker_array = generate_random_num_array(randomized_bkgd_tg_array.length, gap_filled_array.length + 1)
+        
+    
+    
+    // just double check the number are alright
+    var sum_array = tracker_array.reduce(function(a, b){
+        return a + b;
+        }, 0);
+        
+        if (sum_array != randomized_bkgd_tg_array.length){
+            alert("Problem in create_all_simple_stimuli, the sum of tracker array does not equal to the actual length of the item to be filled")
+        } else if (gap_filled_array.length + 1 != tracker_array.length){
+            alert("Problem in create_all_simple_stimuli, the number of item in the tracker_array does not correspond to the number of actual gaps to be filled")
+        }
+        
+        // finally fill in remaining
+    
+    var final_randomized_stimuli = []
+     for (var i = 0; i < tracker_array.length; i++){
+            current_chunk = pop_multiple(randomized_bkgd_tg_array,tracker_array[i])
+            final_randomized_stimuli = final_randomized_stimuli.concat(current_chunk)
+            
+            if (i < gap_filled_array.length){
+                final_randomized_stimuli.push(gap_filled_array[i])
+            }
+            
+        }
+         
+        //console.log(final_randomized_block)
+        
+    var task_info = {
+        type: type,
+        background: bkgd_stim,
+        target: tg_stim,
+        deviant: dvt_stim_selected,
+        blocks_info: final_randomized_stimuli,
+        remaining_stimuli:meta_stimuli_path
+    }
+    
+    return(task_info)
+    
+}
 
     
 
@@ -364,5 +538,6 @@ function convert_path_to_timeline_variables(item_array){
     }
     return timeline_variable
 }
+
 
     
