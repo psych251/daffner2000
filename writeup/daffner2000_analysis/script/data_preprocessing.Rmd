@@ -248,3 +248,8 @@ clean_data %>% datatable()
 
 
 
+```{r}
+library(shape)
+vignette("shape")
+```
+
