@@ -2,9 +2,8 @@ var prepractice_instruction = {
      type: "instructions",
      pages:[
          "Welcome to the practice phase!<p>In this practice phase, you will look at a group of pictures. Some pictures repeat, some do not. You can spend as long as you want on each picture. When you are done, press the down arrow to go to the next one.</p>",
-         "You will also need to respond to the target picture. When you see the target picture, please press the space bar. The target picture for practice phase is shown below." + '<p><img src="'+ "images/practice/practice_target.jpg" + '"></img></p>',
-         "We will not test you afterward.",
-     ],
+         "You will also need to respond to the target picture. When you see the target picture, please press the space bar. The target picture for practice phase is shown below." + '<p><img src="'+ "images/practice/practice_target.jpg" + '" " width ="500" height = "500" style="border:5px solid black"></img></p>', 
+         "When you are ready, go to the next page and start the task."],
      show_clickable_nav: true
      
  }
