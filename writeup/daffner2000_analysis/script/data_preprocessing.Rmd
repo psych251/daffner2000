@@ -2,7 +2,11 @@
 title: "Data Preprocessing and Excluding"
 author: "anjie"
 date: "10/14/2020"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: no
 ---
 
 ```{r setup, include=FALSE}
@@ -17,12 +21,12 @@ AGGREGATED_DATA_PATH <- here("processed_data/aggregated_data.csv")
 ```
 
 # Aggregate the Raw Data 
-```{r}
+```{r message=FALSE, warning=FALSE}
 raw_df <- list.files(RAW_DATA_DIR, full.names = T) %>%
   map_df(read_csv) %>% 
   select(rt, trial_type, trial_index, subject, trial_stimulus, trial_stimulus_type, 
          task_type, task_target_stimulus, task_background_stimulus, task_deviant_stimuli, task_order_number, block_order_number, trial_looking_time, 
-         trial_pressed_space_bar, responses, question_order) %>% 
+         trial_pressed_space_bar,trial_space_bar_rt, responses, question_order) %>% 
   filter(trial_type == "stimulus-presentation" | trial_type == "demog-age" | trial_type == "demog-gender-and-education" | trial_type == "demog-ethnic-US" | trial_type == "demog-disorder-history") %>% 
   mutate(
     stimuli_type = case_when(
@@ -38,7 +42,7 @@ raw_df %>% datatable()
 ```
 
 # Extract the Demog Information 
-```{r}
+```{r message=FALSE, warning=FALSE}
 demog_df <- raw_df %>% 
   filter(grepl("demog", trial_type)) %>% 
   select(subject, trial_type, responses) %>% 
@@ -57,14 +61,15 @@ demog_df <- raw_df %>%
 demog_df %>% datatable()
 ```
 joining back
-```{r}
+```{r message=FALSE, warning=FALSE}
 data_with_demog <- left_join(raw_df,demog_df, by = "subject")
 data_with_demog %>% datatable()
 ```
 
 
 # Exclusion criteria applied 
-## filter out based on demog (neurological order qu)
+
+## filter out based on demog (neurological disorder question)
 ```{r}
 demog_filtered <- data_with_demog %>% 
   filter(
@@ -73,46 +78,9 @@ demog_filtered <- data_with_demog %>%
 
 demog_filtered
 ```
-filtered out based on task performance 
-## trial based exclusion? 
-```{r}
-summary_rt <- data_with_demog %>% 
-  filter(trial_type == "stimulus-presentation") %>% 
-    summarize(
-    mean_rt = mean(as.numeric(rt), na.rm = TRUE), 
-    sd_rt = sd(rt, na.rm = TRUE),
-    upper_rt = mean_rt + 3 * sd_rt, 
-    lower_rt = mean_rt - 3 * sd_rt
-  )
 
-UPPER_RT <- summary_rt %>% select(upper_rt) %>% pull()
-LOWER_RT <- summary_rt %>% select(lower_rt) %>% pull()
+## participant-level exclusion: pressing space bar
 
-trial_rt_filtered <- data_with_demog %>% 
-  filter(trial_type == "stimulus-presentation") %>% 
-  filter(rt < LOWER_RT | rt > UPPER_RT)
-
-# check if the participants are missing 25% trials after applying the trial-based exclusion criteria 
-num_total_trials <- data_with_demog %>% 
-  filter(trial_type == "stimulus-presentation") %>% 
-  group_by(subject) %>% 
-  count()
-
-num_filtered_trials <- trial_rt_filtered %>% 
-  filter(trial_type == "stimulus-presentation") %>% 
-  group_by(subject) %>% 
-  count()
-
-num_total_trials
-num_filtered_trials
-```
-
-```{r}
-data_with_demog %>% ggplot(aes(x = as.numeric(rt))) + geom_histogram() + 
-geom_vline(xintercept = UPPER_RT)
-```
-
-## participants based performance
 ```{r}
 ## proportion of pressing space bar in target trial 
 prop_press_space_summary <- data_with_demog %>% 
@@ -155,13 +123,128 @@ prop_wrong_press_summary
 data_with_demog_spacebar <- left_join(data_with_demog, prop_press_space_summary, by = "subject")
 data_with_demog_spacebar <- left_join(data_with_demog_spacebar, prop_wrong_press_summary, by = "subject")
 
-data_with_demog_spacebar %>% datatable()
-
-
 filtered_spacebar <- data_with_demog_spacebar %>% 
   filter(no_press_prop > 0.25 | wrong_press_prop >0.25)
 ```
 
+## trial-level exclusion:????
+```{r}
+summary_lt <- data_with_demog %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+    summarize(
+    mean_lt = mean(as.numeric(trial_looking_time), na.rm = TRUE), 
+    sd_lt = sd(trial_looking_time, na.rm = TRUE),
+    upper_lt = mean_lt + 3 * sd_lt, 
+    lower_lt = mean_lt - 3 * sd_lt
+  )
+
+UPPER_LT <- summary_lt %>% select(upper_lt) %>% pull()
+LOWER_LT <- summary_lt %>% select(lower_lt) %>% pull()
+summary_lt %>% kable()
+```
+
+```{r}
+trial_lt_to_cut <- data_with_demog %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+  filter(trial_looking_time < LOWER_LT | trial_looking_time > UPPER_LT)
+
+# check if the participants are missing 25% trials after applying the trial-based exclusion criteria 
+num_total_trials <- data_with_demog %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+  group_by(subject) %>% 
+  count()
+
+num_to_cut_trials <- trial_lt_to_cut %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+  group_by(subject) %>% 
+  count()
+
+num_total_trials %>% kable()
+num_to_cut_trials %>% kable()
+```
+
+transformation needed? 
+```{r}
+data_with_demog %>% 
+  ggplot(aes(x = as.numeric(trial_looking_time))) + 
+  geom_histogram() + 
+  geom_vline(xintercept = UPPER_LT)
+```
+
+# plots 
+
+```{r}
+data_with_demog %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+  group_by(trial_stimulus_type, task_type) %>% 
+  summarize(
+    mean = mean(as.numeric(trial_looking_time), na.rm = TRUE),
+    sd = sd(as.numeric(trial_looking_time), na.rm = TRUE), 
+    n = n(),
+    ci_range_95 =  qt(1 - (0.05 / 2), n - 1) * (sd/sqrt(n)),
+    ci_lower = mean - ci_range_95,
+    ci_upper = mean + ci_range_95
+  ) %>% 
+  ggplot(aes(x = trial_stimulus_type, y = mean)) + 
+  geom_point() + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
+  facet_wrap(~task_type)
+```
+
+orirignal plot?
+```{r}
+task_type_order <- c("all_simple", "all_complex", "mixed_simple_deviant", "mixed_complex_deviant")
+
+data_with_demog %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+  filter(trial_stimulus_type != "target") %>% 
+  group_by(trial_stimulus_type, task_type) %>% 
+  summarize(
+    mean = mean(as.numeric(rt), na.rm = TRUE),
+    sd = sd(as.numeric(rt), na.rm = TRUE), 
+    n = n(),
+    ci_range_95 =  qt(1 - (0.05 / 2), n - 1) * (sd/sqrt(n)),
+    ci_lower = mean - ci_range_95,
+    ci_upper = mean + ci_range_95
+  ) %>% 
+  ggplot(aes(x = task_type, y = mean)) + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
+  facet_wrap(~trial_stimulus_type) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+
+
 
 
 # final clean data 
+(it's a lie right now because not excluding anyone but it should look sth similar to this)
+```{r}
+clean_data <- data_with_demog_spacebar %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+  select(subject,  task_type, task_order_number, trial_stimulus_type, trial_stimulus, stimuli_type,
+         trial_looking_time, trial_pressed_space_bar, trial_space_bar_rt, age, ethnicity, gender, education, no_press_prop, wrong_press_prop) %>% 
+  mutate(
+    trial_stimulus_complexity = stimuli_type, 
+    trial_stimulus_path = gsub("<img src='", "", trial_stimulus), 
+    trial_stimulus_path = gsub("' width ='500' height = '500' style='border:5px solid black'>", "", trial_stimulus_path), 
+    demog_age = age, 
+    demog_ethnicity = ethnicity, 
+    demog_gender = gender, 
+    demog_education = education, 
+    target_no_press_percent = no_press_prop,
+    non_target_press_percent = wrong_press_prop,
+    trial_pressed_space_bar = if_else(is.na(trial_pressed_space_bar), "no", trial_pressed_space_bar)
+  ) %>% 
+  select(
+    subject, task_type, task_order_number, 
+    trial_stimulus_path, trial_stimulus_type, trial_stimulus_complexity, trial_looking_time, 
+    trial_pressed_space_bar, trial_space_bar_rt,  target_no_press_percent, non_target_press_percent, 
+    demog_age, demog_ethnicity, demog_gender, demog_education
+  )
+  
+clean_data %>% datatable()
+```
+
+
+
