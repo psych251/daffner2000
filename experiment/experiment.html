@@ -2,7 +2,10 @@
 <html>
 <head>
   <script src="js/jspsych.js"></script>
+  <script src="js/instruction_and_transition.js"></script>
   <script src = "js/practice_trial_package.js"></script>
+  <script src = "js/main_task_package.js"></script>
+  <script src = "js/demog_question_package.js"></script>
   <script src="js/jspsych-pratctice-block.js"></script>
   <script src="js/jspsych-stimulus-presentation.js"></script>
   <script src="js/jspsych-task-instructions.js"></script>
@@ -49,9 +52,15 @@
 
 
 
-// this function random selects [number] of path in the [type] folder and return them in an array    
-// the returned array represents all stimuli to be used in a task (5 blocks)
 
+
+//Before the main task 
+    timeline.push(main_instruction)
+    timeline.push(prepractice_instruction)
+    timeline = timeline.concat(practice_block)
+
+    
+// Setting up the main task
 var NUM_SIMPLE_STIMULI = 120
 var NUM_COMPLEX_STIMULI = 120
 
@@ -62,7 +71,7 @@ stimuli_tracker = ALL_STIMULI_PATH // make a copy to keep track of stimuli that 
 
 var simple_test_blocks = create_all_stimuli_no_block(meta_stimuli_path = stimuli_tracker, 
                                      type = "all_simple", 
-                                     n_trial = 55, 
+                                     n_trial = 62, 
                                      bkgd_freq = 0.7, 
                                      tg_freq = 0.15, 
                                      dvt_freq = 0.15)    
@@ -81,7 +90,7 @@ console.log(counter)
     
 var complex_test_blocks = create_all_stimuli_no_block(meta_stimuli_path = stimuli_tracker, 
                                      type = "all_complex", 
-                                     n_trial = 55, 
+                                     n_trial = 62, 
                                      bkgd_freq = 0.7, 
                                      tg_freq = 0.15, 
                                      dvt_freq = 0.15)  
@@ -90,7 +99,7 @@ stimuli_tracker = complex_test_blocks.remaining_stimuli
     
 var mixed_simple_test_blocks = create_all_stimuli_no_block(meta_stimuli_path = stimuli_tracker, 
                                      type = "mixed_simple_deviant", 
-                                     n_trial = 55, 
+                                     n_trial = 62, 
                                      bkgd_freq = 0.7, 
                                      tg_freq = 0.15, 
                                      dvt_freq = 0.15)
@@ -98,7 +107,7 @@ stimuli_tracker = complex_test_blocks.remaining_stimuli
 
 var mixed_complex_test_blocks = create_all_stimuli_no_block(meta_stimuli_path = stimuli_tracker, 
                                      type = "mixed_complex_deviant", 
-                                     n_trial = 55, 
+                                     n_trial = 62, 
                                      bkgd_freq = 0.7, 
                                      tg_freq = 0.15, 
                                      dvt_freq = 0.15)
@@ -117,207 +126,102 @@ var ALL_TASKS = [simple_test_blocks,
 
 shuffleArray(ALL_TASKS)
     
-
     
-
-// minimum presentation time - done 
-// various inter stimulus interval -- Done  
-// presenting the target stimulus - done 
-// presenting the target stimulus response => need to get conditional responses 
-
-var current_block = ALL_TASKS[0] // this will be embedded in a larger loop 
-
-const NUM_BLOCK = 5
-
-
-
-
-
-
-var main_instruction = {
-     type: "instructions",
-     pages:[
-         '<img src="images/instructions/prepractice_1.png" style="width:800px;height:600px;">',
-         '<img src="images/instructions/prepractice_2.png" style="width:800px;height:600px;">',
-         '<img src="images/instructions/prepractice_3.png" style="width:800px;height:600px;">',
-         '<img src="images/instructions/prepractice_4.png" style="width:800px;height:600px;">',
-         '<img src="images/instructions/prepractice_5.png" style="width:800px;height:600px;">',
-         '<img src="images/instructions/prepractice_6.png" style="width:800px;height:600px;">',
-         '<img src="images/instructions/prepractice_7.png" style="width:800px;height:600px;">',
-         '<img src="images/instructions/prepractice_8.png" style="width:800px;height:600px;">'
-     ],
-     show_clickable_nav: true
-     
- }
-
-
-
-timeline.push(main_instruction)
-timeline.push(prepractice_instruction)
-timeline = timeline.concat(practice_block)
-//timeline.push(practice_block)
-
-    
-    
-    
-
-
-
+// The main task 
 for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
 
-var current_task = ALL_TASKS[task_num]
-var current_target = current_task.target    
+    var current_task = ALL_TASKS[task_num]
+    var current_target = current_task.target    
     
-console.log("current task")
+     console.log("current task")
      console.log(current_task)
 
- task_order_print = ""
- if (task_num === 0){
-     task_order_print = "first"
- }else if (task_num === 1){
-     task_order_print = "second"
- }else if (task_num === 2){
-     task_order_print = "third"
- }else if (task_num === 3){
-     task_order_print ="last"
- }
+     task_order_print = ""
+     if (task_num === 0){
+         task_order_print = "first"
+     }else if (task_num === 1){
+         task_order_print = "second"
+     }else if (task_num === 2){
+         task_order_print = "third"
+     }else if (task_num === 3){
+         task_order_print ="last"
+     }
     
     
     
+
     
     
-    
-    
-    
-    
- var task_instruction = {
-     type: "instructions",
-     pages:[
-         "hello!!!!",
-         "look at pictures hahaha it's boring just press the down arrow", 
-         "this is the target picture though press space bar pls" + '<p><img src="'+ current_target + '"></img></p>',
-         "three tasks in total, you can take relatively longer break in between, each task has 5 small block, small break haha",
-         "nope we will not test you just chill",
-     ],
-     show_clickable_nav: true
-     
- }
+     var task_instruction = {
+         type: "instructions",
+         pages:[
+             "<p>This is the "+ task_order_print + " task.</p><p>You will look at a group of pictures, and you should feel free to spend as long as you want on each picture.</p><p>When you are done with looking at one picture, press the <b>down arrow</b> on your keyboard.</p>",
+             "You should also press the <b>space bar</b> when you see the target picture. The target picture for this task is shown below." + '<p><img src="'+ current_target + '"></img></p>',
+             "When you are ready, go to the next page and start the task.",
+         ],
+         show_clickable_nav: true
+
+     }
  
- timeline.push(task_instruction)
-
-
+    var post_task_break = {
+        type: 'task-instructions',
+        pages: ["<p>You have just finished the "+ task_order_print + " task.</p><p>You can take a short break before proceeding to the next task.</p><p>When you are ready, press the button below and start the next task.</p>"],
+        allow_backward: false, 
+        show_clickable_nav: true,
+        button_label_next: "I'm ready!",
+        show_page_number: false
+    }
+ 
      
     var task_block = {
-    timeline: [
-        
-        {
-            type: 'html-keyboard-response',
-            stimulus: '<img src=images/blank.png width ="500" height = "500" style="border:5px solid black">',
-            trial_duration: function(){ 
-                var random_duration = 800 + 500 * Math.random()
-                return random_duration  } , //The interval between the offset of one stimulus and the onset of the next stimulus ranged between 800 and 1300 msec
-            choices: jsPsych.NO_KEYS
-        },
-        
-        
-       
-        {
-            type: 'stimulus-presentation',
-            stimulus: function(){
-                var html="<img src='"+jsPsych.timelineVariable('pic', true)+"' width ='500' height = '500' style='border:5px solid black'>";
-                
-                return html;
-            },
-            choices_for_target: [32],
-            choices: [40],
-            minimum_viewing_duration: 600, // daffner2000's info
-            response_ends_trial: true, 
-            task_type:current_task.type,
-            task_target_stimulus:current_task.target,
-         task_background_stimulus:current_task.background,
-            task_deviant_stimulus:current_task.deviant,
-            task_order_number:task_num
+        timeline: [
 
-        }],
+            {
+                type: 'html-keyboard-response',
+                stimulus: '<img src=images/blank.png width ="500" height = "500" style="border:5px solid black">',
+                trial_duration: function(){ 
+                    var random_duration = 800 + 500 * Math.random()
+                    return random_duration  } , //The interval between the offset of one stimulus and the onset of the next stimulus ranged between 800 and 1300 msec
+                choices: jsPsych.NO_KEYS
+            },
+
+            {
+                type: 'stimulus-presentation',
+                stimulus: function(){
+                    var html="<img src='"+jsPsych.timelineVariable('pic', true)+"' width ='500' height = '500' style='border:5px solid black'>";
+                    return html;
+                },
+                choices_for_target: [32],
+                choices: [40],
+                minimum_viewing_duration: 600, // daffner2000's info
+                response_ends_trial: true, 
+                task_type:current_task.type,
+                task_target_stimulus:current_task.target,
+             task_background_stimulus:current_task.background,
+                task_deviant_stimulus:current_task.deviant,
+                task_order_number:task_num
+
+            }],
         
-    timeline_variables: convert_path_to_timeline_variables(current_task.blocks_info)
-    
-     
+        timeline_variables: convert_path_to_timeline_variables(current_task.blocks_info)  
     }
     
- 
    
      
-     
      timeline.push(task_block)
- 
-    
-    // maybe add a break prompting block 
+     timeline.push(task_instruction)
+     if (task_order_print != "last"){
+         timeline.push(post_task_break)
+     }   
   
 }
     
     
-    
-var final_instructions = {
-     type: "instructions",
-     pages:[
-         "Finnally, we'd like to ask a few questions about you"
-     ],
-     show_clickable_nav: true
-     
- }
+// after the main task   
 
-
-
-    var demog_question_age = {
-        type: 'demog-age',
-        questions: [
-        {prompt: "How old are you?", name: "age", required: true}
-        ],
-    }
-    
-     var demog_question_ethnicity = {
-        type: "demog-ethnic-US", 
-        button_label: "Done", 
-        questions: [
-            {prompt: "What is your racial or ethnic identification? Check all that apply.", name: "gender", options:  ["American Indian or Alaska Native", "Asian", "Black or African American", "Hispanic or Latino", "Native Hawaiian or Other Pacific Islander", "White", "Other"], required: true}
-        ]
-    }
-     
-    var demog_gender_and_education = {
-        type: "demog-gender-and-education", 
-        button_label: "Done", 
-        questions: [
-            {prompt: "What is your gender?", name: "gender", options: ["Female", "Male", "Non-binary", "Decline to Answer"], required: true}, 
-            {prompt: "What is the highest degree or the higest level of school you have completed? If you are currently enrolled as a student, then please select the highest degree or education you have received.", name: "education", options: ["Some high school", "High school diploma", "Associate Degree/Technical certification", "Bachelor's Degree",  "Master's Degree", "Doctorate/Professional degree", "Other"], required: true}
-        ]
-    }
-  
-    var demog_disorder_history = {
-        type: "demog-disorder-history", 
-        button_label: "Done", 
-        questions: [
-            {prompt: "Do you currently have any neurological disorders?", name: "current_neuro", options: ["Yes", "No"], required: true}, 
-            {prompt: "Have you had any neurological disorders in the past?", name: "past_neuro", options: ["Yes", "No"], required: true},
-            {prompt: "Do you currently have any learning disabilities?", name: "current_ld", options: ["Yes", "No"], required: true},
-            {prompt: "Have you had any history of learning disabilities in the past?", name: "past_ld", options: ["Yes", "No"], required: true}
-        ]
-    }
-    
-   var final_thank_you = {
-     type: "instructions",
-     pages:[
-         "You are all done, thank you!"
-     ],
-     show_clickable_nav: false
-     
- }    
   
    timeline.push(final_instructions)
-   timeline.push(demog_question_age)
-   timeline.push(demog_gender_and_education)
-   timeline.push(demog_question_ethnicity)
-   timeline.push(demog_disorder_history)
+   timeline = timeline.concat(demog_questions)
    timeline.push(final_thank_you)
    ///afs/ir.stanford.edu/users/a/n/anjiecao/cgi-bin/daffner2020/write_data.php
    
@@ -334,12 +238,13 @@ var final_instructions = {
     
 jsPsych.init({
         timeline: timeline,
+        show_progress_bar: true,
         //use_webaudio: true, // this won't work for local testing (CORS), but maybe on server
-        //preload_images: ALL_STIMULI_PATH,
+        preload_images: ALL_STIMULI_PATH,
         //preload_video: video,
         on_trial_finish: function(){
-            saveData("daffnerrep-" + subject_id, jsPsych.data.get().csv());
-            jsPsych.data.displayData();
+            saveData("daffnerrep-pilotb-" + subject_id, jsPsych.data.get().csv());
+            //jsPsych.data.displayData();
             //setTimeout(function() { turk.submit(jsPsych.data.get().ignore('external-html').json()); }, 5000);
       }
     })
