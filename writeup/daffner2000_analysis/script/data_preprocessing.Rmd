@@ -33,12 +33,135 @@ raw_df <- list.files(RAW_DATA_DIR, full.names = T) %>%
 write_csv(raw_df, AGGREGATED_DATA_PATH)
 ```
 
-# Extract the Demog Information 
 ```{r}
 raw_df %>% datatable()
 ```
 
+# Extract the Demog Information 
+```{r}
+demog_df <- raw_df %>% 
+  filter(grepl("demog", trial_type)) %>% 
+  select(subject, trial_type, responses) %>% 
+  toJSON() %>% 
+  fromJSON() %>% 
+    mutate(
+      demog_question = map(responses, ~ fromJSON(.) %>% as.data.frame())) %>% 
+    unnest(demog_question)  %>% 
+  group_by(subject) %>%
+  mutate_at(vars(-group_cols()), function(x) {x[!is.na(x)][1]}) %>%
+  distinct() %>% 
+  select(-trial_type, responses)
+  
+
+
+demog_df %>% datatable()
+```
+joining back
+```{r}
+data_with_demog <- left_join(raw_df,demog_df, by = "subject")
+data_with_demog %>% datatable()
+```
+
+
 # Exclusion criteria applied 
+## filter out based on demog (neurological order qu)
+```{r}
+demog_filtered <- data_with_demog %>% 
+  filter(
+    current_neuro != "Yes" && past_neuro != "Yes" && current_ld != "Yes" && past_ld != "Yes"
+  )
+
+demog_filtered
+```
+filtered out based on task performance 
+## trial based exclusion? 
+```{r}
+summary_rt <- data_with_demog %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+    summarize(
+    mean_rt = mean(as.numeric(rt), na.rm = TRUE), 
+    sd_rt = sd(rt, na.rm = TRUE),
+    upper_rt = mean_rt + 3 * sd_rt, 
+    lower_rt = mean_rt - 3 * sd_rt
+  )
+
+UPPER_RT <- summary_rt %>% select(upper_rt) %>% pull()
+LOWER_RT <- summary_rt %>% select(lower_rt) %>% pull()
+
+trial_rt_filtered <- data_with_demog %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+  filter(rt < LOWER_RT | rt > UPPER_RT)
+
+# check if the participants are missing 25% trials after applying the trial-based exclusion criteria 
+num_total_trials <- data_with_demog %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+  group_by(subject) %>% 
+  count()
+
+num_filtered_trials <- trial_rt_filtered %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+  group_by(subject) %>% 
+  count()
+
+num_total_trials
+num_filtered_trials
+```
+
+```{r}
+data_with_demog %>% ggplot(aes(x = as.numeric(rt))) + geom_histogram() + 
+geom_vline(xintercept = UPPER_RT)
+```
+
+## participants based performance
+```{r}
+## proportion of pressing space bar in target trial 
+prop_press_space_summary <- data_with_demog %>% 
+  select(subject, trial_pressed_space_bar, trial_stimulus_type) %>% 
+  mutate(trial_pressed_space_bar = if_else(is.na(trial_pressed_space_bar), "no", trial_pressed_space_bar)) %>% 
+  filter(trial_stimulus_type == "target") %>% 
+  group_by(subject,trial_pressed_space_bar) %>% 
+  summarize(
+    n = n()
+  ) %>% 
+  pivot_wider(names_from = trial_pressed_space_bar, values_from = n) %>% 
+  mutate(
+    no = if_else(is.na(no), 0.0, as.numeric(no)),
+    yes = if_else(is.na(yes), 0.0, as.numeric(yes)), 
+    sum = no + yes, 
+    no_press_prop = no / sum
+  ) %>% 
+  select(subject, no_press_prop)
+
+## proportion of pressing space bar in non-target trial 
+prop_wrong_press_summary <- data_with_demog %>% 
+  select(subject, trial_pressed_space_bar, trial_stimulus_type) %>% 
+  mutate(trial_pressed_space_bar = if_else(is.na(trial_pressed_space_bar), "no", trial_pressed_space_bar)) %>% 
+  filter(trial_stimulus_type != "target") %>% 
+  group_by(subject,trial_pressed_space_bar) %>% 
+  summarize(
+    n = n()
+  ) %>% 
+  pivot_wider(names_from = trial_pressed_space_bar, values_from = n) %>% 
+  mutate(
+    no = if_else(is.na(no), 0.0, as.numeric(no)),
+    yes = if_else(is.na(yes), 0.0, as.numeric(yes)), 
+    sum = no + yes, 
+    wrong_press_prop = yes / sum
+  ) %>% 
+  select(subject, wrong_press_prop)
+
+prop_wrong_press_summary
+
+data_with_demog_spacebar <- left_join(data_with_demog, prop_press_space_summary, by = "subject")
+data_with_demog_spacebar <- left_join(data_with_demog_spacebar, prop_wrong_press_summary, by = "subject")
+
+data_with_demog_spacebar %>% datatable()
+
+
+filtered_spacebar <- data_with_demog_spacebar %>% 
+  filter(no_press_prop > 0.25 | wrong_press_prop >0.25)
+```
+
 
 
 # final clean data 
