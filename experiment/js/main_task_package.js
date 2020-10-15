@@ -1,19 +1,4 @@
-var NUM_SIMPLE_STIMULI = 120
-var NUM_COMPLEX_STIMULI = 120
 
-
-ALL_STIMULI_PATH = get_all_stimuli() // all stimuli 
-stimuli_tracker = ALL_STIMULI_PATH // make a copy to keep track of stimuli that has been chosen
-
-
-var simple_test_blocks = create_all_stimuli_no_block(meta_stimuli_path = stimuli_tracker, 
-                                     type = "all_simple", 
-                                     n_trial = 10, 
-                                     bkgd_freq = 0.7, 
-                                     tg_freq = 0.15, 
-                                     dvt_freq = 0.15)    
-   
-stimuli_tracker = simple_test_blocks.remaining_stimuli
     
     
 /*

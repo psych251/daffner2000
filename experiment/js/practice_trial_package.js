@@ -25,7 +25,7 @@ var practice_trial_a = {
             stimulus: "<img src='"+"images/practice/practice_background.jpeg"+"' width ='500' height = '500' style='border:5px solid black'>",
             choices_for_target: [32],
             choices: [40],
-            minimum_viewing_duration: 600, // daffner2000's info
+            minimum_viewing_duration: 200, // daffner2000's original was 200ms
             response_ends_trial: true, 
             task_target_stimulus:"images/practice/practice_target.jpg",
         }
@@ -34,7 +34,7 @@ var practice_trial_b = {
             stimulus: "<img src='"+"images/practice/practice_background.jpeg"+"' width ='500' height = '500' style='border:5px solid black'>",
             choices_for_target: [32],
             choices: [40],
-            minimum_viewing_duration: 600, // daffner2000's info
+            minimum_viewing_duration: 200, // daffner2000's original was 200ms
             response_ends_trial: true, 
             task_target_stimulus:"images/practice/practice_target.jpg",
         }
@@ -43,7 +43,7 @@ var practice_trial_deviant = {
             stimulus: "<img src='"+"images/practice/practice_deviant.jpeg"+"' width ='500' height = '500' style='border:5px solid black'>",
             choices_for_target: [32],
             choices: [40],
-            minimum_viewing_duration: 600, // daffner2000's info
+            minimum_viewing_duration: 200, // daffner2000's original was 200ms
             response_ends_trial: true, 
             task_target_stimulus:"images/practice/practice_target.jpg",
         }
@@ -52,7 +52,7 @@ var practice_trial_target = {
             stimulus: "<img src='"+"images/practice/practice_target.jpg"+"' width ='500' height = '500' style='border:5px solid black'>",
             choices_for_target: [32],
             choices: [40],
-            minimum_viewing_duration: 600, // daffner2000's info
+            minimum_viewing_duration: 200, // daffner2000's original was 200ms
             response_ends_trial: true, 
             task_target_stimulus:"images/practice/practice_target.jpg",
         }
@@ -78,7 +78,7 @@ var practice_trial_e = {
             stimulus: "<img src='"+"images/practice/practice_background.jpeg"+"' width ='500' height = '500' style='border:5px solid black'>",
             choices_for_target: [32],
             choices: [40],
-            minimum_viewing_duration: 600, // daffner2000's info
+            minimum_viewing_duration: 200, // daffner2000's original was 200ms
             response_ends_trial: true, 
             task_target_stimulus:"images/practice/practice_target.jpg",
         }
