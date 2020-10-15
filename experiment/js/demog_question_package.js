@@ -9,7 +9,7 @@
         type: "demog-ethnic-US", 
         button_label: "Done", 
         questions: [
-            {prompt: "What is your racial or ethnic identification? Check all that apply.", name: "gender", options:  ["American Indian or Alaska Native", "Asian", "Black or African American", "Hispanic or Latino", "Native Hawaiian or Other Pacific Islander", "White", "Other"], required: true}
+            {prompt: "What is your racial or ethnic identification? Check all that apply.", name: "ethnicity", options:  ["American Indian or Alaska Native", "Asian", "Black or African American", "Hispanic or Latino", "Native Hawaiian or Other Pacific Islander", "White", "Other"], required: true}
         ]
     }
      

@@ -1,12 +1,23 @@
+---
+title: "Data Preprocessing and Excluding"
+author: "anjie"
+date: "10/14/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 library(here)
+library(DT)
+library(jsonlite)
 library(tidyverse)
-
-#FIXME: CURRENT VERSION ADAPT TO THE EXISTING (NOW FIXED TYPOS)
-
+library(kableExtra)
 RAW_DATA_DIR <- here("raw_data/")
-PROCESSED_DATA_PATH <- here("processed_data/processed_data.csv")
+AGGREGATED_DATA_PATH <- here("processed_data/aggregated_data.csv")
+```
 
-
+# Aggregate the Raw Data 
+```{r}
 raw_df <- list.files(RAW_DATA_DIR, full.names = T) %>%
   map_df(read_csv) %>% 
   select(rt, trial_type, trial_index, subject, trial_stimulus, trial_stimulus_type, 
@@ -19,4 +30,15 @@ raw_df <- list.files(RAW_DATA_DIR, full.names = T) %>%
     grepl("simple", trial_stimulus) ~ "simple"
   ))
 
-write_csv(raw_df, PROCESSED_DATA_PATH)
+write_csv(raw_df, AGGREGATED_DATA_PATH)
+```
+
+# Extract the Demog Information 
+```{r}
+raw_df %>% datatable()
+```
+
+# Exclusion criteria applied 
+
+
+# final clean data 
