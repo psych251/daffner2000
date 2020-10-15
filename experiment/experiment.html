@@ -2,8 +2,10 @@
 <html>
 <head>
   <script src="js/jspsych.js"></script>
+  <script src = "js/practice_trial_package.js"></script>
   <script src="js/jspsych-pratctice-block.js"></script>
   <script src="js/jspsych-stimulus-presentation.js"></script>
+  <script src="js/jspsych-task-instructions.js"></script>
   <script src="js/jspsych-instructions.js"></script>
     <script src="js/jspsych-html-keyboard-response.js"></script>
     <script src="js/jspsych-image-keyboard-response.js"></script>
@@ -149,139 +151,6 @@ var main_instruction = {
  }
 
 
-var prepractice_instruction = {
-     type: "instructions",
-     pages:[
-         "Welcome to the practice phase!<p>In this practice phase, you will look at a group of pictures. Some pictures repeat, some do not. You can spend as long as you want on each picture. When you are done, press the down arrow to go to the next one.</p>",
-         "You will also need to respond to the target picture. When you see the target picture, please press the space bar. The target picture for practice phase is shown below." + '<p><img src="'+ "images/practice/practice_target.jpg" + '"></img></p>',
-         "We will not test you afterward.",
-     ],
-     show_clickable_nav: true
-     
- }
-
-
-
-var practice_trial_a = {
-            type: 'practice-block',
-            stimulus: "<img src='"+"images/practice/practice_background.jpeg"+"' width ='500' height = '500' style='border:5px solid black'>",
-            choices_for_target: [32],
-            choices: [40],
-            minimum_viewing_duration: 600, // daffner2000's info
-            response_ends_trial: true, 
-            task_target_stimulus:"images/practice/practice_target.jpg",
-        }
-var practice_trial_b = {
-            type: 'practice-block',
-            stimulus: "<img src='"+"images/practice/practice_background.jpeg"+"' width ='500' height = '500' style='border:5px solid black'>",
-            choices_for_target: [32],
-            choices: [40],
-            minimum_viewing_duration: 600, // daffner2000's info
-            response_ends_trial: true, 
-            task_target_stimulus:"images/practice/practice_target.jpg",
-        }
-var practice_trial_deviant = {
-            type: 'practice-block',
-            stimulus: "<img src='"+"images/practice/practice_deviant.jpeg"+"' width ='500' height = '500' style='border:5px solid black'>",
-            choices_for_target: [32],
-            choices: [40],
-            minimum_viewing_duration: 600, // daffner2000's info
-            response_ends_trial: true, 
-            task_target_stimulus:"images/practice/practice_target.jpg",
-        }
-var practice_trial_target = {
-            type: 'practice-block',
-            stimulus: "<img src='"+"images/practice/practice_target.jpg"+"' width ='500' height = '500' style='border:5px solid black'>",
-            choices_for_target: [32],
-            choices: [40],
-            minimum_viewing_duration: 600, // daffner2000's info
-            response_ends_trial: true, 
-            task_target_stimulus:"images/practice/practice_target.jpg",
-        }
-
-        
-    
-var practice_trial_target_while_loop = {
-    timeline: [practice_trial_target], 
-        loop_function: function(){
-            var data = jsPsych.data.get().last(1).values()[0];
-            if(data.trial_pressed_space_bar == "yes"){
-                
-                return false;
-            } else {
-                return true;
-        }}
-   
-}
-
-    
-var practice_trial_e = {
-            type: 'practice-block',
-            stimulus: "<img src='"+"images/practice/practice_background.jpeg"+"' width ='500' height = '500' style='border:5px solid black'>",
-            choices_for_target: [32],
-            choices: [40],
-            minimum_viewing_duration: 600, // daffner2000's info
-            response_ends_trial: true, 
-            task_target_stimulus:"images/practice/practice_target.jpg",
-        }
-
-
-
-var practice_block = [
-    practice_trial_a,
-    practice_trial_b,
-    practice_trial_deviant, 
-    practice_trial_target_while_loop,
-    practice_trial_e
-]
-
-
-
-
-/*
-var practice_block = {
-    timeline: [
-        
-        {
-            type: 'html-keyboard-response',
-            stimulus: '<img src=images/blank.png width ="500" height = "500" style="border:5px solid black">',
-            trial_duration: function(){ 
-                var random_duration = 800 + 500 * Math.random()
-                return random_duration  } , //The interval between the offset of one stimulus and the onset of the next stimulus ranged between 800 and 1300 msec
-            choices: jsPsych.NO_KEYS
-        },
-        
-        
-       
-        {
-            type: 'practice-block',
-            stimulus: function(){
-                var html="<img src='"+jsPsych.timelineVariable('pic', true)+"' width ='500' height = '500' style='border:5px solid black'>";
-                
-                return html;
-            },
-            choices_for_target: [32],
-            choices: [40],
-            minimum_viewing_duration: 600, // daffner2000's info
-            response_ends_trial: true, 
-            task_target_stimulus:"images/practice/practice_target.jpg",
-
-        }],
-        
-    timeline_variables: [
-        {pic: "images/practice/practice_background.jpeg"},
-        {pic: "images/practice/practice_background.jpeg"},
-        {pic: "images/practice/practice_background.jpeg"},
-        {pic: "images/practice/practice_deviant.jpeg"},
-        {pic: "images/practice/practice_target.jpg"}
-    ],
-    randomize_order: true 
-    
-    
-     
-    }
-
-*/
 
 timeline.push(main_instruction)
 timeline.push(prepractice_instruction)

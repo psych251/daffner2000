@@ -540,4 +540,3 @@ function convert_path_to_timeline_variables(item_array){
 }
 
 
-    
