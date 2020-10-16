@@ -127,17 +127,18 @@ Note: Because the current replication will be done online, I made modifications 
 <!-- Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.   -->
 
 - Data cleaning rules: the script for extracting and aggregating relevant data from the raw CSV will be available in the SI. 
-- Data exclusion rules: In Daffner et al.(2000) the exclusion rule is based on criteria related to the EEG measurement, which is unobtainable with the online format. The current replication experiment has both participant-level exclusion criterion and the trial-level exclusion criterion. On the participant level, a participant is excluded from the final analysis if a) one presses the space bar for more than non-target 25% trials or b) one does not press the space bar for more than 25% of the target trial or c) indicate one has a history of neurological disorder or learning disabilities or d) missing data from more than 25% trials after applying the trial-based exclusion rule. On the trial-level, a trial is excluded if the RT is more than 3 standard deviation away from the log-transformed scale.
+- Data exclusion rules: In Daffner et al.(2000) the exclusion rule is based on criteria related to the EEG measurement, which is unobtainable with the online format. The current replication experiment has both participant-level exclusion criterion and the trial-level exclusion criterion. On the participant level, a participant is excluded from the final analysis if a) one presses the space bar for more than non-target 25% trials or b) one does not press the space bar for more than 15% of the target trial or c) indicate one has a history of neurological disorder or learning disabilities or d) missing data from more than 15% trials after applying the trial-based exclusion rule. On the trial-level, a trial is excluded if the RT is more than 3 standard deviation away from the log-transformed scale.
 
 **Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
 
 - 2 stimuli type x 4 task type repeated measures ANOVA
-- Mixed effects linear regression: log(RT) ~ stimuli_type * block + (trial | participant)
+- Mixed effects linear regression: log(trial_looking_time) ~ trial_stimulus_type * block + (1|subject)
 - Exploratory analysis: 
-  - Demographics: log(RT) ~ age + (trial | participant); log(RT) ~ age + stimuli_type * block + (trial | participant); log(RT) ~ education_level + (trial | participant); log(RT) ~ education_level + stimuli_type * block + (trial | participant)
-  - Target reaction time: log(target_rt) ~ target_type * block + (trial | participant)
-  - Number of consecutive background stimuli before deviant: log(RT_at_deviant) ~ number_of_consecutive_background_before_deviant + background_type * block + (trial | participant);  
-  - distance to the target trial before deviant: log(RT_at_deviant) ~ number_of_trials_between_deviant_and_last_target + background_type * block + (trial | participant);   - effect of stimuli repetition: log(rt) ~ trial_type * block + trial_num * block_num + trial_num * trial_type*num_times_stimulus_seen
+  - **Demographics**: log(trial_looking_time) ~ demog_age +  (1|subject/block_trial_num); log(RT) ~ log(trial_looking_time) ~ demog_age + trial_stimulus_type * block +  (1|subject/block_trial_num); log(trial_looking_time) ~ demog_education + (1 | subject/block_trial_num); log(trial_looking_time) ~ demog_education + trial_stimulus_type * block + (1 | subject/block_trial_num)
+  - **Target reaction time**: trial_space_bar_rt ~ trial_stimulus_complexity * block + (1 |subject/block_trial_num)
+  - **Number ofbackground stimuli**: log(trial_looking_time) ~ bkgd_rep * block + (1 | subject/block_trial_num);  
+  - **Length of intervals between targets**: log(trial_space_bar_rt) ~ target_interval * block + (1 | subject/block_trial_num)
+  - **Effect of stimuli repetition**: log(trial_looking_time) ~ trial_stimulus_type * block + block_trial_num * block_number + block_trial_num * trial_stimulus_type * num_times_stimulus_seen +  (1 | subject/block_trial_num)
 
 ### Differences from Original Study
 
@@ -244,22 +245,118 @@ Original Plot:
 
     
 
-### Exploratory analyses
-```{r}
-d
-```
+### Exploratory analyses{.tabset}
 
-- Mixed effects linear regression: log(RT) ~ stimuli_type * block + (trial | participant)
-
+#### Mixed effect linear regression model 
+using (1|subject/block_trial_num) has ## Model failed to converge with max|grad| = 0.00201842 (tol = 0.002, component 1) warning
 ```{r}
-lmer(log(trial_looking_time) ~ trial_stimulus_type * block + (trial_num | subject), 
+basic_m <- lmer(log(trial_looking_time) ~ trial_stimulus_type * block + (1|subject), 
      data = d)
+summary(basic_m)
 ```
 
-  - Demographics: log(RT) ~ age + (trial | participant); log(RT) ~ age + stimuli_type * block + (trial | participant); log(RT) ~ education_level + (trial | participant); log(RT) ~ education_level + stimuli_type * block + (trial | participant)
-  - Target reaction time: log(target_rt) ~ target_type * block + (trial | participant)
-  - Number of consecutive background stimuli before deviant: log(RT_at_deviant) ~ number_of_consecutive_background_before_deviant + background_type * block + (trial | participant);  
-  - distance to the target trial before deviant: log(RT_at_deviant) ~ number_of_trials_between_deviant_and_last_target + background_type * block + (trial | participant);   - effect of stimuli repetition: log(rt) ~ trial_type * block + trial_num * block_num + trial_num * trial_type*num_times_stimulus_seen
+#### Effect of age
+
+```{r message=FALSE, warning=FALSE}
+age_only_m <- lmer(log(trial_looking_time) ~ demog_age +  (1|subject/block_trial_num), data = d)
+age_with_task_m <- lmer(log(trial_looking_time) ~ demog_age + trial_stimulus_type * block +  (1|subject/block_trial_num), 
+     data = d)
+summary(age_only_m)
+summary(age_with_task_m)
+```
+
+
+#### Effect of education
+
+```{r}
+edu_only_m <- lmer(log(trial_looking_time) ~ demog_education +  (1|subject/block_trial_num), data = d)
+edu_with_task_m <- lmer(log(trial_looking_time) ~ demog_education + trial_stimulus_type * block +  (1|subject/block_trial_num), data = d)
+
+summary(edu_only_m)
+summary(edu_with_task_m)
+
+```
+
+#### Task effect on target reaction time
+
+```{r}
+target_rt_m <- lmer(trial_space_bar_rt ~ trial_stimulus_complexity * block + (1|subject/block_trial_num),
+     data = filter(d, trial_stimulus_type == "target"))
+summary(target_rt_m)
+```
+  
+#### Number of background stimuli
+
+```{r message=FALSE, warning=FALSE}
+
+no_target <- d %>% 
+  filter(trial_stimulus_type != "target")
+
+no_target <- no_target %>% 
+    mutate( 
+      temp_id = paste0(subject, block_number) 
+    )
+no_target$block_trial_num <- sequence(rle(no_target$temp_id)$lengths)
+no_target <- no_target %>% select(-temp_id)
+
+repetition_bckgd <- no_target %>% 
+  group_by(subject, block) %>%
+  filter(trial_stimulus_type == "deviant") %>% 
+  mutate(
+    bkgd_rep = block_trial_num - (lag(block_trial_num, default = block_trial_num[1])) - 1
+  )
+
+num_bkgd <- lmer(log(trial_looking_time) ~ bkgd_rep * block + (1 | subject / block_trial_num), 
+     data = repetition_bckgd)
+summary(num_bkgd)
+
+```
+  
+#### Length of intervals between targets 
+
+```{r message=FALSE, warning=FALSE}
+target_interval <- d %>% 
+  group_by(subject, block) %>%
+  filter(trial_stimulus_type == "target") %>% 
+  mutate(
+    target_interval = block_trial_num - (lag(block_trial_num, default = block_trial_num[1])) - 1
+  )
+
+interval_length_m <- lmer(log(trial_space_bar_rt) ~ target_interval * block + (1 | subject / block_trial_num), 
+     data = target_interval)
+summary(interval_length_m)
+
+```
+
+#### effect of stimuli repetition
+
+```{r}
+count_num_seen <- d %>% 
+  mutate(
+    number = 1) %>% 
+  group_by(
+  subject, block, trial_stimulus_type
+  ) %>% 
+  mutate(num_times_stimulus_seen = cumsum(number))
+
+stimuli_rep_m <- lmer(log(trial_looking_time) ~ trial_stimulus_type * block + block_trial_num * block_number + block_trial_num * trial_stimulus_type * num_times_stimulus_seen +  (1 | subject / block_trial_num), 
+             data = count_num_seen)
+summary(stimuli_rep_m)
+
+count_num_seen %>% 
+  ggplot(
+    aes(y = trial_looking_time, 
+        x = num_times_stimulus_seen,
+        color = trial_stimulus_complexity)
+  ) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+
+
+
+
 
 
 

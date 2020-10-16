@@ -28,7 +28,15 @@ tidy_data <- function(filtered_data, output_path){
       demog_age, demog_ethnicity, demog_gender, demog_education
     )
   
-  tidy_data$trial_num <- sequence(rle(tidy_data$subject)$lengths)
+  tidy_data$total_trial_num <- sequence(rle(tidy_data$subject)$lengths)
+  tidy_data <- tidy_data %>% 
+    mutate( 
+      temp_id = paste0(subject, block_number) 
+    )
+  tidy_data$block_trial_num <- sequence(rle(tidy_data$temp_id)$lengths)
+  
+  tidy_data <- tidy_data %>% select(-temp_id)
+  
   
    write_csv(tidy_data, output_path)
    return(tidy_data)
