@@ -68,6 +68,19 @@ data_with_demog %>% datatable()
 
 
 # Exclusion criteria applied 
+## function to filter out based on demog: 
+```{r filter_based_on_demog}
+filter_demog <- function(data_with_demog){
+  filtered_data <- data_with_demog %>% 
+  filter(
+    current_neuro != "Yes" && past_neuro != "Yes" && current_ld != "Yes" && past_ld != "Yes"
+  )
+  return (filtered_data)
+} 
+
+```
+
+
 
 ## filter out based on demog (neurological disorder question)
 ```{r}
@@ -80,9 +93,11 @@ demog_filtered
 ```
 
 ## participant-level exclusion: pressing space bar
+non-target space bar > 25%, or space bar on target < 75%
+```{r filter_based_on_space_bar}
 
-```{r}
-## proportion of pressing space bar in target trial 
+filter_spacebar <- function(data_with_demog){
+
 prop_press_space_summary <- data_with_demog %>% 
   select(subject, trial_pressed_space_bar, trial_stimulus_type) %>% 
   mutate(trial_pressed_space_bar = if_else(is.na(trial_pressed_space_bar), "no", trial_pressed_space_bar)) %>% 
@@ -118,22 +133,51 @@ prop_wrong_press_summary <- data_with_demog %>%
   ) %>% 
   select(subject, wrong_press_prop)
 
-prop_wrong_press_summary
-
 data_with_demog_spacebar <- left_join(data_with_demog, prop_press_space_summary, by = "subject")
 data_with_demog_spacebar <- left_join(data_with_demog_spacebar, prop_wrong_press_summary, by = "subject")
 
 filtered_spacebar <- data_with_demog_spacebar %>% 
-  filter(no_press_prop > 0.25 | wrong_press_prop >0.25)
+  filter(no_press_prop > 0.25 | wrong_press_prop > 0.25)
+
+return(filtered_spacebar)
+}
 ```
+## participant-level exclusion: lack of SD in RT, tentatively using 300 mms cut off
+```{r}
+
+filter_trial_variation <- function(data_with_demog){
+to_exclude_subj <- data_with_demog %>% 
+  group_by(subject) %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+  summarize(
+    lookingtime_sd = sd(trial_looking_time)
+  ) %>% 
+  filter(lookingtime_sd < 300) %>% 
+  select(subject) %>% 
+  pull()
+
+
+
+filtered_no_variation_df <- data_with_demog %>% 
+  filter(!(subject %in% to_exclude_subj))
+
+return(filtered_no_variation_df)
+}
+
+
+```
+
+
+
+
 
 ## trial-level exclusion:????
 ```{r}
 summary_lt <- data_with_demog %>% 
   filter(trial_type == "stimulus-presentation") %>% 
     summarize(
-    mean_lt = mean(as.numeric(trial_looking_time), na.rm = TRUE), 
-    sd_lt = sd(trial_looking_time, na.rm = TRUE),
+    mean_lt = mean(log(as.numeric(trial_looking_time)), na.rm = TRUE), 
+    sd_lt = sd(log(trial_looking_time), na.rm = TRUE),
     upper_lt = mean_lt + 3 * sd_lt, 
     lower_lt = mean_lt - 3 * sd_lt
   )
@@ -144,23 +188,90 @@ summary_lt %>% kable()
 ```
 
 ```{r}
-trial_lt_to_cut <- data_with_demog %>% 
-  filter(trial_type == "stimulus-presentation") %>% 
-  filter(trial_looking_time < LOWER_LT | trial_looking_time > UPPER_LT)
+
 
 # check if the participants are missing 25% trials after applying the trial-based exclusion criteria 
+
+filter_too_many_outliers <- function(data_with_demog){
+  
+  
+  summary_lt <- data_with_demog %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+    summarize(
+    mean_lt = mean(log(as.numeric(trial_looking_time)), na.rm = TRUE), 
+    sd_lt = sd(log(trial_looking_time), na.rm = TRUE),
+    upper_lt = mean_lt + 3 * sd_lt, 
+    lower_lt = mean_lt - 3 * sd_lt
+  )
+
+  UPPER_LT <- summary_lt %>% select(upper_lt) %>% pull()
+  LOWER_LT <- summary_lt %>% select(lower_lt) %>% pull()
+  
+  
+  
+  
+  trial_lt_to_cut <- data_with_demog %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+  filter(log(trial_looking_time) < LOWER_LT | log(trial_looking_time) > UPPER_LT)
+
+
 num_total_trials <- data_with_demog %>% 
   filter(trial_type == "stimulus-presentation") %>% 
   group_by(subject) %>% 
-  count()
+  count() %>% 
+  mutate(
+    total_trial_num = n
+  ) %>% 
+  select(-n)
 
 num_to_cut_trials <- trial_lt_to_cut %>% 
   filter(trial_type == "stimulus-presentation") %>% 
   group_by(subject) %>% 
-  count()
+  count() %>% 
+  mutate(
+    excluded_trial_num = n
+  ) %>% 
+  select(-n)
 
-num_total_trials %>% kable()
-num_to_cut_trials %>% kable()
+summary_trial_cut_table <- left_join(num_total_trials, num_to_cut_trials, by = "subject") %>% 
+  mutate(
+    exclude_proportion = excluded_trial_num / total_trial_num
+  )
+
+excluded_participants_id <- summary_trial_cut_table %>% 
+  filter(exclude_proportion > 0.25) %>% 
+  select(subject) %>% 
+  pull()
+
+filtered_too_many_outliers <- data_with_demog %>% 
+  filter(!(subject %in% excluded_participants_id))
+
+return(filtered_too_many_outliers)
+
+} 
+
+
+filter_outlier_trial <- function(data_with_demog){
+  
+  summary_lt <- data_with_demog %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+    summarize(
+    mean_lt = mean(log(as.numeric(trial_looking_time)), na.rm = TRUE), 
+    sd_lt = sd(log(trial_looking_time), na.rm = TRUE),
+    upper_lt = mean_lt + 3 * sd_lt, 
+    lower_lt = mean_lt - 3 * sd_lt
+  )
+  
+  trial_filtered_df <- data_with_demog %>% 
+  filter(trial_type == "stimulus-presentation") %>% 
+  filter(!(log(trial_looking_time) < LOWER_LT | log(trial_looking_time) > UPPER_LT))
+  
+  return(trial_filtered_df)
+  
+  
+}
+
+filter_outlier_trial(data_with_demog)
 ```
 
 transformation needed? 
@@ -248,8 +359,5 @@ clean_data %>% datatable()
 
 
 
-```{r}
-library(shape)
-vignette("shape")
-```
+
 

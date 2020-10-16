@@ -5,10 +5,12 @@ date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document:
     toc: yes
+    code_folding: hide
     toc_depth: 3
     toc_float:
-      collapsed: false
+      collapsed: true
 ---
+
 
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
 
@@ -160,50 +162,82 @@ Explicitly describe known differences in sample, setting, procedure, and analysi
 ### Data preparation
 
 Data preparation following the analysis plan.
-See [00_read_raw_data](https://github.com/psych251/daffner2000/blob/master/writeup/daffner2000_analysis/script/00_read_raw_data.R)
-	
+Scripts for preprocessing data can be seen [here](https://github.com/psych251/daffner2000/tree/master/writeup/daffner2000_analysis/script)
 
-```{r include=F}
-###Data Preparation
+```{r message=FALSE, warning=FALSE, include=T}
 
-####Load Relevant Libraries and Functions
 library(tidyverse)
 library(here)
 library(rstatix)
 library(lme4)
+library(DT)
+library(jsonlite)
+library(tidyverse)
+library(kableExtra)
+source(here("writeup/daffner2000_analysis/script/00_read_raw_data.R"))
+source(here("writeup/daffner2000_analysis/script/01_apply_exclusion_criteria.R"))
+source(here("writeup/daffner2000_analysis/script/02_tidy_data.R"))
 
-####Import data <- current no exclusion rule applied 
-processed_data <- read_csv(here("writeup/daffner2000_analysis/processed_data/processed_data.csv"))
+RAW_DATA_DIR <- here("writeup/daffner2000_analysis/raw_data/")
+AGGREGATED_DATA_PATH <- here("writeup/daffner2000_analysis/processed_data/aggregated_data.csv")
+PROCESSED_DATA_PATH <- here("writeup/daffner2000_analysis/processed_data/processed_data.csv")
+
+####Aggregate across participants, clean up demographic fields
+aggregate_data(RAW_DATA_DIR, AGGREGATED_DATA_PATH)
+
+
+####Import data 
+data_with_demog <- read_csv(AGGREGATED_DATA_PATH)
 
 #### Data exclusion / filtering
-
+# participants level exclusion
+filtered_data <- filter_demog(data_with_demog)
+filtered_data <- filter_spacebar(filtered_data)
+filtered_data <- filter_trial_variation(filtered_data)
+filtered_data <- filter_too_many_outliers(filtered_data)
+#trial level exclusion
+filtered_data <- filter_outlier_trial(filtered_data)  
 
 #### Prepare data for analysis - create columns etc.
-
-data_for_analysis <- processed_data %>% 
-  filter(trial_type == "stimulus-presentation") 
+d <- tidy_data( filtered_data,PROCESSED_DATA_PATH) # this also writes
 
 ```
 
 ### Confirmatory analysis
-
-Confirmatory analysis: 
+preview data 
 ```{r}
-anova_test(data = data_for_analysis, 
-           formula = trial_looking_time ~ stimuli_type * task_type,
+d %>% datatable()
+```
+*Side-by-side graph with original graph is ideal here*
+Confirmatory analysis: 
+```{r message=FALSE, warning=FALSE}
+anova_test(data = d, 
+           formula = trial_looking_time ~ trial_stimulus_complexity * block,
            dv = trial_looking_time)
 ```
 
+```{r}
+d %>% 
+  filter(trial_stimulus_type != "target") %>% 
+  group_by(trial_stimulus_type, block) %>% 
+  summarize(
+    mean = mean(as.numeric(trial_looking_time), na.rm = TRUE),
+    sd = sd(as.numeric(trial_looking_time), na.rm = TRUE), 
+    n = n(),
+    ci_range_95 =  qt(1 - (0.05 / 2), n - 1) * (sd/sqrt(n)),
+    ci_lower = mean - ci_range_95,
+    ci_upper = mean + ci_range_95
+  ) %>% 
+  ggplot(aes(x = block, y = mean)) + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
+  facet_wrap(~trial_stimulus_type) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+Original Plot: 
+![original plot](original_plot.png)
 
 
-
-
-        
-
-
-
-
-*Side-by-side graph with original graph is ideal here*
+    
 
 ### Exploratory analyses
 
