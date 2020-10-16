@@ -99,7 +99,8 @@ The planned sample size is [??? depends on the power analysis]. They should be h
 
 > “All stimuli either came from a set of simple geometric figures or a set of unusual/unfamiliar figures (e.g., fragmented or ‘‘impossible’’ objects), many of which were from the collection of drawings that have been used by Kosslyn et al. (1994) and Kroll and Potter (1984). The particular stimuli assigned to each task were randomly chosen from the two sets of figures noted above.” (Daffner et al., 2000, pg 402)
 
-Note: if I can not obtain the original stimuli in time I will substitute the stimuli with two different sets that differ in their visual complexity. 
+Note: 
+- The stimuli used in the current replication is from the set of novel objects stimuli normed by Lewis & Frank (2016). The simple geometric figures were substituted with novel objects with complexity score in the lowest 1.5 quintile. The "unusual figures" were substituted with the novel objects in the highest 1.5 quintiles. 
 
 
 
@@ -110,9 +111,12 @@ Note: if I can not obtain the original stimuli in time I will substitute the sti
 > "Subjects were introduced to the laboratory setting and, following electrode placement (see below), were seated in front of a computer monitor in a sound attenuated room. Subjects were told that the experiment involved the study of brain wave responses as they looked at different kinds of pictures. They were informed that they would be viewing a set of pictures and that they could look at each picture for however long or short they liked. They controlled the viewing duration by a button press that triggered the onset of the next stimulus. They were explicitly informed that they would not be asked questions about the pictures at the conclusion of the experiment. Subjects also were asked to respond to the designated target stimulus by pressing a foot pedal (ipsilateral to the button press). The targets were called ‘‘Sequence Markers’’ and subjects were told that they were included in the task to help the experimenters keep track of where they were in the sequence of drawings. As with the other stimuli, subjects controlled how long they looked at each of the targets. The 250 stimuli for each task were presented in five blocks of 50 stimuli each, with a brief break between each block. Longer breaks were taken between each task. The laterality of the responding hand and foot was counter- balanced across subjects. Although viewing durations were calculated by subtracting the stimulus onset time from the button press time, all stimuli were displayed for a minimum duration of 600 msec. The interval between the offset of one stimulus and the onset of the next stimulus ranged between 800 and 1300 msec." (Daffner et al., 2000, pg 402 - 403)
 
 Note: Because the current replication will be done online, I made modifications as following
+
 - The current replication includes four tasks instead of three for reasons explained in the introduction section. 
+- The length of each task is shortened to 49 trials. This is to make sure that participants can go through the entire study via the online format. 
+- A practice phase is added to familiarze the participants with the test-setups. 
+- Also to adapt to the online format, the minimum viewing duration is reduced from 600 msec to 200 msec. 
 - Instead of pressing the foot pedal, the participants were prompted to press the space bar when seeing the target stimuli. When the participants press the space bar in the target trial, the fixation window's border will flash red to indicate the participant has reacted. Participants can press the space bar in other trials as well but they will not see the visual feedback. 
-- The current format of breaks between blocks are prespecified intervals, and the breaks between tasks are self-paced. This is subject to change until the authors respond with more specifics. 
 
 
 
@@ -123,17 +127,17 @@ Note: Because the current replication will be done online, I made modifications 
 <!-- Can also quote directly, though it is less often spelled out effectively for an analysis strategy section.  The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.   -->
 
 - Data cleaning rules: the script for extracting and aggregating relevant data from the raw CSV will be available in the SI. 
-- Data exclusion rules: In Daffner et al.(2000) the exclusion rule is based on criteria related to the EEG measurement, which is unobtainable with the online format. The current replication experiment will exclude a trial if the RT is more than 3 standard deviation away, and we will exclude the participant if a) one presses the space bar for more than non-target 25% trials or b) one does not press the space bar for more than 25% of the target trial or c) indicate one has a history of neurological disorder or learning disabilities or d) missing data from more than 25% trials after applying the trial-based exclusion rule. 
+- Data exclusion rules: In Daffner et al.(2000) the exclusion rule is based on criteria related to the EEG measurement, which is unobtainable with the online format. The current replication experiment has both participant-level exclusion criterion and the trial-level exclusion criterion. On the participant level, a participant is excluded from the final analysis if a) one presses the space bar for more than non-target 25% trials or b) one does not press the space bar for more than 25% of the target trial or c) indicate one has a history of neurological disorder or learning disabilities or d) missing data from more than 25% trials after applying the trial-based exclusion rule. On the trial-level, a trial is excluded if the RT is more than 3 standard deviation away from the log-transformed scale.
 
 **Clarify key analysis of interest here**  You can also pre-specify additional analyses you plan to do.
 
 - 2 stimuli type x 4 task type repeated measures ANOVA
-- Mixed effects linear regression: RT ~ stimuli_type * task_type + (trial | participant)
+- Mixed effects linear regression: log(RT) ~ stimuli_type * block + (trial | participant)
 - Exploratory analysis: 
-  - Demographics: RT ~ age + (trial | participant); RT ~ age + stimuli_type * task_type + (trial | participant); RT ~ education_level + (trial | participant); RT ~ education_level + stimuli_type * task_type + (trial | participant)
-  - Target reaction time: target_rt ~ target_type * task_type + (trial | participant)
-  - Number of consecutive background stimuli before deviant: RT_at_deviant ~ number_of_consecutive_background_before_deviant + background_type * task_type + (trial | participant);   
-  - distance to the target trial before deviant: RT_at_deviant ~ number_of_trials_between_deviant_and_last_target + background_type * task_type + (trial | participant);   
+  - Demographics: log(RT) ~ age + (trial | participant); log(RT) ~ age + stimuli_type * block + (trial | participant); log(RT) ~ education_level + (trial | participant); log(RT) ~ education_level + stimuli_type * block + (trial | participant)
+  - Target reaction time: log(target_rt) ~ target_type * block + (trial | participant)
+  - Number of consecutive background stimuli before deviant: log(RT_at_deviant) ~ number_of_consecutive_background_before_deviant + background_type * block + (trial | participant);  
+  - distance to the target trial before deviant: log(RT_at_deviant) ~ number_of_trials_between_deviant_and_last_target + background_type * block + (trial | participant);   - effect of stimuli repetition: log(rt) ~ trial_type * block + trial_num * block_num + trial_num * trial_type*num_times_stimulus_seen
 
 ### Differences from Original Study
 
@@ -141,7 +145,7 @@ Explicitly describe known differences in sample, setting, procedure, and analysi
 
 - **Sample differences**: the original study tested 24 right handed undergraduate students with a mean age 20.54 years. I anticipated the current sample will have a higher mean age and a wider range of age. Because of the within-subject design, the age should not alter the claimed effects. 
 - **Setting differences**: the original study was conducted in the lab with the participants wearing EEG caps. The current setting is an online browser-based experiment. The setting difference can lead current participants to be less motivated and engaged. It can increase the noise in the data. 
-- **Procedure differences**: There are two differences. First, the original study asks the participant to press a foot pedal as a response to the target trial, and the current study changes it to be the space bar and also add visual feedback when the response is provided. Second, the original study includes three tasks and the current includes four. Neither of the change should make a difference in the effects. 
+- **Procedure differences**: There are three differences. First, the original study asks the participant to press a foot pedal as a response to the target trial, and the current study changes it to be the space bar and also add visual feedback when the response is provided. Second, the original study includes three tasks and the current includes four. Neither of the change should make a difference in the effects. Third, the length of the task is cut to about the quarter of the origianl length. 
 - **Analysis differences**: for the confirmatory analysis, there is no difference. The exclusion rule is changed because the current replication effort will not collect EEG data. 
 
 
@@ -199,9 +203,10 @@ filtered_data <- filter_too_many_outliers(filtered_data)
 filtered_data <- filter_outlier_trial(filtered_data)  
 
 #### Prepare data for analysis - create columns etc.
-d <- tidy_data( filtered_data,PROCESSED_DATA_PATH) # this also writes
+d <- tidy_data(filtered_data,PROCESSED_DATA_PATH) # this also writes
 
 ```
+
 
 ### Confirmatory analysis
 preview data 
@@ -240,8 +245,23 @@ Original Plot:
     
 
 ### Exploratory analyses
+```{r}
+d
+```
 
-Any follow-up analyses desired (not required).  
+- Mixed effects linear regression: log(RT) ~ stimuli_type * block + (trial | participant)
+
+```{r}
+lmer(log(trial_looking_time) ~ trial_stimulus_type * block + (trial_num | subject), 
+     data = d)
+```
+
+  - Demographics: log(RT) ~ age + (trial | participant); log(RT) ~ age + stimuli_type * block + (trial | participant); log(RT) ~ education_level + (trial | participant); log(RT) ~ education_level + stimuli_type * block + (trial | participant)
+  - Target reaction time: log(target_rt) ~ target_type * block + (trial | participant)
+  - Number of consecutive background stimuli before deviant: log(RT_at_deviant) ~ number_of_consecutive_background_before_deviant + background_type * block + (trial | participant);  
+  - distance to the target trial before deviant: log(RT_at_deviant) ~ number_of_trials_between_deviant_and_last_target + background_type * block + (trial | participant);   - effect of stimuli repetition: log(rt) ~ trial_type * block + trial_num * block_num + trial_num * trial_type*num_times_stimulus_seen
+
+
 
 ## Discussion
 

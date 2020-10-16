@@ -1,194 +1,775 @@
-subject,block,block_number,trial_stimulus_path,trial_stimulus_type,trial_stimulus_complexity,trial_looking_time,trial_pressed_space_bar,trial_space_bar_rt,demog_age,demog_ethnicity,demog_gender,demog_education
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,587.5499999849126,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,469.22000001650304,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,441.7299999506213,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/simple/4.png,deviant,simple,592.1649999683723,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,511.67500000447035,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,549.4850000133738,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,667.5900000147521,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,599.6250000200234,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,630.675000010524,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/13.png,target,complex,1605.7250000187196,yes,797.9400000185706,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/simple/2.png,deviant,simple,515.279999980703,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,547.6200000150129,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,452.2150000440888,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,404.15000000502914,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,426.7549999523908,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,314.1150000039488,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/simple/9.png,deviant,simple,573.0349999968894,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,416.8699999456294,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,384.93000004673377,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/simple/8.png,deviant,simple,735.9600000083447,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,646.0549999494106,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,323.9649999770336,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,408.45500001451,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,368.1850000168197,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,638.6800000211224,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,235.10500001721084,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,553.5699999774806,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,295.9100000327453,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,570.11999997776,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/simple/12.png,deviant,simple,542.8950000088662,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,381.79499998223037,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,305.53499998059124,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,362.47500001918525,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/13.png,target,complex,354.0099999983795,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/13.png,target,complex,1221.695000003092,yes,417.5800000084564,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,495.0349999591708,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,333.73000000137836,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/simple/16.png,deviant,simple,604.7900000005029,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,388.13999998383224,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/13.png,target,complex,1394.7750000399537,yes,578.2150000450201,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/13.png,target,complex,480.1999999792315,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,456.63000001804903,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,455.0550000160001,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,416.18000004673377,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/simple/5.png,deviant,simple,653.6649999790825,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/13.png,target,complex,1233.7450000224635,yes,466.1550000309944,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,511.23499997192994,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,437.6349999685772,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,1142.925000039395,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,388.7699999497272,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/6.png,deviant,simple,503.80500003229827,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/3.png,target,simple,1303.6800000001676,yes,489.7000000346452,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,549.9000000301749,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,344.8300000047311,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/14.png,deviant,simple,454.0900000021793,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,1369.2949999705888,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,353.9300000295043,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/3.png,target,simple,1359.2400000081398,yes,479.33499998180196,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/11.png,deviant,simple,438.4500000043772,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,532.1100000175647,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/3.png,target,simple,1405.3350000060163,yes,589.815000013914,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,361.9749999954365,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,405.56500001112,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/1.png,deviant,simple,278.354999946896,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,518.8549999613315,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,385.9750000294298,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,330.71499997749925,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,355.2699999883771,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,343.50000000558794,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,384.50000003213063,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,449.91499999305233,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,337.9150000284426,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,322.78000003425404,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,357.5299999676645,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,368.3399999747053,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/3.png,target,simple,1367.070000024978,yes,575.2650000504218,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/7.png,deviant,simple,316.9649999937974,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,361.5999999921769,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,361.2549999845214,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,436.7599999997765,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,379.5799999963492,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,485.88999999919906,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,392.9899999522604,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/18.png,deviant,simple,580.7999999844469,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,392.1849999926053,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,360.69500002777204,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,363.9300000388175,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,332.01000000117347,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,390.2700000209734,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/10.png,deviant,simple,538.4749999968335,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,339.6699999459088,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,352.6050000102259,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,430.4800000274554,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/3.png,target,simple,1338.1800000090152,yes,522.9099999996834,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/3.png,target,simple,336.9050000212155,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/13.png,background,simple,315.0400000042282,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_simple,1,images/simple/3.png,target,simple,347.51999999862164,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/10.png,target,complex,1348.0049999663606,yes,334.21000000089407,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,548.6250000423752,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,445.67500001285225,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,354.29000003496185,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,361.05999995488673,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/15.png,deviant,complex,583.8649999815971,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/10.png,target,complex,340.84000000730157,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,398.3100000070408,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,373.36000001523644,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/10.png,target,complex,1103.9299999712966,yes,287.88499999791384,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/10.png,target,complex,1111.2599999643862,yes,279.90500000305474,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,500.20999995758757,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/10.png,target,complex,1189.1150000039488,yes,384.1550000361167,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/9.png,deviant,complex,731.3800000003539,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,444.62000001221895,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,456.58499996643513,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/2.png,deviant,complex,489.7899999516085,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,424.0750000346452,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,497.6550000021234,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,384.0599999995902,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,467.55500002764165,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,364.27499998826534,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,405.1400000345893,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,291.5849999873899,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/11.png,deviant,complex,743.98499999661,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,373.35499997716397,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,394.2849999759346,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/18.png,deviant,complex,542.4850000301376,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,511.6450000088662,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/10.png,target,complex,428.34500001044944,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,1351.5500000095926,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,615.0950000039302,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/4.png,deviant,complex,515.279999980703,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,371.4050000300631,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/10.png,target,complex,1252.3399999947287,yes,459.3800000147894,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,492.27000003447756,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,452.5799999712035,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,388.52500000502914,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,396.17499999003485,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/12.png,deviant,complex,603.6700000287965,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,369.67500001192093,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,606.2649999978021,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,462.9799999995157,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,491.2699999869801,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,410.89499996742234,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,488.31000003265217,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,all_complex,2,images/complex/6.png,background,complex,369.88499998115003,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,877.3599999723956,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/complex/5.png,deviant,complex,324.3499999982305,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,1139.650000014808,yes,331.9350000238046,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,438.6300000362098,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,318.8899999833666,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,426.88999999081716,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/complex/14.png,deviant,complex,502.78500000713393,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,358.8149999734014,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,372.55000001750886,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,398.3749999781139,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,432.4899999657646,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,709.0699999709614,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,416.1900000064634,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,502.8150000027381,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,368.68499998236075,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,380.28500000946224,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,404.87000001594424,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/complex/1.png,deviant,complex,577.600000007078,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,372.0600000116974,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,462.28999998420477,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,340.65000001573935,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/complex/7.png,deviant,complex,588.890000001993,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,364.6500000497326,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,379.69999997876585,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,336.7249999893829,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,1323.769999947399,yes,540.6099999672733,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,332.8149999608286,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,299.52999994857237,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/complex/3.png,deviant,complex,345.2400000416674,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,391.17499998537824,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,400.74999995995313,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,357.61499997461215,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,376.9400000339374,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,437.24499996751547,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,1230.8549999608658,yes,336.3600000157021,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/complex/8.png,deviant,complex,485.0050000124611,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,449.0149999503046,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,1059.6950000501238,yes,311.4300000015646,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,521.1400000145659,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,355.9799999813549,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,346.8999999924563,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,337.4749999959022,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,403.014999977313,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/complex/16.png,deviant,complex,518.9750000019558,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,1218.1949999532662,yes,402.9049999662675,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,377.0999999716878,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,311.2050000228919,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,363.53499999968335,no,NA,25,Asian,Non-binary,Master's Degree
-SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,353.1550000072457,no,NA,25,Asian,Non-binary,Master's Degree
+subject,block,block_number,trial_stimulus_path,trial_stimulus_type,trial_stimulus_complexity,trial_looking_time,trial_pressed_space_bar,trial_space_bar_rt,demog_age,demog_ethnicity,demog_gender,demog_education,trial_num
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,1525.5199999548495,no,NA,20,Asian,Female,High school diploma,1
+SS1602796859502,mixed_complex_deviant,0,images/complex/8.png,deviant,complex,774.010000040289,no,NA,20,Asian,Female,High school diploma,2
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,638.7900000438094,no,NA,20,Asian,Female,High school diploma,3
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,443.2849999750033,no,NA,20,Asian,Female,High school diploma,4
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,555.0850000465289,no,NA,20,Asian,Female,High school diploma,5
+SS1602796859502,mixed_complex_deviant,0,images/complex/7.png,deviant,complex,1975.0850000302307,no,NA,20,Asian,Female,High school diploma,6
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,1584.8349999752827,no,NA,20,Asian,Female,High school diploma,7
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,694.8300000396557,no,NA,20,Asian,Female,High school diploma,8
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,671.6799999587238,no,NA,20,Asian,Female,High school diploma,9
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,871.6799999703653,no,NA,20,Asian,Female,High school diploma,10
+SS1602796859502,mixed_complex_deviant,0,images/simple/10.png,target,simple,2046.19000001112,yes,901.9599999883212,20,Asian,Female,High school diploma,11
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,722.3400000249967,no,NA,20,Asian,Female,High school diploma,12
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,576.33500003721565,no,NA,20,Asian,Female,High school diploma,13
+SS1602796859502,mixed_complex_deviant,0,images/complex/17.png,deviant,complex,728.2699999515899,no,NA,20,Asian,Female,High school diploma,14
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,695.7100000465289,no,NA,20,Asian,Female,High school diploma,15
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,804.894999996759,no,NA,20,Asian,Female,High school diploma,16
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,623.8750000367872,no,NA,20,Asian,Female,High school diploma,17
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,661.1000000149943,no,NA,20,Asian,Female,High school diploma,18
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,597.2150000045076,no,NA,20,Asian,Female,High school diploma,19
+SS1602796859502,mixed_complex_deviant,0,images/simple/10.png,target,simple,946.3050000369549,no,NA,20,Asian,Female,High school diploma,20
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,602.0100000197999,no,NA,20,Asian,Female,High school diploma,21
+SS1602796859502,mixed_complex_deviant,0,images/complex/4.png,deviant,complex,635.3700000210665,no,NA,20,Asian,Female,High school diploma,22
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,446.93500000284985,no,NA,20,Asian,Female,High school diploma,23
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,522.0699999947101,no,NA,20,Asian,Female,High school diploma,24
+SS1602796859502,mixed_complex_deviant,0,images/simple/10.png,target,simple,1531.0200000414625,yes,549.0700000082143,20,Asian,Female,High school diploma,25
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,663.1950000184588,no,NA,20,Asian,Female,High school diploma,26
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,523.9649999886751,no,NA,20,Asian,Female,High school diploma,27
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,674.4150000042282,no,NA,20,Asian,Female,High school diploma,28
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,676.4450000366196,no,NA,20,Asian,Female,High school diploma,29
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,618.2349999900907,no,NA,20,Asian,Female,High school diploma,30
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,493.23999996995553,no,NA,20,Asian,Female,High school diploma,31
+SS1602796859502,mixed_complex_deviant,0,images/complex/14.png,deviant,complex,670.450000022538,no,NA,20,Asian,Female,High school diploma,32
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,617.6950000110082,no,NA,20,Asian,Female,High school diploma,33
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,626.4400000101887,no,NA,20,Asian,Female,High school diploma,34
+SS1602796859502,mixed_complex_deviant,0,images/simple/10.png,target,simple,2150.765000015963,yes,1087.104999984149,20,Asian,Female,High school diploma,35
+SS1602796859502,mixed_complex_deviant,0,images/complex/12.png,deviant,complex,628.5449999733828,no,NA,20,Asian,Female,High school diploma,36
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,619.8399999877438,no,NA,20,Asian,Female,High school diploma,37
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,387.42499995278195,no,NA,20,Asian,Female,High school diploma,38
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,569.185000017751,no,NA,20,Asian,Female,High school diploma,39
+SS1602796859502,mixed_complex_deviant,0,images/simple/10.png,target,simple,1955.1300000050105,yes,1069.2300000227988,20,Asian,Female,High school diploma,40
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,570.824999990873,no,NA,20,Asian,Female,High school diploma,41
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,545.450000022538,no,NA,20,Asian,Female,High school diploma,42
+SS1602796859502,mixed_complex_deviant,0,images/simple/10.png,target,simple,1497.2050000098534,yes,546.0200000088662,20,Asian,Female,High school diploma,43
+SS1602796859502,mixed_complex_deviant,0,images/complex/2.png,deviant,complex,633.5949999513105,no,NA,20,Asian,Female,High school diploma,44
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,610.6949999695644,no,NA,20,Asian,Female,High school diploma,45
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,410.6550000025891,no,NA,20,Asian,Female,High school diploma,46
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,438.4149999707006,no,NA,20,Asian,Female,High school diploma,47
+SS1602796859502,mixed_complex_deviant,0,images/simple/13.png,background,simple,402.76999997440726,no,NA,20,Asian,Female,High school diploma,48
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,1080.2399999694899,no,NA,20,Asian,Female,High school diploma,49
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,628.6149999825284,no,NA,20,Asian,Female,High school diploma,50
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,508.2550000399351,no,NA,20,Asian,Female,High school diploma,51
+SS1602796859502,all_simple,1,images/simple/11.png,deviant,simple,486.1900000134483,no,NA,20,Asian,Female,High school diploma,52
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,525.4549999837764,no,NA,20,Asian,Female,High school diploma,53
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,448.98999999277294,no,NA,20,Asian,Female,High school diploma,54
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,377.834999980405,no,NA,20,Asian,Female,High school diploma,55
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,558.4100000443868,no,NA,20,Asian,Female,High school diploma,56
+SS1602796859502,all_simple,1,images/simple/9.png,deviant,simple,545.6000000005588,no,NA,20,Asian,Female,High school diploma,57
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,586.2450000015087,no,NA,20,Asian,Female,High school diploma,58
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,447.73000000277534,no,NA,20,Asian,Female,High school diploma,59
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,426.42000002088025,no,NA,20,Asian,Female,High school diploma,60
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,498.8449999829754,no,NA,20,Asian,Female,High school diploma,61
+SS1602796859502,all_simple,1,images/simple/8.png,target,simple,1387.7150000073016,yes,355.66499998094514,20,Asian,Female,High school diploma,62
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,499.99000002862886,no,NA,20,Asian,Female,High school diploma,63
+SS1602796859502,all_simple,1,images/simple/15.png,deviant,simple,503.55000001145527,no,NA,20,Asian,Female,High school diploma,64
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,588.3049999712966,no,NA,20,Asian,Female,High school diploma,65
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,536.864999961108,no,NA,20,Asian,Female,High school diploma,66
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,435.3450000518933,no,NA,20,Asian,Female,High school diploma,67
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,351.27500001108274,no,NA,20,Asian,Female,High school diploma,68
+SS1602796859502,all_simple,1,images/simple/6.png,deviant,simple,564.5299999625422,no,NA,20,Asian,Female,High school diploma,69
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,413.1550000049174,no,NA,20,Asian,Female,High school diploma,70
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,421.895000024233,no,NA,20,Asian,Female,High school diploma,71
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,388.2750000222586,no,NA,20,Asian,Female,High school diploma,72
+SS1602796859502,all_simple,1,images/simple/8.png,target,simple,1293.4000000124797,yes,382.5349999824539,20,Asian,Female,High school diploma,73
+SS1602796859502,all_simple,1,images/simple/8.png,target,simple,1352.4199999985285,yes,432.6700000092387,20,Asian,Female,High school diploma,74
+SS1602796859502,all_simple,1,images/simple/8.png,target,simple,1254.5450000208803,yes,399.02499999152496,20,Asian,Female,High school diploma,75
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,473.3449999941513,no,NA,20,Asian,Female,High school diploma,76
+SS1602796859502,all_simple,1,images/simple/8.png,target,simple,348.9949999959208,no,NA,20,Asian,Female,High school diploma,77
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,438.7149999849498,no,NA,20,Asian,Female,High school diploma,78
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,423.6850000335835,no,NA,20,Asian,Female,High school diploma,79
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,348.2099999557249,no,NA,20,Asian,Female,High school diploma,80
+SS1602796859502,all_simple,1,images/simple/5.png,deviant,simple,498.75000001629815,no,NA,20,Asian,Female,High school diploma,81
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,625.6799999857321,no,NA,20,Asian,Female,High school diploma,82
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,449.4999999762513,no,NA,20,Asian,Female,High school diploma,83
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,623.8050000276417,no,NA,20,Asian,Female,High school diploma,84
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,549.8999999719672,no,NA,20,Asian,Female,High school diploma,85
+SS1602796859502,all_simple,1,images/simple/8.png,target,simple,1726.0049999924377,yes,612.2549999854527,20,Asian,Female,High school diploma,86
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,475.42499999981374,no,NA,20,Asian,Female,High school diploma,87
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,410.61499998904765,no,NA,20,Asian,Female,High school diploma,88
+SS1602796859502,all_simple,1,images/simple/16.png,deviant,simple,626.5899999882095,no,NA,20,Asian,Female,High school diploma,89
+SS1602796859502,all_simple,1,images/simple/8.png,target,simple,913.8450000202283,no,NA,20,Asian,Female,High school diploma,90
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,487.72000002209097,no,NA,20,Asian,Female,High school diploma,91
+SS1602796859502,all_simple,1,images/simple/4.png,deviant,simple,548.485000024084,no,NA,20,Asian,Female,High school diploma,92
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,628.9049999788404,no,NA,20,Asian,Female,High school diploma,93
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,435.8349999994971,no,NA,20,Asian,Female,High school diploma,94
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,363.47999998833984,no,NA,20,Asian,Female,High school diploma,95
+SS1602796859502,all_simple,1,images/simple/12.png,background,simple,381.26500002108514,no,NA,20,Asian,Female,High school diploma,96
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,710.0499999825843,no,NA,20,Asian,Female,High school diploma,97
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,489.9149999720976,no,NA,20,Asian,Female,High school diploma,98
+SS1602796859502,mixed_simple_deviant,2,images/simple/2.png,deviant,simple,523.3250000048429,no,NA,20,Asian,Female,High school diploma,99
+SS1602796859502,mixed_simple_deviant,2,images/complex/9.png,target,complex,1428.7550000473857,yes,549.8850000440143,20,Asian,Female,High school diploma,100
+SS1602796859502,mixed_simple_deviant,2,images/complex/9.png,target,complex,331.47000002209097,no,NA,20,Asian,Female,High school diploma,101
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,469.3149999831803,no,NA,20,Asian,Female,High school diploma,102
+SS1602796859502,mixed_simple_deviant,2,images/complex/9.png,target,complex,1515.920000022743,yes,605.3250000113621,20,Asian,Female,High school diploma,103
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,506.03499995777383,no,NA,20,Asian,Female,High school diploma,104
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,349.89000000059605,no,NA,20,Asian,Female,High school diploma,105
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,357.6999999815598,no,NA,20,Asian,Female,High school diploma,106
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,298.18000002996996,no,NA,20,Asian,Female,High school diploma,107
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,402.43499998468906,no,NA,20,Asian,Female,High school diploma,108
+SS1602796859502,mixed_simple_deviant,2,images/simple/1.png,deviant,simple,564.7150000324473,no,NA,20,Asian,Female,High school diploma,109
+SS1602796859502,mixed_simple_deviant,2,images/complex/9.png,target,complex,1217.5499999895692,yes,338.24499999172986,20,Asian,Female,High school diploma,110
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,615.355000004638,no,NA,20,Asian,Female,High school diploma,111
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,533.5700000170618,no,NA,20,Asian,Female,High school diploma,112
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,362.4599999631755,no,NA,20,Asian,Female,High school diploma,113
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,438.405000010971,no,NA,20,Asian,Female,High school diploma,114
+SS1602796859502,mixed_simple_deviant,2,images/complex/9.png,target,complex,1296.4999999850988,yes,359.21500000404194,20,Asian,Female,High school diploma,115
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,406.17000001948327,no,NA,20,Asian,Female,High school diploma,116
+SS1602796859502,mixed_simple_deviant,2,images/simple/7.png,deviant,simple,511.86499999603257,no,NA,20,Asian,Female,High school diploma,117
+SS1602796859502,mixed_simple_deviant,2,images/complex/9.png,target,complex,323.40499996207654,no,NA,20,Asian,Female,High school diploma,118
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,329.3650000006892,no,NA,20,Asian,Female,High school diploma,119
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,408.054999995511,no,NA,20,Asian,Female,High school diploma,120
+SS1602796859502,mixed_simple_deviant,2,images/complex/9.png,target,complex,1618.9899999764748,yes,601.2450000271201,20,Asian,Female,High school diploma,121
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,641.0599999828264,no,NA,20,Asian,Female,High school diploma,122
+SS1602796859502,mixed_simple_deviant,2,images/simple/14.png,deviant,simple,696.5400000219233,no,NA,20,Asian,Female,High school diploma,123
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,438.4250000468455,no,NA,20,Asian,Female,High school diploma,124
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,459.3300000298768,no,NA,20,Asian,Female,High school diploma,125
+SS1602796859502,mixed_simple_deviant,2,images/simple/3.png,deviant,simple,624.7849999810569,no,NA,20,Asian,Female,High school diploma,126
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,365.5099999625236,no,NA,20,Asian,Female,High school diploma,127
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,342.4899999983609,no,NA,20,Asian,Female,High school diploma,128
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,325.5900000105612,no,NA,20,Asian,Female,High school diploma,129
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,323.7649999675341,no,NA,20,Asian,Female,High school diploma,130
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,314.0599999926053,no,NA,20,Asian,Female,High school diploma,131
+SS1602796859502,mixed_simple_deviant,2,images/simple/17.png,deviant,simple,521.1849999497645,no,NA,20,Asian,Female,High school diploma,132
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,438.36000001756474,no,NA,20,Asian,Female,High school diploma,133
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,424.675000004936,no,NA,20,Asian,Female,High school diploma,134
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,356.02999995462596,no,NA,20,Asian,Female,High school diploma,135
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,380.4300000076182,no,NA,20,Asian,Female,High school diploma,136
+SS1602796859502,mixed_simple_deviant,2,images/simple/18.png,deviant,simple,548.035000031814,no,NA,20,Asian,Female,High school diploma,137
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,591.7249999940395,no,NA,20,Asian,Female,High school diploma,138
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,500.99499999778345,no,NA,20,Asian,Female,High school diploma,139
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,406.86499995645136,no,NA,20,Asian,Female,High school diploma,140
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,325.88499998673797,no,NA,20,Asian,Female,High school diploma,141
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,381.0049999621697,no,NA,20,Asian,Female,High school diploma,142
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,365.18499999074265,no,NA,20,Asian,Female,High school diploma,143
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,369.86500000348315,no,NA,20,Asian,Female,High school diploma,144
+SS1602796859502,mixed_simple_deviant,2,images/complex/11.png,background,complex,468.22999998694286,no,NA,20,Asian,Female,High school diploma,145
+SS1602796859502,all_complex,3,images/complex/15.png,deviant,complex,667.6899999612942,no,NA,20,Asian,Female,High school diploma,146
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,425.0699999858625,no,NA,20,Asian,Female,High school diploma,147
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,454.6750000328757,no,NA,20,Asian,Female,High school diploma,148
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,398.34000000264496,no,NA,20,Asian,Female,High school diploma,149
+SS1602796859502,all_complex,3,images/complex/5.png,target,complex,1428.2000000122935,yes,611.9799999869429,20,Asian,Female,High school diploma,150
+SS1602796859502,all_complex,3,images/complex/16.png,deviant,complex,453.01499996567145,no,NA,20,Asian,Female,High school diploma,151
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,283.8450000155717,no,NA,20,Asian,Female,High school diploma,152
+SS1602796859502,all_complex,3,images/complex/5.png,target,complex,446.82999996002764,no,NA,20,Asian,Female,High school diploma,153
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,627.1849999786355,no,NA,20,Asian,Female,High school diploma,154
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,1287.8950000042096,no,NA,20,Asian,Female,High school diploma,155
+SS1602796859502,all_complex,3,images/complex/6.png,deviant,complex,564.049999974668,no,NA,20,Asian,Female,High school diploma,156
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,736.8799999705516,no,NA,20,Asian,Female,High school diploma,157
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,356.40999999595806,no,NA,20,Asian,Female,High school diploma,158
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,375.25500000920147,no,NA,20,Asian,Female,High school diploma,159
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,313.1850000238046,no,NA,20,Asian,Female,High school diploma,160
+SS1602796859502,all_complex,3,images/complex/5.png,target,complex,1243.3999999659136,yes,428.11499995877966,20,Asian,Female,High school diploma,161
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,284.54499999061227,no,NA,20,Asian,Female,High school diploma,162
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,259.95999998413026,no,NA,20,Asian,Female,High school diploma,163
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,293.45499996561557,no,NA,20,Asian,Female,High school diploma,164
+SS1602796859502,all_complex,3,images/complex/1.png,deviant,complex,1390.6699999817647,no,NA,20,Asian,Female,High school diploma,165
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,1038.0499999620952,no,NA,20,Asian,Female,High school diploma,166
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,440.28500000713393,no,NA,20,Asian,Female,High school diploma,167
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,1881.89499998698,no,NA,20,Asian,Female,High school diploma,168
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,573.215000028722,no,NA,20,Asian,Female,High school diploma,169
+SS1602796859502,all_complex,3,images/complex/3.png,deviant,complex,626.5949999680743,no,NA,20,Asian,Female,High school diploma,170
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,622.6199999684468,no,NA,20,Asian,Female,High school diploma,171
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,354.81000003637746,no,NA,20,Asian,Female,High school diploma,172
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,771.9750000280328,no,NA,20,Asian,Female,High school diploma,173
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,399.07500001136214,no,NA,20,Asian,Female,High school diploma,174
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,422.73999999742955,no,NA,20,Asian,Female,High school diploma,175
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,369.7500000009313,no,NA,20,Asian,Female,High school diploma,176
+SS1602796859502,all_complex,3,images/complex/13.png,deviant,complex,744.0899999812245,no,NA,20,Asian,Female,High school diploma,177
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,432.9850000096485,no,NA,20,Asian,Female,High school diploma,178
+SS1602796859502,all_complex,3,images/complex/5.png,target,complex,1487.270000029821,yes,638.8049999950454,20,Asian,Female,High school diploma,179
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,608.9699999894947,no,NA,20,Asian,Female,High school diploma,180
+SS1602796859502,all_complex,3,images/complex/5.png,target,complex,1455.7549999910407,yes,583.4249999606982,20,Asian,Female,High school diploma,181
+SS1602796859502,all_complex,3,images/complex/10.png,deviant,complex,726.0899999993853,no,NA,20,Asian,Female,High school diploma,182
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,330.44500001706183,no,NA,20,Asian,Female,High school diploma,183
+SS1602796859502,all_complex,3,images/complex/5.png,target,complex,352.3799999849871,no,NA,20,Asian,Female,High school diploma,184
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,445.5049999989569,no,NA,20,Asian,Female,High school diploma,185
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,391.34499999927357,no,NA,20,Asian,Female,High school diploma,186
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,345.7199999713339,no,NA,20,Asian,Female,High school diploma,187
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,372.1949999919161,no,NA,20,Asian,Female,High school diploma,188
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,405.19000000786036,no,NA,20,Asian,Female,High school diploma,189
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,432.23000002326444,no,NA,20,Asian,Female,High school diploma,190
+SS1602796859502,all_complex,3,images/complex/18.png,background,complex,414.94999999413267,no,NA,20,Asian,Female,High school diploma,191
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,587.5499999849126,no,NA,25,Asian,Non-binary,Master's Degree,1
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,469.22000001650304,no,NA,25,Asian,Non-binary,Master's Degree,2
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,441.7299999506213,no,NA,25,Asian,Non-binary,Master's Degree,3
+SS1602797585862,mixed_simple_deviant,0,images/simple/4.png,deviant,simple,592.1649999683723,no,NA,25,Asian,Non-binary,Master's Degree,4
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,511.67500000447035,no,NA,25,Asian,Non-binary,Master's Degree,5
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,549.4850000133738,no,NA,25,Asian,Non-binary,Master's Degree,6
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,667.5900000147521,no,NA,25,Asian,Non-binary,Master's Degree,7
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,599.6250000200234,no,NA,25,Asian,Non-binary,Master's Degree,8
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,630.675000010524,no,NA,25,Asian,Non-binary,Master's Degree,9
+SS1602797585862,mixed_simple_deviant,0,images/complex/13.png,target,complex,1605.7250000187196,yes,797.9400000185706,25,Asian,Non-binary,Master's Degree,10
+SS1602797585862,mixed_simple_deviant,0,images/simple/2.png,deviant,simple,515.279999980703,no,NA,25,Asian,Non-binary,Master's Degree,11
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,547.6200000150129,no,NA,25,Asian,Non-binary,Master's Degree,12
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,452.2150000440888,no,NA,25,Asian,Non-binary,Master's Degree,13
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,404.15000000502914,no,NA,25,Asian,Non-binary,Master's Degree,14
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,426.7549999523908,no,NA,25,Asian,Non-binary,Master's Degree,15
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,314.1150000039488,no,NA,25,Asian,Non-binary,Master's Degree,16
+SS1602797585862,mixed_simple_deviant,0,images/simple/9.png,deviant,simple,573.0349999968894,no,NA,25,Asian,Non-binary,Master's Degree,17
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,416.8699999456294,no,NA,25,Asian,Non-binary,Master's Degree,18
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,384.93000004673377,no,NA,25,Asian,Non-binary,Master's Degree,19
+SS1602797585862,mixed_simple_deviant,0,images/simple/8.png,deviant,simple,735.9600000083447,no,NA,25,Asian,Non-binary,Master's Degree,20
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,646.0549999494106,no,NA,25,Asian,Non-binary,Master's Degree,21
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,323.9649999770336,no,NA,25,Asian,Non-binary,Master's Degree,22
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,408.45500001451,no,NA,25,Asian,Non-binary,Master's Degree,23
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,368.1850000168197,no,NA,25,Asian,Non-binary,Master's Degree,24
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,638.6800000211224,no,NA,25,Asian,Non-binary,Master's Degree,25
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,235.10500001721084,no,NA,25,Asian,Non-binary,Master's Degree,26
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,553.5699999774806,no,NA,25,Asian,Non-binary,Master's Degree,27
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,295.9100000327453,no,NA,25,Asian,Non-binary,Master's Degree,28
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,570.11999997776,no,NA,25,Asian,Non-binary,Master's Degree,29
+SS1602797585862,mixed_simple_deviant,0,images/simple/12.png,deviant,simple,542.8950000088662,no,NA,25,Asian,Non-binary,Master's Degree,30
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,381.79499998223037,no,NA,25,Asian,Non-binary,Master's Degree,31
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,305.53499998059124,no,NA,25,Asian,Non-binary,Master's Degree,32
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,362.47500001918525,no,NA,25,Asian,Non-binary,Master's Degree,33
+SS1602797585862,mixed_simple_deviant,0,images/complex/13.png,target,complex,354.0099999983795,no,NA,25,Asian,Non-binary,Master's Degree,34
+SS1602797585862,mixed_simple_deviant,0,images/complex/13.png,target,complex,1221.695000003092,yes,417.5800000084564,25,Asian,Non-binary,Master's Degree,35
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,495.0349999591708,no,NA,25,Asian,Non-binary,Master's Degree,36
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,333.73000000137836,no,NA,25,Asian,Non-binary,Master's Degree,37
+SS1602797585862,mixed_simple_deviant,0,images/simple/16.png,deviant,simple,604.7900000005029,no,NA,25,Asian,Non-binary,Master's Degree,38
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,388.13999998383224,no,NA,25,Asian,Non-binary,Master's Degree,39
+SS1602797585862,mixed_simple_deviant,0,images/complex/13.png,target,complex,1394.7750000399537,yes,578.2150000450201,25,Asian,Non-binary,Master's Degree,40
+SS1602797585862,mixed_simple_deviant,0,images/complex/13.png,target,complex,480.1999999792315,no,NA,25,Asian,Non-binary,Master's Degree,41
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,456.63000001804903,no,NA,25,Asian,Non-binary,Master's Degree,42
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,455.0550000160001,no,NA,25,Asian,Non-binary,Master's Degree,43
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,416.18000004673377,no,NA,25,Asian,Non-binary,Master's Degree,44
+SS1602797585862,mixed_simple_deviant,0,images/simple/5.png,deviant,simple,653.6649999790825,no,NA,25,Asian,Non-binary,Master's Degree,45
+SS1602797585862,mixed_simple_deviant,0,images/complex/13.png,target,complex,1233.7450000224635,yes,466.1550000309944,25,Asian,Non-binary,Master's Degree,46
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,511.23499997192994,no,NA,25,Asian,Non-binary,Master's Degree,47
+SS1602797585862,mixed_simple_deviant,0,images/complex/17.png,background,complex,437.6349999685772,no,NA,25,Asian,Non-binary,Master's Degree,48
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,1142.925000039395,no,NA,25,Asian,Non-binary,Master's Degree,49
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,388.7699999497272,no,NA,25,Asian,Non-binary,Master's Degree,50
+SS1602797585862,all_simple,1,images/simple/6.png,deviant,simple,503.80500003229827,no,NA,25,Asian,Non-binary,Master's Degree,51
+SS1602797585862,all_simple,1,images/simple/3.png,target,simple,1303.6800000001676,yes,489.7000000346452,25,Asian,Non-binary,Master's Degree,52
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,549.9000000301749,no,NA,25,Asian,Non-binary,Master's Degree,53
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,344.8300000047311,no,NA,25,Asian,Non-binary,Master's Degree,54
+SS1602797585862,all_simple,1,images/simple/14.png,deviant,simple,454.0900000021793,no,NA,25,Asian,Non-binary,Master's Degree,55
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,1369.2949999705888,no,NA,25,Asian,Non-binary,Master's Degree,56
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,353.9300000295043,no,NA,25,Asian,Non-binary,Master's Degree,57
+SS1602797585862,all_simple,1,images/simple/3.png,target,simple,1359.2400000081398,yes,479.33499998180196,25,Asian,Non-binary,Master's Degree,58
+SS1602797585862,all_simple,1,images/simple/11.png,deviant,simple,438.4500000043772,no,NA,25,Asian,Non-binary,Master's Degree,59
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,532.1100000175647,no,NA,25,Asian,Non-binary,Master's Degree,60
+SS1602797585862,all_simple,1,images/simple/3.png,target,simple,1405.3350000060163,yes,589.815000013914,25,Asian,Non-binary,Master's Degree,61
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,361.9749999954365,no,NA,25,Asian,Non-binary,Master's Degree,62
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,405.56500001112,no,NA,25,Asian,Non-binary,Master's Degree,63
+SS1602797585862,all_simple,1,images/simple/1.png,deviant,simple,278.354999946896,no,NA,25,Asian,Non-binary,Master's Degree,64
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,518.8549999613315,no,NA,25,Asian,Non-binary,Master's Degree,65
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,385.9750000294298,no,NA,25,Asian,Non-binary,Master's Degree,66
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,330.71499997749925,no,NA,25,Asian,Non-binary,Master's Degree,67
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,355.2699999883771,no,NA,25,Asian,Non-binary,Master's Degree,68
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,343.50000000558794,no,NA,25,Asian,Non-binary,Master's Degree,69
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,384.50000003213063,no,NA,25,Asian,Non-binary,Master's Degree,70
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,449.91499999305233,no,NA,25,Asian,Non-binary,Master's Degree,71
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,337.9150000284426,no,NA,25,Asian,Non-binary,Master's Degree,72
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,322.78000003425404,no,NA,25,Asian,Non-binary,Master's Degree,73
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,357.5299999676645,no,NA,25,Asian,Non-binary,Master's Degree,74
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,368.3399999747053,no,NA,25,Asian,Non-binary,Master's Degree,75
+SS1602797585862,all_simple,1,images/simple/3.png,target,simple,1367.070000024978,yes,575.2650000504218,25,Asian,Non-binary,Master's Degree,76
+SS1602797585862,all_simple,1,images/simple/7.png,deviant,simple,316.9649999937974,no,NA,25,Asian,Non-binary,Master's Degree,77
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,361.5999999921769,no,NA,25,Asian,Non-binary,Master's Degree,78
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,361.2549999845214,no,NA,25,Asian,Non-binary,Master's Degree,79
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,436.7599999997765,no,NA,25,Asian,Non-binary,Master's Degree,80
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,379.5799999963492,no,NA,25,Asian,Non-binary,Master's Degree,81
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,485.88999999919906,no,NA,25,Asian,Non-binary,Master's Degree,82
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,392.9899999522604,no,NA,25,Asian,Non-binary,Master's Degree,83
+SS1602797585862,all_simple,1,images/simple/18.png,deviant,simple,580.7999999844469,no,NA,25,Asian,Non-binary,Master's Degree,84
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,392.1849999926053,no,NA,25,Asian,Non-binary,Master's Degree,85
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,360.69500002777204,no,NA,25,Asian,Non-binary,Master's Degree,86
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,363.9300000388175,no,NA,25,Asian,Non-binary,Master's Degree,87
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,332.01000000117347,no,NA,25,Asian,Non-binary,Master's Degree,88
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,390.2700000209734,no,NA,25,Asian,Non-binary,Master's Degree,89
+SS1602797585862,all_simple,1,images/simple/10.png,deviant,simple,538.4749999968335,no,NA,25,Asian,Non-binary,Master's Degree,90
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,339.6699999459088,no,NA,25,Asian,Non-binary,Master's Degree,91
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,352.6050000102259,no,NA,25,Asian,Non-binary,Master's Degree,92
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,430.4800000274554,no,NA,25,Asian,Non-binary,Master's Degree,93
+SS1602797585862,all_simple,1,images/simple/3.png,target,simple,1338.1800000090152,yes,522.9099999996834,25,Asian,Non-binary,Master's Degree,94
+SS1602797585862,all_simple,1,images/simple/3.png,target,simple,336.9050000212155,no,NA,25,Asian,Non-binary,Master's Degree,95
+SS1602797585862,all_simple,1,images/simple/13.png,background,simple,315.0400000042282,no,NA,25,Asian,Non-binary,Master's Degree,96
+SS1602797585862,all_simple,1,images/simple/3.png,target,simple,347.51999999862164,no,NA,25,Asian,Non-binary,Master's Degree,97
+SS1602797585862,all_complex,2,images/complex/10.png,target,complex,1348.0049999663606,yes,334.21000000089407,25,Asian,Non-binary,Master's Degree,98
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,548.6250000423752,no,NA,25,Asian,Non-binary,Master's Degree,99
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,445.67500001285225,no,NA,25,Asian,Non-binary,Master's Degree,100
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,354.29000003496185,no,NA,25,Asian,Non-binary,Master's Degree,101
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,361.05999995488673,no,NA,25,Asian,Non-binary,Master's Degree,102
+SS1602797585862,all_complex,2,images/complex/15.png,deviant,complex,583.8649999815971,no,NA,25,Asian,Non-binary,Master's Degree,103
+SS1602797585862,all_complex,2,images/complex/10.png,target,complex,340.84000000730157,no,NA,25,Asian,Non-binary,Master's Degree,104
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,398.3100000070408,no,NA,25,Asian,Non-binary,Master's Degree,105
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,373.36000001523644,no,NA,25,Asian,Non-binary,Master's Degree,106
+SS1602797585862,all_complex,2,images/complex/10.png,target,complex,1103.9299999712966,yes,287.88499999791384,25,Asian,Non-binary,Master's Degree,107
+SS1602797585862,all_complex,2,images/complex/10.png,target,complex,1111.2599999643862,yes,279.90500000305474,25,Asian,Non-binary,Master's Degree,108
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,500.20999995758757,no,NA,25,Asian,Non-binary,Master's Degree,109
+SS1602797585862,all_complex,2,images/complex/10.png,target,complex,1189.1150000039488,yes,384.1550000361167,25,Asian,Non-binary,Master's Degree,110
+SS1602797585862,all_complex,2,images/complex/9.png,deviant,complex,731.3800000003539,no,NA,25,Asian,Non-binary,Master's Degree,111
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,444.62000001221895,no,NA,25,Asian,Non-binary,Master's Degree,112
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,456.58499996643513,no,NA,25,Asian,Non-binary,Master's Degree,113
+SS1602797585862,all_complex,2,images/complex/2.png,deviant,complex,489.7899999516085,no,NA,25,Asian,Non-binary,Master's Degree,114
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,424.0750000346452,no,NA,25,Asian,Non-binary,Master's Degree,115
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,497.6550000021234,no,NA,25,Asian,Non-binary,Master's Degree,116
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,384.0599999995902,no,NA,25,Asian,Non-binary,Master's Degree,117
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,467.55500002764165,no,NA,25,Asian,Non-binary,Master's Degree,118
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,364.27499998826534,no,NA,25,Asian,Non-binary,Master's Degree,119
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,405.1400000345893,no,NA,25,Asian,Non-binary,Master's Degree,120
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,291.5849999873899,no,NA,25,Asian,Non-binary,Master's Degree,121
+SS1602797585862,all_complex,2,images/complex/11.png,deviant,complex,743.98499999661,no,NA,25,Asian,Non-binary,Master's Degree,122
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,373.35499997716397,no,NA,25,Asian,Non-binary,Master's Degree,123
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,394.2849999759346,no,NA,25,Asian,Non-binary,Master's Degree,124
+SS1602797585862,all_complex,2,images/complex/18.png,deviant,complex,542.4850000301376,no,NA,25,Asian,Non-binary,Master's Degree,125
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,511.6450000088662,no,NA,25,Asian,Non-binary,Master's Degree,126
+SS1602797585862,all_complex,2,images/complex/10.png,target,complex,428.34500001044944,no,NA,25,Asian,Non-binary,Master's Degree,127
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,1351.5500000095926,no,NA,25,Asian,Non-binary,Master's Degree,128
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,615.0950000039302,no,NA,25,Asian,Non-binary,Master's Degree,129
+SS1602797585862,all_complex,2,images/complex/4.png,deviant,complex,515.279999980703,no,NA,25,Asian,Non-binary,Master's Degree,130
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,371.4050000300631,no,NA,25,Asian,Non-binary,Master's Degree,131
+SS1602797585862,all_complex,2,images/complex/10.png,target,complex,1252.3399999947287,yes,459.3800000147894,25,Asian,Non-binary,Master's Degree,132
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,492.27000003447756,no,NA,25,Asian,Non-binary,Master's Degree,133
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,452.5799999712035,no,NA,25,Asian,Non-binary,Master's Degree,134
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,388.52500000502914,no,NA,25,Asian,Non-binary,Master's Degree,135
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,396.17499999003485,no,NA,25,Asian,Non-binary,Master's Degree,136
+SS1602797585862,all_complex,2,images/complex/12.png,deviant,complex,603.6700000287965,no,NA,25,Asian,Non-binary,Master's Degree,137
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,369.67500001192093,no,NA,25,Asian,Non-binary,Master's Degree,138
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,606.2649999978021,no,NA,25,Asian,Non-binary,Master's Degree,139
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,462.9799999995157,no,NA,25,Asian,Non-binary,Master's Degree,140
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,491.2699999869801,no,NA,25,Asian,Non-binary,Master's Degree,141
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,410.89499996742234,no,NA,25,Asian,Non-binary,Master's Degree,142
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,488.31000003265217,no,NA,25,Asian,Non-binary,Master's Degree,143
+SS1602797585862,all_complex,2,images/complex/6.png,background,complex,369.88499998115003,no,NA,25,Asian,Non-binary,Master's Degree,144
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,877.3599999723956,no,NA,25,Asian,Non-binary,Master's Degree,145
+SS1602797585862,mixed_complex_deviant,3,images/complex/5.png,deviant,complex,324.3499999982305,no,NA,25,Asian,Non-binary,Master's Degree,146
+SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,1139.650000014808,yes,331.9350000238046,25,Asian,Non-binary,Master's Degree,147
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,438.6300000362098,no,NA,25,Asian,Non-binary,Master's Degree,148
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,318.8899999833666,no,NA,25,Asian,Non-binary,Master's Degree,149
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,426.88999999081716,no,NA,25,Asian,Non-binary,Master's Degree,150
+SS1602797585862,mixed_complex_deviant,3,images/complex/14.png,deviant,complex,502.78500000713393,no,NA,25,Asian,Non-binary,Master's Degree,151
+SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,358.8149999734014,no,NA,25,Asian,Non-binary,Master's Degree,152
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,372.55000001750886,no,NA,25,Asian,Non-binary,Master's Degree,153
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,398.3749999781139,no,NA,25,Asian,Non-binary,Master's Degree,154
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,432.4899999657646,no,NA,25,Asian,Non-binary,Master's Degree,155
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,709.0699999709614,no,NA,25,Asian,Non-binary,Master's Degree,156
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,416.1900000064634,no,NA,25,Asian,Non-binary,Master's Degree,157
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,502.8150000027381,no,NA,25,Asian,Non-binary,Master's Degree,158
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,368.68499998236075,no,NA,25,Asian,Non-binary,Master's Degree,159
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,380.28500000946224,no,NA,25,Asian,Non-binary,Master's Degree,160
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,404.87000001594424,no,NA,25,Asian,Non-binary,Master's Degree,161
+SS1602797585862,mixed_complex_deviant,3,images/complex/1.png,deviant,complex,577.600000007078,no,NA,25,Asian,Non-binary,Master's Degree,162
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,372.0600000116974,no,NA,25,Asian,Non-binary,Master's Degree,163
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,462.28999998420477,no,NA,25,Asian,Non-binary,Master's Degree,164
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,340.65000001573935,no,NA,25,Asian,Non-binary,Master's Degree,165
+SS1602797585862,mixed_complex_deviant,3,images/complex/7.png,deviant,complex,588.890000001993,no,NA,25,Asian,Non-binary,Master's Degree,166
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,364.6500000497326,no,NA,25,Asian,Non-binary,Master's Degree,167
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,379.69999997876585,no,NA,25,Asian,Non-binary,Master's Degree,168
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,336.7249999893829,no,NA,25,Asian,Non-binary,Master's Degree,169
+SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,1323.769999947399,yes,540.6099999672733,25,Asian,Non-binary,Master's Degree,170
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,332.8149999608286,no,NA,25,Asian,Non-binary,Master's Degree,171
+SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,299.52999994857237,no,NA,25,Asian,Non-binary,Master's Degree,172
+SS1602797585862,mixed_complex_deviant,3,images/complex/3.png,deviant,complex,345.2400000416674,no,NA,25,Asian,Non-binary,Master's Degree,173
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,391.17499998537824,no,NA,25,Asian,Non-binary,Master's Degree,174
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,400.74999995995313,no,NA,25,Asian,Non-binary,Master's Degree,175
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,357.61499997461215,no,NA,25,Asian,Non-binary,Master's Degree,176
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,376.9400000339374,no,NA,25,Asian,Non-binary,Master's Degree,177
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,437.24499996751547,no,NA,25,Asian,Non-binary,Master's Degree,178
+SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,1230.8549999608658,yes,336.3600000157021,25,Asian,Non-binary,Master's Degree,179
+SS1602797585862,mixed_complex_deviant,3,images/complex/8.png,deviant,complex,485.0050000124611,no,NA,25,Asian,Non-binary,Master's Degree,180
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,449.0149999503046,no,NA,25,Asian,Non-binary,Master's Degree,181
+SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,1059.6950000501238,yes,311.4300000015646,25,Asian,Non-binary,Master's Degree,182
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,521.1400000145659,no,NA,25,Asian,Non-binary,Master's Degree,183
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,355.9799999813549,no,NA,25,Asian,Non-binary,Master's Degree,184
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,346.8999999924563,no,NA,25,Asian,Non-binary,Master's Degree,185
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,337.4749999959022,no,NA,25,Asian,Non-binary,Master's Degree,186
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,403.014999977313,no,NA,25,Asian,Non-binary,Master's Degree,187
+SS1602797585862,mixed_complex_deviant,3,images/complex/16.png,deviant,complex,518.9750000019558,no,NA,25,Asian,Non-binary,Master's Degree,188
+SS1602797585862,mixed_complex_deviant,3,images/simple/17.png,target,simple,1218.1949999532662,yes,402.9049999662675,25,Asian,Non-binary,Master's Degree,189
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,377.0999999716878,no,NA,25,Asian,Non-binary,Master's Degree,190
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,311.2050000228919,no,NA,25,Asian,Non-binary,Master's Degree,191
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,363.53499999968335,no,NA,25,Asian,Non-binary,Master's Degree,192
+SS1602797585862,mixed_complex_deviant,3,images/simple/15.png,background,simple,353.1550000072457,no,NA,25,Asian,Non-binary,Master's Degree,193
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,627.849999978207,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,1
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,466.3099999772385,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,2
+SS1602802640714,all_simple,0,images/simple/11.png,deviant,simple,427.94499999145046,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,3
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,421.1349999997765,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,4
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,381.67999997967854,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,5
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,394.2300000227988,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,6
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,568.8200000324287,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,7
+SS1602802640714,all_simple,0,images/simple/5.png,deviant,simple,491.31499998038635,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,8
+SS1602802640714,all_simple,0,images/simple/9.png,target,simple,2238.2250000257045,yes,1404.4299999950454,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,9
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,557.8299999935552,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,10
+SS1602802640714,all_simple,0,images/simple/9.png,target,simple,394.20999998692423,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,11
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,378.84000000776723,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,12
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,467.4000000115484,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,13
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,603.2250000163913,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,14
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,431.2000000383705,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,15
+SS1602802640714,all_simple,0,images/simple/16.png,deviant,simple,373.9050000323914,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,16
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,400.76500001596287,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,17
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,363.2899999967776,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,18
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,391.5900000021793,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,19
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,952.4550000089221,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,20
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,1641.2449999945238,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,21
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,1026.195000030566,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,22
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,643.5799999628216,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,23
+SS1602802640714,all_simple,0,images/simple/2.png,deviant,simple,1127.834999980405,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,24
+SS1602802640714,all_simple,0,images/simple/9.png,target,simple,1221.3849999709055,yes,343.32499996526167,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,25
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,391.2700000102632,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,26
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,370.9600000176579,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,27
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,391.5900000021793,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,28
+SS1602802640714,all_simple,0,images/simple/1.png,deviant,simple,550.975000008475,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,29
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,469.7849999531172,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,30
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,403.37999996263534,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,31
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,435.8399999793619,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,32
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,346.3050000020303,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,33
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,367.1249999781139,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,34
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,342.5399999716319,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,35
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,300.07499996572733,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,36
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,327.34999996609986,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,37
+SS1602802640714,all_simple,0,images/simple/14.png,deviant,simple,460.3450000169687,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,38
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,435.0000000442378,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,39
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,439.88499998813495,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,40
+SS1602802640714,all_simple,0,images/simple/9.png,target,simple,1199.744999979157,yes,353.99500001221895,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,41
+SS1602802640714,all_simple,0,images/simple/18.png,deviant,simple,660.0649999920279,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,42
+SS1602802640714,all_simple,0,images/simple/9.png,target,simple,1155.164999992121,yes,328.24999996228144,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,43
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,349.4599999859929,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,44
+SS1602802640714,all_simple,0,images/simple/9.png,target,simple,327.6400000206195,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,45
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,398.73499998357147,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,46
+SS1602802640714,all_simple,0,images/simple/9.png,target,simple,1174.0549999987707,yes,341.5800000075251,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,47
+SS1602802640714,all_simple,0,images/simple/4.png,background,simple,385.9899999690242,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,48
+SS1602802640714,mixed_simple_deviant,1,images/simple/17.png,deviant,simple,1006.1650000163354,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,49
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,393.5749999829568,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,50
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,467.9950000019744,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,51
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,491.68500000378117,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,52
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,420.9150000126101,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,53
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,384.2199999955483,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,54
+SS1602802640714,mixed_simple_deviant,1,images/simple/15.png,deviant,simple,576.3199999812059,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,55
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,442.91999998968095,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,56
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,358.51999999722466,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,57
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,363.07999996934086,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,58
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,334.5649999566376,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,59
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,362.16499998699874,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,60
+SS1602802640714,mixed_simple_deviant,1,images/simple/12.png,deviant,simple,511.3399999565445,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,61
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,419.29999999701977,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,62
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,284.03999998699874,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,63
+SS1602802640714,mixed_simple_deviant,1,images/complex/12.png,target,complex,1081.0599999851547,yes,306.01499998010695,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,64
+SS1602802640714,mixed_simple_deviant,1,images/simple/7.png,deviant,simple,589.6100000129081,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,65
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,325.9899999713525,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,66
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,376.64000001968816,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,67
+SS1602802640714,mixed_simple_deviant,1,images/complex/12.png,target,complex,1133.7099999538623,yes,319.4399999920279,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,68
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,407.4049999937415,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,69
+SS1602802640714,mixed_simple_deviant,1,images/complex/12.png,target,complex,1511.615000013262,yes,693.1600000243634,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,70
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,452.00999999651685,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,71
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,468.3950000209734,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,72
+SS1602802640714,mixed_simple_deviant,1,images/complex/12.png,target,complex,1143.2699999888428,yes,414.3199999816716,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,73
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,462.9750000196509,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,74
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,425.59499996714294,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,75
+SS1602802640714,mixed_simple_deviant,1,images/simple/6.png,deviant,simple,455.4050000035204,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,76
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,379.984999995213,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,77
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,368.7099999981001,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,78
+SS1602802640714,mixed_simple_deviant,1,images/complex/12.png,target,complex,1131.6450000042096,yes,308.18499997258186,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,79
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,738.3049999945797,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,80
+SS1602802640714,mixed_simple_deviant,1,images/simple/8.png,deviant,simple,439.60500000976026,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,81
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,640.1800000341609,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,82
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,512.1399999945424,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,83
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,352.0149999996647,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,84
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,324.1699999663979,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,85
+SS1602802640714,mixed_simple_deviant,1,images/complex/12.png,target,complex,1200.0049999798648,yes,381.7200000048615,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,86
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,441.05000001145527,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,87
+SS1602802640714,mixed_simple_deviant,1,images/simple/3.png,deviant,simple,655.6950000114739,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,88
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,505.7099999859929,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,89
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,374.6399999829009,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,90
+SS1602802640714,mixed_simple_deviant,1,images/complex/12.png,target,complex,263.11500002630055,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,91
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,270.30999998096377,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,92
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,534.8950000363402,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,93
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,425.6049999850802,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,94
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,368.8250000006519,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,95
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,337.54000002518296,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,96
+SS1602802640714,mixed_simple_deviant,1,images/complex/13.png,background,complex,379.8500000149943,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,97
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,876.644999999553,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,98
+SS1602802640714,all_complex,2,images/complex/1.png,deviant,complex,1294.2650000215508,yes,350.09000002173707,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,99
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,398.89499997952953,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,100
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,438.405000010971,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,101
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,442.97000002115965,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,102
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,356.20999998645857,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,103
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,352.765000006184,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,104
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,367.81999997328967,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,105
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,344.54499998828396,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,106
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,560.2299999911338,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,107
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,306.5550000057556,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,108
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,309.08500000368804,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,109
+SS1602802640714,all_complex,2,images/complex/6.png,target,complex,1133.240000042133,yes,316.54500000877306,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,110
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,332.98500003293157,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,111
+SS1602802640714,all_complex,2,images/complex/3.png,deviant,complex,367.7849999978207,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,112
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,355.7700000121258,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,113
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,290.74000001419336,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,114
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,380.690000008326,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,115
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,315.9849999821745,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,116
+SS1602802640714,all_complex,2,images/complex/8.png,deviant,complex,1369.4799999822862,yes,793.5549999820068,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,117
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,466.91000000573695,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,118
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,332.5399999623187,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,119
+SS1602802640714,all_complex,2,images/complex/5.png,deviant,complex,304.18500000378117,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,120
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,473.1250000069849,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,121
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,324.62499999674037,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,122
+SS1602802640714,all_complex,2,images/complex/14.png,deviant,complex,458.8250000262633,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,123
+SS1602802640714,all_complex,2,images/complex/6.png,target,complex,1296.4099999982864,yes,504.71999996807426,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,124
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,446.1749999783933,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,125
+SS1602802640714,all_complex,2,images/complex/6.png,target,complex,290.79500002553686,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,126
+SS1602802640714,all_complex,2,images/complex/4.png,deviant,complex,457.8900000080466,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,127
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,469.74000001791865,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,128
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,371.6550000128336,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,129
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,362.66500001074746,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,130
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,401.04000001447275,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,131
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,436.0399999888614,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,132
+SS1602802640714,all_complex,2,images/complex/6.png,target,complex,1036.9199999724515,yes,286.8799999705516,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,133
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,444.0599999972619,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,134
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,324.88000001758337,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,135
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,308.94499998539686,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,136
+SS1602802640714,all_complex,2,images/complex/6.png,target,complex,1654.3100000009872,yes,886.4999999641441,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,137
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,438.82999998750165,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,138
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,354.16500001447275,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,139
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,377.0150000229478,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,140
+SS1602802640714,all_complex,2,images/complex/9.png,deviant,complex,894.725000008475,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,141
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,380.02500000875443,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,142
+SS1602802640714,all_complex,2,images/complex/6.png,target,complex,518.7449999968521,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,143
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,325.08499994874,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,144
+SS1602802640714,all_complex,2,images/complex/16.png,background,complex,361.4100000006147,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,145
+SS1602802640714,all_complex,2,images/complex/6.png,target,complex,1120.3899999847636,yes,338.37000001221895,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,146
+SS1602802640714,mixed_complex_deviant,3,images/simple/10.png,target,simple,1202.07499996759,yes,410.63499997835606,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,147
+SS1602802640714,mixed_complex_deviant,3,images/simple/10.png,target,simple,1047.4500000011176,yes,255.43000001925975,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,148
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,459.20500000938773,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,149
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,382.72500002058223,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,150
+SS1602802640714,mixed_complex_deviant,3,images/complex/15.png,deviant,complex,565.7799999928102,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,151
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,348.7199999974109,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,152
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,404.4649999588728,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,153
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,331.41500001074746,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,154
+SS1602802640714,mixed_complex_deviant,3,images/complex/11.png,deviant,complex,588.3350000251085,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,155
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,355.29000002425164,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,156
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,351.1900000041351,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,157
+SS1602802640714,mixed_complex_deviant,3,images/simple/10.png,target,simple,1151.404999999795,yes,398.1250000069849,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,158
+SS1602802640714,mixed_complex_deviant,3,images/complex/17.png,deviant,complex,326.60000001778826,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,159
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,430.8999999659136,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,160
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,378.82999998982996,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,161
+SS1602802640714,mixed_complex_deviant,3,images/complex/7.png,deviant,complex,510.43999997200444,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,162
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,548.8549999892712,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,163
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,559.1350000351667,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,164
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,515.1450000004843,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,165
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,384.17500000214204,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,166
+SS1602802640714,mixed_complex_deviant,3,images/complex/2.png,deviant,complex,500.6949999835342,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,167
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,297.6850000442937,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,168
+SS1602802640714,mixed_complex_deviant,3,images/simple/10.png,target,simple,454.114999959711,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,169
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,392.47499998891726,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,170
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,397.94500002171844,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,171
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,324.82000002637506,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,172
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,363.765000004787,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,173
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,349.1750000277534,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,174
+SS1602802640714,mixed_complex_deviant,3,images/complex/10.png,deviant,complex,523.9049999974668,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,175
+SS1602802640714,mixed_complex_deviant,3,images/simple/10.png,target,simple,1079.2849999736063,yes,296.764999977313,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,176
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,386.8499999982305,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,177
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,313.5350000113249,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,178
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,380.5649999878369,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,179
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,304.38000003341585,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,180
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,359.2349999700673,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,181
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,343.87500000884756,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,182
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,334.1699999757111,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,183
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,286.27500000875443,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,184
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,325.10999996447936,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,185
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,323.1149999657646,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,186
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,305.69500003475696,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,187
+SS1602802640714,mixed_complex_deviant,3,images/complex/18.png,deviant,complex,245.00500002177432,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,188
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,291.48499998264015,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,189
+SS1602802640714,mixed_complex_deviant,3,images/simple/10.png,target,simple,1000.9200000087731,yes,286.7349999723956,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,190
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,321.0449999780394,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,191
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,298.3600000035949,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,192
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,359.7400000318885,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,193
+SS1602802640714,mixed_complex_deviant,3,images/simple/13.png,background,simple,326.74999999580905,no,NA,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,194
+SS1602802640714,mixed_complex_deviant,3,images/simple/10.png,target,simple,1186.879999982193,yes,380.57499995920807,32,American Indian or Alaska Native,Female,Associate Degree/Technical certification,195
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,501.1899999692105,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,1
+SS1602823796763,mixed_simple_deviant,0,images/complex/16.png,target,complex,274.78500000433996,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,2
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,383.5850000497885,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,3
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,360.23500001756474,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,4
+SS1602823796763,mixed_simple_deviant,0,images/simple/12.png,deviant,simple,481.0149999568239,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,5
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,345.4950000043027,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,6
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,346.0100000258535,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,7
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,325.81500003580004,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,8
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,314.560000016354,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,9
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,369.3650000379421,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,10
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,401.6150000272319,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,11
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,341.1250000237487,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,12
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,379.7650000080466,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,13
+SS1602823796763,mixed_simple_deviant,0,images/complex/16.png,target,complex,1124.1150000016205,yes,356.824999966193,25,Hispanic or Latino,Male,Bachelor's Degree,14
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,286.4150000270456,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,15
+SS1602823796763,mixed_simple_deviant,0,images/complex/16.png,target,complex,1132.4550000019372,yes,317.2999999951571,25,Hispanic or Latino,Male,Bachelor's Degree,16
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,2210.034999984782,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,17
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,349.98999994713813,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,18
+SS1602823796763,mixed_simple_deviant,0,images/simple/18.png,deviant,simple,497.77000000467524,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,19
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,523.0400000466034,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,20
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,332.6300000073388,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,21
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,319.4050000049174,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,22
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,416.21500002220273,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,23
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,347.84499997040257,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,24
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,363.27000001911074,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,25
+SS1602823796763,mixed_simple_deviant,0,images/simple/8.png,deviant,simple,574.710000003688,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,26
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,303.3150000148453,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,27
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,356.3150000292808,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,28
+SS1602823796763,mixed_simple_deviant,0,images/simple/7.png,deviant,simple,291.5749999694526,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,29
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,378.29000001074746,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,30
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,374.54999999608845,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,31
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,395.83500002045184,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,32
+SS1602823796763,mixed_simple_deviant,0,images/simple/6.png,deviant,simple,562.1450000209734,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,33
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,457.2500000242144,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,34
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,340.87999996263534,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,35
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,315.00500002875924,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,36
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,467.57000002544373,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,37
+SS1602823796763,mixed_simple_deviant,0,images/simple/1.png,deviant,simple,440.84000004222617,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,38
+SS1602823796763,mixed_simple_deviant,0,images/complex/16.png,target,complex,1176.589999976568,yes,423.320000001695,25,Hispanic or Latino,Male,Bachelor's Degree,39
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,390.2099999715574,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,40
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,387.60499998461455,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,41
+SS1602823796763,mixed_simple_deviant,0,images/complex/16.png,target,complex,1792.6600000238977,yes,546.4150000480004,25,Hispanic or Latino,Male,Bachelor's Degree,42
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,892.1549999970011,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,43
+SS1602823796763,mixed_simple_deviant,0,images/simple/3.png,deviant,simple,537.0449999929406,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,44
+SS1602823796763,mixed_simple_deviant,0,images/complex/16.png,target,complex,1154.4549999991432,yes,394.43499996559694,25,Hispanic or Latino,Male,Bachelor's Degree,45
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,363.7500000069849,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,46
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,311.1500000115484,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,47
+SS1602823796763,mixed_simple_deviant,0,images/complex/2.png,background,complex,1971.4750000159256,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,48
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,476.9700000062585,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,49
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,341.6100000496954,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,50
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,333.6899999878369,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,51
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,309.714999969583,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,52
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,317.91500000981614,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,53
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,294.57000001566485,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,54
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,539.040000049863,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,55
+SS1602823796763,all_complex,1,images/complex/3.png,deviant,complex,315.36499997600913,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,56
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,432.9199999803677,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,57
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,401.1300000012852,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,58
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,329.2600000160746,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,59
+SS1602823796763,all_complex,1,images/complex/4.png,target,complex,1284.2650000122376,yes,494.6549999876879,25,Hispanic or Latino,Male,Bachelor's Degree,60
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,336.57500001136214,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,61
+SS1602823796763,all_complex,1,images/complex/7.png,deviant,complex,291.1750000086613,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,62
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,356.66999999666587,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,63
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,369.3650000379421,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,64
+SS1602823796763,all_complex,1,images/complex/4.png,target,complex,1014.4800000009127,yes,224.97999999905005,25,Hispanic or Latino,Male,Bachelor's Degree,65
+SS1602823796763,all_complex,1,images/complex/4.png,target,complex,395.89999999152496,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,66
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,774.6349999681115,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,67
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,382.38000001292676,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,68
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,399.0200000000186,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,69
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,355.50499997334555,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,70
+SS1602823796763,all_complex,1,images/complex/9.png,deviant,complex,511.34999997448176,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,71
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,450.56999997468665,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,72
+SS1602823796763,all_complex,1,images/complex/17.png,deviant,complex,864.9399999878369,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,73
+SS1602823796763,all_complex,1,images/complex/4.png,target,complex,1067.8199999849312,yes,338.9249999891035,25,Hispanic or Latino,Male,Bachelor's Degree,74
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,396.7850000364706,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,75
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,350.16499999910593,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,76
+SS1602823796763,all_complex,1,images/complex/4.png,target,complex,995.4749999917112,yes,251.96500000311062,25,Hispanic or Latino,Male,Bachelor's Degree,77
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,487.53999999025837,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,78
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,306.70499998377636,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,79
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,292.8399999975227,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,80
+SS1602823796763,all_complex,1,images/complex/14.png,deviant,complex,551.4999999897555,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,81
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,353.9049999555573,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,82
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,315.84500002209097,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,83
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,445.8500000066124,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,84
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,344.8450000025332,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,85
+SS1602823796763,all_complex,1,images/complex/5.png,deviant,complex,565.15500000678,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,86
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,374.3900000001304,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,87
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,387.0350000099279,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,88
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,420.69500002544373,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,89
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,356.9850000087172,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,90
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,362.00000001117587,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,91
+SS1602823796763,all_complex,1,images/complex/13.png,deviant,complex,435.1050000288524,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,92
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,372.0649999915622,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,93
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,417.6399999880232,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,94
+SS1602823796763,all_complex,1,images/complex/4.png,target,complex,1027.3199999821372,yes,291.42000002320856,25,Hispanic or Latino,Male,Bachelor's Degree,95
+SS1602823796763,all_complex,1,images/complex/4.png,target,complex,309.40000001573935,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,96
+SS1602823796763,all_complex,1,images/complex/10.png,background,complex,383.83500003255904,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,97
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,697.5299999932759,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,98
+SS1602823796763,all_simple,2,images/simple/14.png,deviant,simple,833.3749999757856,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,99
+SS1602823796763,all_simple,2,images/simple/4.png,target,simple,1080.8150000404567,yes,288.8399999937974,25,Hispanic or Latino,Male,Bachelor's Degree,100
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,401.2249999679625,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,101
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,360.8550000237301,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,102
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,349.5499999728054,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,103
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,339.32000001659617,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,104
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,342.68000004813075,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,105
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,335.13999996939674,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,106
+SS1602823796763,all_simple,2,images/simple/13.png,deviant,simple,732.7399999951012,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,107
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,467.5150000141002,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,108
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,487.0200000470504,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,109
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,419.0150000387803,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,110
+SS1602823796763,all_simple,2,images/simple/16.png,deviant,simple,823.0499999946915,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,111
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,741.5199999697506,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,112
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,400.0700000207871,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,113
+SS1602823796763,all_simple,2,images/simple/4.png,target,simple,1706.9099999964237,yes,904.5500000356697,25,Hispanic or Latino,Male,Bachelor's Degree,114
+SS1602823796763,all_simple,2,images/simple/10.png,deviant,simple,430.17500003334135,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,115
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,372.31499997433275,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,116
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,342.4750000005588,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,117
+SS1602823796763,all_simple,2,images/simple/4.png,target,simple,1149.2849999805912,yes,408.47999998368323,25,Hispanic or Latino,Male,Bachelor's Degree,118
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,355.95499996561557,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,119
+SS1602823796763,all_simple,2,images/simple/11.png,deviant,simple,472.1400000154972,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,120
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,298.92499999841675,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,121
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,290.4450000380166,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,122
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,293.8700000406243,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,123
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,319.49499999172986,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,124
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,337.8149999654852,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,125
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,331.5900000045076,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,126
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,310.42499996256083,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,127
+SS1602823796763,all_simple,2,images/simple/4.png,target,simple,1051.0849999729544,yes,364.2450000043027,25,Hispanic or Latino,Male,Bachelor's Degree,128
+SS1602823796763,all_simple,2,images/simple/9.png,deviant,simple,483.5049999994226,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,129
+SS1602823796763,all_simple,2,images/simple/4.png,target,simple,327.3650000221096,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,130
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,496.77999997511506,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,131
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,335.2550000301562,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,132
+SS1602823796763,all_simple,2,images/simple/4.png,target,simple,1056.9099999731407,yes,320.27000002563,25,Hispanic or Latino,Male,Bachelor's Degree,133
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,410.80499998060986,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,134
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,319.3750000093132,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,135
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,296.16499999538064,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,136
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,331.0949999606237,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,137
+SS1602823796763,all_simple,2,images/simple/15.png,deviant,simple,802.1199999959208,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,138
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,343.48500000778586,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,139
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,357.1150000090711,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,140
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,330.3499999921769,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,141
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,365.0950000039302,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,142
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,316.2499999627471,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,143
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,320.8300000289455,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,144
+SS1602823796763,all_simple,2,images/simple/17.png,background,simple,287.679999996908,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,145
+SS1602823796763,all_simple,2,images/simple/4.png,target,simple,1082.175000035204,yes,307.10000003455207,25,Hispanic or Latino,Male,Bachelor's Degree,146
+SS1602823796763,mixed_complex_deviant,3,images/complex/12.png,deviant,complex,585.5200000107288,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,147
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,360.89499997906387,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,148
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,335.89500001398847,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,149
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,293.0850000004284,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,150
+SS1602823796763,mixed_complex_deviant,3,images/complex/11.png,deviant,complex,272.7550000301562,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,151
+SS1602823796763,mixed_complex_deviant,3,images/simple/5.png,target,simple,782.7949999948032,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,152
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,335.4249999858439,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,153
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,327.8250000323169,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,154
+SS1602823796763,mixed_complex_deviant,3,images/simple/5.png,target,simple,1067.1849999809638,yes,322.95499998144805,25,Hispanic or Latino,Male,Bachelor's Degree,155
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,329.5399999944493,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,156
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,341.2750000017695,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,157
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,309.2400000197813,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,158
+SS1602823796763,mixed_complex_deviant,3,images/simple/5.png,target,simple,1042.1149999485351,yes,348.6249999841675,25,Hispanic or Latino,Male,Bachelor's Degree,159
+SS1602823796763,mixed_complex_deviant,3,images/complex/18.png,deviant,complex,344.02499998686835,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,160
+SS1602823796763,mixed_complex_deviant,3,images/simple/5.png,target,simple,1118.2249999721535,yes,382.5300000025891,25,Hispanic or Latino,Male,Bachelor's Degree,161
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,318.8649999676272,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,162
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,308.5900000180118,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,163
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,309.93999999482185,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,164
+SS1602823796763,mixed_complex_deviant,3,images/simple/5.png,target,simple,988.8299999758601,yes,286.3399999914691,25,Hispanic or Latino,Male,Bachelor's Degree,165
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,293.12999999383464,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,166
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,303.60500001115724,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,167
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,333.6499999742955,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,168
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,337.6649999874644,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,169
+SS1602823796763,mixed_complex_deviant,3,images/complex/15.png,deviant,complex,539.0849999850616,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,170
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,325.9700000518933,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,171
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,347.545000014361,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,172
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,305.2149999886751,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,173
+SS1602823796763,mixed_complex_deviant,3,images/complex/6.png,deviant,complex,439.7100000525825,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,174
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,326.3850000104867,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,175
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,323.56500001624227,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,176
+SS1602823796763,mixed_complex_deviant,3,images/simple/5.png,target,simple,1032.0149999926798,yes,337.59000001009554,25,Hispanic or Latino,Male,Bachelor's Degree,177
+SS1602823796763,mixed_complex_deviant,3,images/complex/1.png,deviant,complex,488.5849999729544,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,178
+SS1602823796763,mixed_complex_deviant,3,images/simple/5.png,target,simple,936.0500000067987,yes,238.88000001898035,25,Hispanic or Latino,Male,Bachelor's Degree,179
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,349.0849999827333,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,180
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,326.4049999881536,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,181
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,336.6149999666959,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,182
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,340.24500001687557,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,183
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,342.74500001920387,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,184
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,279.12500004749745,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,185
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,324.58999996306375,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,186
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,334.41499997861683,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,187
+SS1602823796763,mixed_complex_deviant,3,images/complex/8.png,deviant,complex,758.3750000223517,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,188
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,324.2900000070222,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,189
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,388.37500002700835,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,190
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,488.2899999967776,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,191
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,305.47999996924773,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,192
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,269.06999996863306,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,193
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,302.6300000376068,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,194
+SS1602823796763,mixed_complex_deviant,3,images/simple/2.png,background,simple,333.5500000277534,no,NA,25,Hispanic or Latino,Male,Bachelor's Degree,195
