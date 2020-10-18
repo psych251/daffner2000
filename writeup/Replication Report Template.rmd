@@ -52,68 +52,20 @@ These three findings will also be the target findings for the current replicatio
 ## Methods
 
 ### Power Analysis
-...haaaaalp
-Original main findings: 
-  - task by stimulus interaction 
-  - Unusual deviant in all unusual longer than simple deviant in all simple task OR the mixed stimuli tasks
-  - no diffrence in viewing duration on the simple deviant in the latter two tasks 
-  - main effect of stimulus type 
-  - viewing duration shorter on the simple background stimuli in the mixed stimuli task 
-  
-+ Original Stats measured from plot   
-```{r}
-library(rpsychi)
-N <- 24
-deviant_simple_mean <- (85.9 / 31.59) * 500
-deviant_unusual_mean <- (181.44 / 31.59) * 500
-deviant_mixed_mean <- (98.88 / 31.59) * 500
+I ran a simulation for the anova test. The code and results can be found [here](https://rpubs.com/anjiecao/daffner2000_pa). Using the original ANOVA test, 25 participants is enough to reach power = 0.8, and about 40 participants can reach above 0.95 power. 
 
-deviant_simple_sem <- (9.92 / 31.59) * 500
-deviant_unusual_sem <- (26.1 / 31.59) * 500
-deviant_mixed_sem <- (15.6 / 31.59) * 500
-
-deviant_simple_sd <- deviant_simple_sem * sqrt(N)
-deviant_unusual_sd <- deviant_unusual_sem * sqrt(N)
-deviant_mixed_sd <- deviant_mixed_sem * sqrt(N)
-
-bkgd_simple_mean <- (48.02 / 31.59) * 500
-bkgd_unusual_mean <- (53.6 / 31.59) * 500
-bkgd_mixed_mean <- (58.53 / 31.59) * 500
-
-bkgd_simple_sem <- (10.52 / 31.59) * 500
-bkgd_unusual_sem <- (4.27 / 31.59) * 500
-bkgd_mixed_sem <- (16.94 / 31.59) * 500
-
-bkgd_simple_sd <- bkgd_simple_sem * sqrt(N)
-bkgd_unusual_sd <- bkgd_unusual_sem * sqrt(N)
-bkgd_mixed_sd <- bkgd_mixed_sem * sqrt(N)
-
-```
-
-```{r}
-library(pwr)
-```
+Note: in the markdown I also included an attempt for estimating power if I used linear mixed effect model instead. The attempt was not very succeful because I think I don't have trial-level information to generate the simulated data.
 
 
-```{r}
-pwr.t.test 
-sims <- expand.grid(n = seq(10, 100, 10), 
-                    d = seq(.1,.9,.1)) %>% 
-  mutate(pwr = pwr.t.test(n = n, d= d)$power)
-
-ggplot(sims,
-       aes(x = n, y = pwr, col = as.factor(d))) + 
-  geom_line
-```
 
 
-Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.
+
 
 ### Planned Sample
 
 <!-- Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any. -->
 
-The planned sample size is [??? depends on the power analysis]. They should be healthy adults without any known history of neurological problems or learning disabilities.
+The planned sample size is 25. They should be healthy adults without any known history of neurological problems or learning disabilities.
 
 
 ### Materials

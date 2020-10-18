@@ -1,10 +1,37 @@
 ---
-title: "R Notebook"
-output: html_notebook
+title: "Power analysis through simulation for Daffner et al (2000)"
+author: "Anjie Cao (anjiecao@stanford.edu)"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: no
 ---
 
-```{r}
+
+```{r include=FALSE}
 library(tidyverse)
+library(knitr)
+library(rstatix)
+library(lme4)
+library(DT)
+library(kableExtra)
+library(here)
+SIMULATION_NUM = 1000
+IMAGE_PATH <- here("original_plot.png")
+```
+
+# Credit:
+Many code chunks are adapted from the recitation notebook created for [CMU 85732](https://github.com/CoAxLab/DataSciencePsychNeuro_CMU85732/blob/master/RecitationNotebooks/Recitation10_power_analysis_through_simulation.ipynb) 
+
+# Set up the mean and SD as measured from the plot:
+
+The original plot
+![original plot](`r IMAGE_PATH`)
+
+
+```{r}
 
 N <- 24
 deviant_simple_mean <- (85.9 / 31.59) * 500
@@ -33,7 +60,9 @@ bkgd_mixed_sd <- bkgd_mixed_sem * sqrt(N)
 
 ```
 
-# Generate artificial data 
+# Generate artificial data
+Assuming normal distribution of the looking time data will lead to some "negative" looking time data.
+Also, because the plot only provides data aggregated across participant levels, the generated data is not going to be perfectly fit for lmer analysis where trial-level data is needed. 
 ```{r}
 simulate_data <- function(sample_size, 
                           deviant_simple_mu, deviant_simple_sd,
@@ -51,41 +80,17 @@ simulate_data <- function(sample_size,
   bkgd_unusual <- rnorm(sample_size,bkgd_unusual_mu, bkgd_unusual_sd)
   bkgd_mixed <- rnorm(sample_size,bkgd_mixed_mu, bkgd_mixed_sd)
   
-  return(data.frame(
+  raw_data <- data.frame(
     deviant_simple = deviant_simple,
     deviant_unusual = deviant_unusual,
     deviant_mixed = deviant_mixed,
     bkgd_simple = bkgd_simple, 
     bkgd_unusual = bkgd_unusual, 
     bkgd_mixed = bkgd_mixed
-  ))
-
-}
-
-# simulate_data(24,
-#               deviant_simple_mean, deviant_simple_sd,
-#               deviant_unusual_mean, deviant_unusual_sd,
-#               deviant_mixed_mean, deviant_mixed_sd,
-#               bkgd_simple_mean, bkgd_simple_sd,
-#               bkgd_unusual_mean, bkgd_unusual_sd,
-#               bkgd_mixed_mean, bkgd_mixed_sd)
-
-
-data <- simulate_data(24,
-              deviant_simple_mean, deviant_simple_sem,
-              deviant_unusual_mean, deviant_unusual_sem,
-              deviant_mixed_mean, deviant_mixed_sem,
-              bkgd_simple_mean, bkgd_simple_sem,
-              bkgd_unusual_mean, bkgd_unusual_sem,
-              bkgd_mixed_mean, bkgd_mixed_sem)
-
-data
-```
-
-
-```{r}
-data$subject <- seq_len(nrow(data))
-tidy_data <- data %>% 
+  )
+  
+  raw_data$subject <- seq_len(nrow(raw_data))
+ tidy_data <- raw_data %>% 
   pivot_longer(cols = deviant_simple:bkgd_mixed,
                names_to = "trial_info",
                values_to = "trial_looking_time") %>% 
@@ -101,19 +106,35 @@ tidy_data <- data %>%
     )
   ) %>% 
   select(-trial_info)
+ 
+ return(tidy_data)
 
-tidy_data
+}
+
+
+
+
+tidy_data <- simulate_data(24,
+              deviant_simple_mean, deviant_simple_sd,
+              deviant_unusual_mean, deviant_unusual_sd,
+              deviant_mixed_mean, deviant_mixed_sd,
+              bkgd_simple_mean, bkgd_simple_sd,
+              bkgd_unusual_mean, bkgd_unusual_sd,
+              bkgd_mixed_mean, bkgd_mixed_sd)
+
+tidy_data %>% datatable()
 ```
 
-```{r}
-lm_res <- lmer(log(trial_looking_time) ~ trial_stimulus_type * block + (1|subject), 
-     data = tidy_data)
-
-View(lm_res)
-```
 
 
-#function for analysis
+
+
+# Analysis functions
+
+## Function to run analysis once
+One to run anova, extracting p value. 
+The other to fit lmer model, exctracting BIC. 
+
 ```{r}
 # get the interaction effect p value
 run_anova <- function(data){
@@ -129,23 +150,132 @@ run_anova <- function(data){
 
 run_lme <- function(data){
   
+  null_res <- lmer(log(trial_looking_time) ~ 1 + (1|subject), 
+                   data = data)
   lm_res <- lmer(log(trial_looking_time) ~ trial_stimulus_type * block + (1|subject), 
      data = data)
+  
+  m_bic <- BIC(null_res, lm_res)$BIC
+  stats <- diff(m_bic)
+  return(stats)
+  
 }
 
+```
+
+## Function to run analysis repeatedly
+analysis_fun is one of the two functions listed above 
+analysis_type is either "anova" or "lmer
+
+```{r message=FALSE, warning=FALSE}
+repeat_analysis <- function(n_simulations, alpha, analysis_fun, analysis_type,
+                          n_subjects, 
+                          deviant_simple_mu, deviant_simple_sd,
+                          deviant_unusual_mu, deviant_unusual_sd,
+                          deviant_mixed_mu, deviant_mixed_sd,
+                          bkgd_simple_mu, bkgd_simple_sd,
+                          bkgd_unusual_mu, bkgd_unusual_sd,
+                          bkgd_mixed_mu, bkgd_mixed_sd) {
+    stat_results <- c() # empty vector to store delta BICs from each simulation
+    # loop for repeating the simulation
+    for (i in 1:n_simulations) {
+        data <- simulate_data(n_subjects, 
+                          deviant_simple_mu, deviant_simple_sd,
+                          deviant_unusual_mu, deviant_unusual_sd,
+                          deviant_mixed_mu, deviant_mixed_sd,
+                          bkgd_simple_mu, bkgd_simple_sd,
+                          bkgd_unusual_mu, bkgd_unusual_sd,
+                          bkgd_mixed_mu, bkgd_mixed_sd)
+        stat_result <- analysis_fun(data)
+        stat_results <- c(stat_results,stat_result) 
+    }
+    
+    if (analysis_type == "lmer"){
+    # calculate how many of the simulations had significant results
+    power <- mean(stat_results <= -20) #strong evidence, see Raftery & Kass 1995
+    return(list(power = power, stat_results = stat_results))
+    } else if(analysis_type == "anova"){
+    power <- mean(stat_results <= alpha)
+    return(list(power = power, stat_results = stat_results))
+    }
+}
+
+```
+
+# Simulation results:
+The current RPub run `r SIMULATION_NUM` simulations. 
+
+## Anova test
+```{r message=FALSE, warning=FALSE}
+
+anova_data <- expand.grid(sample_size = c(10,20,30,40), alpha = c(0.05,0.01,0.001)) 
+anova_data$id <- 1:nrow(anova_data) 
+
+anova_results <- anova_data  %>%  
+    nest(-id, .key = 'parameters')  %>% 
+    mutate(power = map(parameters, ~repeat_analysis(SIMULATION_NUM, .$alpha, run_anova, "anova",
+                                                     
+                                                     .$sample_size,
+                                                     deviant_simple_mean, deviant_simple_sd,
+                                                     deviant_unusual_mean, deviant_unusual_sd,
+                                                      deviant_mixed_mean, deviant_mixed_sd,
+                                                      bkgd_simple_mean, bkgd_simple_sd,
+                                                      bkgd_unusual_mean, bkgd_unusual_sd,
+                                                      bkgd_mixed_mean, bkgd_mixed_sd)$power)) %>% 
+    unnest(parameters, power)
+
+
+
+
+
+```
+
+
+```{r}
+anova_results %>% 
+  ggplot(aes(sample_size, power, color = as.factor(alpha), group = alpha)) +
+    geom_point() +
+    geom_line() +
+    geom_hline(yintercept = 0.8) + 
+    geom_hline(yintercept = 0.95) +
+    scale_color_discrete('Alpha level') +
+    scale_x_continuous('Sample size') +
+    theme_classic()
 ```
 
 
 
 
 
+## Linear mixed effect model results
+```{r message=FALSE, warning=FALSE}
+dat <- expand.grid(sample_size = c(10,20,30,40))
+dat$id <- 1:nrow(dat)
+lmer_results <- dat  %>% 
+    nest(-id, .key = 'parameters')  %>% 
+    mutate(power = map(parameters, ~ repeat_analysis(SIMULATION_NUM, 0.05, run_lme, "lmer",
+                                                     .$sample_size,
+                                                     deviant_simple_mean, deviant_simple_sd,
+                                                     deviant_unusual_mean, deviant_unusual_sd,
+                                                      deviant_mixed_mean, deviant_mixed_sd,
+                                                      bkgd_simple_mean, bkgd_simple_sd,
+                                                      bkgd_unusual_mean, bkgd_unusual_sd,
+                                                      bkgd_mixed_mean, bkgd_mixed_sd)$power))  %>% 
+    unnest(parameters, power)
 
+```
 
-
-
-
-
-
+```{r}
+lmer_results %>% 
+  ggplot(aes(sample_size, power)) +
+    geom_point() +
+    geom_line() +
+    geom_hline(yintercept = 0.8) + 
+    geom_hline(yintercept = 0.95) +
+    scale_color_discrete('Alpha level') +
+    scale_x_continuous('Sample size') +
+    theme_classic()
+```
 
 
 
