@@ -52,10 +52,7 @@ These three findings will also be the target findings for the current replicatio
 ## Methods
 
 ### Power Analysis
-I ran a simulation for the anova test. The code and results can be found [here](https://rpubs.com/anjiecao/daffner2000_pa). Using the original ANOVA test, 25 participants is enough to reach power = 0.8, and about 40 participants can reach above 0.95 power. 
-
-Note: in the markdown I also included an attempt for estimating power if I used linear mixed effect model instead. The attempt was not very succeful because I think I don't have trial-level information to generate the simulated data.
-
+I ran a simulation for the anova test. The code and results can be found [here](https://rpubs.com/anjiecao/daffner2000_pa). Using the original ANOVA test, 25 participants is enough to reach power = 0.8, and about 40 participants can reach above 0.95 power. Due to design differences and the unaccounted for covariances, I plan to recruit 40 participants. 
 
 
 
@@ -65,7 +62,7 @@ Note: in the markdown I also included an attempt for estimating power if I used 
 
 <!-- Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any. -->
 
-The planned sample size is 25. They should be healthy adults without any known history of neurological problems or learning disabilities.
+The planned sample size is 40 They should be healthy adults without any known history of neurological problems or learning disabilities. Participants will be excluded following the Data exclusion rules specified in the Analysis Plan section. 
 
 
 ### Materials
