@@ -150,7 +150,20 @@ run_anova <- function(data){
 
 run_lme <- function(data){
   
-  null_res <- lmer(log(trial_looking_time) ~ 1 + (1|subject), 
+  null_res <- lmer(log(trial_looking_time) ~ trial_stimulus_type + block  + (1|subject), 
+                   data = data)
+  lm_res <- lmer(log(trial_looking_time) ~ trial_stimulus_type * block + (1|subject), 
+     data = data)
+  
+  comparison <- anova(lm_res, null_res)
+  stats <- comparison %>% rownames_to_column() %>% filter(rowname == "lm_res") %>% select("Pr(>Chisq)") %>% pull() %>% as.numeric() 
+  return(stats)
+  
+}
+
+run_lme_with_null <- function(data){
+  
+  null_res <- lmer(log(trial_looking_time) ~ 1  + (1|subject), 
                    data = data)
   lm_res <- lmer(log(trial_looking_time) ~ trial_stimulus_type * block + (1|subject), 
      data = data)
@@ -192,7 +205,7 @@ repeat_analysis <- function(n_simulations, alpha, analysis_fun, analysis_type,
     
     if (analysis_type == "lmer"){
     # calculate how many of the simulations had significant results
-    power <- mean(stat_results <= -20) #strong evidence, see Raftery & Kass 1995
+    power <- mean(stat_results <= alpha) #strong evidence, see Raftery & Kass 1995
     return(list(power = power, stat_results = stat_results))
     } else if(analysis_type == "anova"){
     power <- mean(stat_results <= alpha)
@@ -247,7 +260,8 @@ anova_results %>%
 
 
 
-## Linear mixed effect model results
+## Linear mixed effect model results {.tabset}
+compares m1+m2 model 
 ```{r message=FALSE, warning=FALSE}
 dat <- expand.grid(sample_size = c(10,20,30,40))
 dat$id <- 1:nrow(dat)
@@ -276,17 +290,6 @@ lmer_results %>%
     scale_x_continuous('Sample size') +
     theme_classic()
 ```
-
-
-
-
-
-
-
-
-
-
-
 
 
 
