@@ -206,10 +206,25 @@ d %>%
     ci_lower = mean - ci_range_95,
     ci_upper = mean + ci_range_95
   ) %>% 
-  ggplot(aes(x = block, y = mean)) + 
+  mutate(
+    block_print = case_when(
+      block == "mixed_complex_deviant" ~ "Complex Deviant Block", 
+      block == "mixed_simple_deviant" ~ "Simple Deviant Block", 
+      block == "all_simple" ~ "All Simple Block", 
+      block == "all_complex" ~ "All Complex Block"
+    ), 
+    stimulus_type_print = case_when(
+      trial_stimulus_type == "background" ~ "Background", 
+      trial_stimulus_type == "deviant" ~ "Deviant"
+    )
+  ) %>% 
+  ggplot(aes(x = block_print, y = mean)) + 
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
-  facet_wrap(~trial_stimulus_type) + 
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  facet_wrap(~stimulus_type_print) + 
+  xlab("") + 
+  ylab("Mean Looking Time") + 
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 Original Plot: 
 ![original plot](original_plot.png)
@@ -317,12 +332,18 @@ summary(stimuli_rep_m)
 
 count_num_seen %>% 
   ggplot(
-    aes(y = trial_looking_time, 
+    aes(y = log(trial_looking_time), 
         x = num_times_stimulus_seen,
         color = trial_stimulus_complexity)
   ) + 
-  geom_point() + 
-  geom_smooth(method = "lm")
+  geom_point(aes(alpha = 0.2)) + 
+  guides(alpha = FALSE) + 
+  labs(color = "Stimulus Complexity") + 
+  ylab("Mean Looking Time (log)") + 
+  xlab("Number of Stimulus Reptitions") + 
+  geom_smooth(method = "lm") + 
+  theme(axis.text = element_text(size = 10))
+  
 ```
 
 
