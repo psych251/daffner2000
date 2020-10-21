@@ -33,14 +33,16 @@
 
     // if we're not on MTurk, create a timestamp-based subject number; otherwise use turker ID
     var subject_id = 'SS' + timenum;
-
+    var survey_code = 'SS' + timenum
     //console.log(turkInfo.workerId)
+    
+    /*
     if(turkInfo.workerId === "") {
       console.log(turkInfo.workerId)
       var subject_id = 'SS' + timenum;
     } else {
       var subject_id = 'MT-' + turkInfo.workerId;
-    }
+    }*/
     
     // store subject in data on every trial
     jsPsych.data.addProperties({ subject: subject_id });
@@ -51,15 +53,28 @@
   
 
 
+    var survey_code_page = {
+     type: "instructions",
+     pages:[
+         "Your survey code is<p><b>"+ survey_code + "</b></p><p>Please make sure you save this somewhere safe. You will need to enter this code into mturk to be paid.</p>"
+     ],
+     show_clickable_nav: false
+     
+ }
+    
+    
 
 
 
 //Before the main task 
+  
+  
+  
+
     timeline.push(front_page)
     timeline.push(main_instruction)
     timeline.push(prepractice_instruction)
     timeline = timeline.concat(practice_block)
-
     
 // Setting up the main task
 var NUM_SIMPLE_STIMULI = 18
@@ -228,10 +243,14 @@ for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
     
 // after the main task   
 
+    
+    
+    
   
    timeline.push(final_instructions)
    timeline = timeline.concat(demog_questions)
    timeline.push(final_thank_you)
+  timeline.push(survey_code_page)
    ///afs/ir.stanford.edu/users/a/n/anjiecao/cgi-bin/daffner2020/write_data.php
    
     //'../../../cgi-bin/RR_adults/write_data.php')

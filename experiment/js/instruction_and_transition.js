@@ -41,8 +41,9 @@ var final_instructions = {
    var final_thank_you = {
      type: "instructions",
      pages:[
-         "<p>You are all done, thank you!</p>In this study, we are interested in how complexity influences people's viewing time at different pictures. Past research has found that people spend longer time looking at pictures that are more complex. Please do not share this information with other potential participants."
+         "<p>You are all done, thank you!</p>In this study, we are interested in how complexity influences people's viewing time at different pictures. Past research has found that people spend longer time looking at pictures that are more complex. Please do not share this information with other potential participants.<p><b>Your survey code will be displayed on the next page. You will need the survey code to get paid.</b></p>", 
+    
      ],
-     show_clickable_nav: false
+     show_clickable_nav: true
      
  }    
