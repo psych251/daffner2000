@@ -264,11 +264,15 @@ for (var task_num = 0; task_num < ALL_TASKS.length; task_num++){
     }
     
     
+    var all_images = INSTRCUTION_IMAGES.concat(ALL_STIMULI_PATH)
+    var all_images = all_images.concat(PRACTICE_IMAGES)
+    
+    
 jsPsych.init({
         timeline: timeline,
         show_progress_bar: true,
         //use_webaudio: true, // this won't work for local testing (CORS), but maybe on server
-        preload_images: ALL_STIMULI_PATH,
+        preload_images: all_images,
         //preload_video: video,
         on_trial_finish: function(){
             saveData("daffnerrep-pilotb-" + subject_id, jsPsych.data.get().csv());

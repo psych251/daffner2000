@@ -9,6 +9,20 @@ var front_page = {
  }
 
 
+var INSTRCUTION_IMAGES = [
+    'images/instructions/prepractice_1.png',
+     'images/instructions/prepractice_2.png',
+     'images/instructions/prepractice_3.png',
+     'images/instructions/prepractice_4.png',
+     'images/instructions/prepractice_5.png',
+     'images/instructions/prepractice_6.png',
+     'images/instructions/prepractice_7.png',
+     'images/instructions/prepractice_8.png',
+     'images/instructions/prepractice_9.png',
+        
+    
+]
+
 var main_instruction = {
      type: "instructions",
      pages:[

@@ -220,7 +220,7 @@ d %>%
   ) %>% 
   ggplot(aes(x = block_print, y = mean)) + 
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
-  facet_wrap(~stimulus_type_print) + 
+  facet_wrap(~fct_rev(stimulus_type_print)) + 
   xlab("") + 
   ylab("Mean Looking Time") + 
   theme_classic() +
@@ -267,7 +267,7 @@ d %>%
 #c("Complex Deviant Block", "Simple Deviant Block", "All Simple Block", "All Complex Block")
 ```
 
-
+›
 Original Plot: 
 ![original plot](original_plot.png)
 

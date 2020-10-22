@@ -8,6 +8,11 @@ var prepractice_instruction = {
      
  }
 
+var PRACTICE_IMAGES = [
+    "images/practice/practice_target.jpg",
+    "images/practice/practice_background.jpeg",
+    "images/practice/practice_deviant.jpeg"
+]
 
 
 var intertrial_interval = {
