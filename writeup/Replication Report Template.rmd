@@ -286,6 +286,8 @@ summary(basic_m)
 
 #### Effect of age
 
+visualization? show slope trend? 
+
 ```{r message=FALSE, warning=FALSE}
 age_only_m <- lmer(log(trial_looking_time) ~ demog_age +  (1|subject/block_trial_num), data = d)
 age_with_task_m <- lmer(log(trial_looking_time) ~ demog_age + trial_stimulus_type * block +  (1|subject/block_trial_num), 
@@ -293,6 +295,8 @@ age_with_task_m <- lmer(log(trial_looking_time) ~ demog_age + trial_stimulus_typ
 summary(age_only_m)
 summary(age_with_task_m)
 ```
+
+
 
 
 #### Effect of education
@@ -315,6 +319,8 @@ summary(target_rt_m)
 ```
   
 #### Number of background stimuli
+
+
 
 ```{r message=FALSE, warning=FALSE}
 
@@ -340,6 +346,54 @@ num_bkgd <- lmer(log(trial_looking_time) ~ bkgd_rep * block + (1 | subject / blo
 summary(num_bkgd)
 
 ```
+
+```{r}
+repetition_bckgd %>% 
+  ggplot(aes(y = log(trial_looking_time), 
+         x = bkgd_rep, 
+         color = trial_stimulus_complexity)) + 
+  geom_point() + 
+  geom_smooth(method = "lm") + 
+  labs(title = "looking time at deviant stimuli w/ number of background stimuli preceding it ")
+
+repetition_bckgd %>% 
+  ggplot(aes(y = log(trial_looking_time), 
+         x = bkgd_rep, 
+         color = trial_stimulus_complexity)) + 
+  geom_violin() + 
+  labs(title = "looking time at deviant stimuli w/ number of background stimuli preceding it ")
+```
+  
+```{r}
+repetition_bckgd %>% 
+  mutate(
+    complexity_combination = case_when(
+      grepl("all", block) ~ "same", 
+      grepl("mixed", block) ~ "different"
+    )
+  ) %>% 
+  ggplot(aes(y = log(trial_looking_time), 
+         x = bkgd_rep, 
+         color = complexity_combination)) + 
+  geom_point() + 
+  geom_smooth(method = "lm") + 
+  labs(title = "looking time at deviant stimuli w/ number of background stimuli preceding it ")
+
+repetition_bckgd %>% 
+  mutate(
+    complexity_combination = case_when(
+      grepl("all", block) ~ "same", 
+      grepl("mixed", block) ~ "different"
+    )
+  ) %>% 
+  ggplot(aes(y = log(trial_looking_time), 
+         x = bkgd_rep, 
+         color = complexity_combination)) + 
+  geom_violin() +
+  labs(title = "looking time at deviant stimuli w/ number of background stimuli preceding it ")
+```
+
+  
   
 #### Length of intervals between targets 
 
