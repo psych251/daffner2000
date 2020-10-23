@@ -60,7 +60,7 @@ filter_spacebar <- function(data_with_demog){
   data_with_demog_spacebar <- left_join(data_with_demog_spacebar, prop_wrong_press_summary, by = "subject")
   
   filtered_spacebar <- data_with_demog_spacebar %>% 
-    filter(no_press_prop > 0.15 | wrong_press_prop > 0.15)
+    filter(no_press_prop > 0.1 | wrong_press_prop > 0.1)
   
   return(filtered_spacebar)
 }

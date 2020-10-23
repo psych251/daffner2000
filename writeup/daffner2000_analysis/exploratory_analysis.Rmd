@@ -1,0 +1,113 @@
+---
+title: "Expoloratory analysis for Pilot-B data"
+author: "Anjie Cao (anjiecao@stanford.edu)"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    toc: yes
+    code_folding: hide
+    toc_depth: 3
+    toc_float:
+      collapsed: true
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r include=FALSE}
+library(tidyverse)
+library(here)
+library(rstatix)
+library(lme4)
+library(DT)
+library(jsonlite)
+library(tidyverse)
+library(kableExtra)
+source(here("writeup/daffner2000_analysis/script/00_read_raw_data.R"))
+source(here("writeup/daffner2000_analysis/script/01_apply_exclusion_criteria.R"))
+source(here("writeup/daffner2000_analysis/script/02_tidy_data.R"))
+
+RAW_DATA_DIR <- here("writeup/daffner2000_analysis/raw_data/")
+AGGREGATED_DATA_PATH <- here("writeup/daffner2000_analysis/processed_data/aggregated_data.csv")
+PROCESSED_DATA_PATH <- here("writeup/daffner2000_analysis/processed_data/processed_data.csv")
+NO_FILTER_DATA_PATH <- here("writeup/daffner2000_analysis/processed_data/no_filtered.csv")
+####Aggregate across participants, clean up demographic fields
+aggregate_data(RAW_DATA_DIR, AGGREGATED_DATA_PATH)
+
+
+####Import data 
+data_with_demog <- read_csv(AGGREGATED_DATA_PATH)
+
+#### Data exclusion / filtering
+# participants level exclusion
+filtered_data <- filter_demog(data_with_demog)
+filtered_data <- filter_spacebar(filtered_data)
+filtered_data <- filter_trial_variation(filtered_data)
+filtered_data <- filter_too_many_outliers(filtered_data)
+#trial level exclusion
+filtered_data <- filter_outlier_trial(filtered_data)  
+
+#### Prepare data for analysis - create columns etc.
+d <- tidy_data(filtered_data,PROCESSED_DATA_PATH) # this also writes
+
+```
+
+
+```{r}
+
+d_all <- tidy_data(filtered_data,NO_FILTER_DATA_PATH)
+data_with_demog %>% 
+  group_by(subject) %>% 
+  summarize(
+    n = n()
+  )
+```
+
+```{r}
+d %>% 
+  group_by(subject) %>% 
+  summarize(
+    n = n()
+  )
+```
+
+```{r}
+d_all %>% 
+  filter(trial_stimulus_type != "target") %>% 
+  group_by(trial_stimulus_type, block) %>% 
+  summarize(
+    mean = mean(as.numeric(trial_looking_time), na.rm = TRUE),
+    sd = sd(as.numeric(trial_looking_time), na.rm = TRUE), 
+    n = n(),
+    ci_range_95 =  qt(1 - (0.05 / 2), n - 1) * (sd/sqrt(n)),
+    ci_lower = mean - ci_range_95,
+    ci_upper = mean + ci_range_95
+  ) %>% 
+  mutate(
+    block_print = case_when(
+      block == "mixed_complex_deviant" ~ "Complex Deviant Block", 
+      block == "mixed_simple_deviant" ~ "Simple Deviant Block", 
+      block == "all_simple" ~ "All Simple Block", 
+      block == "all_complex" ~ "All Complex Block"
+    ), 
+    stimulus_type_print = case_when(
+      trial_stimulus_type == "background" ~ "Background", 
+      trial_stimulus_type == "deviant" ~ "Deviant"
+    )
+  ) %>% 
+  ggplot(aes(x = block_print, y = mean )) + 
+  geom_col(aes(fill = block_print), colour = "black") + 
+  scale_x_discrete(limits = c( "All Simple Block", "All Complex Block", 
+                                "Simple Deviant Block", "Complex Deviant Block")) + 
+  scale_fill_manual(values = c("gray","white", "brown","red")) + 
+   guides(fill = FALSE) + 
+  geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = .2) +
+  facet_wrap(~ fct_rev(stimulus_type_print)) + 
+  xlab("") + 
+  ylab("Mean Looking Time") + 
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+  
+```
+
