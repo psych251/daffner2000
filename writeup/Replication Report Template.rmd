@@ -267,6 +267,44 @@ d %>%
 #c("Complex Deviant Block", "Simple Deviant Block", "All Simple Block", "All Complex Block")
 ```
 
+```{r}
+d %>% 
+  filter(trial_stimulus_type != "target", block != "mixed_complex_deviant") %>% 
+  group_by(trial_stimulus_type, block) %>% 
+  summarize(
+    mean = mean(as.numeric(trial_looking_time), na.rm = TRUE),
+    sd = sd(as.numeric(trial_looking_time), na.rm = TRUE), 
+    n = n(),
+    ci_range_95 =  qt(1 - (0.05 / 2), n - 1) * (sd/sqrt(n)),
+    ci_lower = mean - ci_range_95,
+    ci_upper = mean + ci_range_95
+  ) %>% 
+  mutate(
+    block_print = case_when(
+      block == "mixed_complex_deviant" ~ "Complex Deviant Block", 
+      block == "mixed_simple_deviant" ~ "Simple Deviant Block", 
+      block == "all_simple" ~ "All Simple Block", 
+      block == "all_complex" ~ "All Complex Block"
+    ), 
+    stimulus_type_print = case_when(
+      trial_stimulus_type == "background" ~ "Background", 
+      trial_stimulus_type == "deviant" ~ "Deviant"
+    )
+  ) %>% 
+  ggplot(aes(x = block_print, y = mean )) + 
+  geom_col(aes(fill = block_print), colour = "black") + 
+  scale_x_discrete(limits = c( "All Simple Block", "All Complex Block", 
+                                "Simple Deviant Block")) + 
+  scale_fill_manual(values = c("gray","white", "black")) + 
+   guides(fill = FALSE) + 
+  geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = .2) +
+  facet_wrap(~ fct_rev(stimulus_type_print)) + 
+  xlab("") + 
+  ylab("Mean Looking Time") + 
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+
 ›
 Original Plot: 
 ![original plot](original_plot.png)
