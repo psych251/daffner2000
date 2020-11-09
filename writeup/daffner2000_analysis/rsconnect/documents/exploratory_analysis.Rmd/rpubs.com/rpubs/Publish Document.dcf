@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/686524/191dd4fc309745fb904878987f97b64d
+bundleId: https://api.rpubs.com/api/v1/document/686524/191dd4fc309745fb904878987f97b64d
+url: http://rpubs.com/anjiecao/686524
+when: 1604587491.42781
