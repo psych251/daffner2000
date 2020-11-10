@@ -292,9 +292,151 @@ anova(null_m, basic_m)
 # TODO: 
 - age, SES, gender
 
-# number of repetition on looking time
+# number of background repetition on looking time {.tabset}
+## full, aggregated, by complexity
+```{r}
+full_aggregated <- d %>% 
+  mutate(
+    number = 1) %>% 
+  group_by(
+  subject, block, trial_stimulus_type
+  ) %>% 
+  mutate(num_times_stimulus_seen = cumsum(number))
+
+full_aggregated %>% 
+  filter(trial_stimulus_type == "background") %>% 
+  ggplot(
+    aes(y = log(trial_looking_time), 
+        x = num_times_stimulus_seen,
+        color = trial_stimulus_complexity)
+  ) + 
+  geom_point(aes(alpha = 0.2), size = 3, shape = ".") + 
+  guides(alpha = FALSE) + 
+  labs(color = "Stimulus Complexity") + 
+  ylab("Mean Looking Time (log)") + 
+  xlab("Number of Stimulus Reptitions") + 
+  geom_smooth(method = "lm") + 
+  theme(axis.text = element_text(size = 10))
+```
+
+## full, aggregated, by blocks 
+```{r}
+full_aggregated %>% 
+  filter(trial_stimulus_type == "background") %>% 
+  ggplot(
+    aes(y = log(trial_looking_time), 
+        x = num_times_stimulus_seen,
+        color = block)
+  ) + 
+  geom_point(aes(alpha = 0.2), size = 3, shape = ".") + 
+  guides(alpha = FALSE) + 
+  labs(color = "Stimulus Complexity") + 
+  ylab("Mean Looking Time (log)") + 
+  xlab("Number of Stimulus Reptitions") + 
+  geom_smooth(method = "lm") + 
+  theme(axis.text = element_text(size = 10))
+```
+
+
+## no weird, aggregated, by complexity
+```{r}
+excluded_sum <- full_aggregated %>% 
+  filter(trial_stimulus_type == "background") %>% 
+  filter(!(subject %in% weird))
+
+excluded_sum %>% 
+  ggplot(
+    aes(y = log(trial_looking_time), 
+        x = num_times_stimulus_seen,
+        color = trial_stimulus_complexity)
+  ) + 
+  geom_point(aes(alpha = 0.2), size = 3, shape = ".") + 
+  guides(alpha = FALSE) + 
+  labs(color = "Stimulus Complexity") + 
+  ylab("Mean Looking Time (log)") + 
+  xlab("Number of Stimulus Reptitions") + 
+  geom_smooth(method = "lm") + 
+  theme(axis.text = element_text(size = 10))
+```
+
+## no weird, aggregated, by blocks
+```{r}
+excluded_sum %>% 
+  ggplot(
+    aes(y = log(trial_looking_time), 
+        x = num_times_stimulus_seen,
+        color = block)
+  ) + 
+  geom_point(aes(alpha = 0.2), size = 3, shape = ".") + 
+  guides(alpha = FALSE) + 
+  labs(color = "Stimulus Complexity") + 
+  ylab("Mean Looking Time (log)") + 
+  xlab("Number of Stimulus Reptitions") + 
+  geom_smooth(method = "lm") + 
+  theme(axis.text = element_text(size = 10))
+```
+
+## individual, by complexity 
+```{r}
+full_aggregated %>% 
+  filter(trial_stimulus_type == "background") %>% 
+  ggplot(
+    aes(y = log(trial_looking_time), 
+        x = num_times_stimulus_seen,
+        color = trial_stimulus_complexity)
+  ) + 
+  geom_point(aes(alpha = 0.2), size = 3, shape = ".") + 
+  guides(alpha = FALSE) + 
+  labs(color = "Stimulus Complexity") + 
+  ylab("Mean Looking Time (log)") + 
+  xlab("Number of Stimulus Reptitions") + 
+  geom_smooth(method = "lm") + 
+  theme(axis.text = element_text(size = 10)) + 
+  facet_wrap(~subject)
+```
+
+## individual, by block 
+```{r}
+full_aggregated %>% 
+  filter(trial_stimulus_type == "background") %>% 
+  ggplot(
+    aes(y = log(trial_looking_time), 
+        x = num_times_stimulus_seen,
+        color = block)
+  ) + 
+  geom_point(aes(alpha = 0.2), size = 3, shape = ".") + 
+  guides(alpha = FALSE) + 
+  labs(color = "Stimulus Complexity") + 
+  ylab("Mean Looking Time (log)") + 
+  xlab("Number of Stimulus Reptitions") + 
+  geom_smooth(method = "lm") + 
+  theme(axis.text = element_text(size = 10)) + 
+  facet_wrap(~subject)
+```
+
+## models 
+```{r}
+null_m <- lmer(log(trial_looking_time) ~ 1 + (1|subject), 
+               data = excluded_sum)
+
+rep_m <- lmer(log(trial_looking_time) ~ num_times_stimulus_seen + (1|subject), 
+     data = excluded_sum)
+
+interaction_m <- lmer(log(trial_looking_time) ~ num_times_stimulus_seen * block + (1|subject), 
+     data = excluded_sum)
+anova(rep_m, null_m)
+anova(rep_m, interaction_m)
+summary(rep_m)
+```
+
+
+
+
+
 
 # target reaction time predictive of anything? 
+
+
 
 # import the complexity norm 
 
