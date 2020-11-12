@@ -276,21 +276,55 @@ d_no_weird_sum %>% ggplot(aes(x = block, y = mean_lt)) +
   geom_pointrange(aes(ymin = ci_lb, ymax = ci_ub)) + 
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
-# Basic model 
+
+# Demographic 
+## SES 
+education == "Some high school" ~ 1,
+        education == "High school diploma" ~ 2, 
+        education == "Associate Degree/Technical certification" ~ 3, 
+        education == "Bachelor's Degree" ~ 4, 
+        education == "Master's Degree" ~ 5, 
+        education == "Doctorate/Professional degree" ~ 6, 
+        education == "Other" ~ NA_real_
+```{r}
+d %>% 
+  distinct(subject, .keep_all = TRUE) %>% 
+  ggplot(aes(x = demog_education)) + 
+  geom_histogram()
+```
 ```{r}
 null_m <- lmer(trial_looking_time ~ 1 + (1|subject), 
-               data = d)
+               data = filter(d, !is.na(demog_education)))
 
-basic_m <- lmer(trial_looking_time ~ block + (1|subject), 
-     data = d)
+edu_m <- lmer(trial_looking_time ~ demog_education + (1|subject), 
+     data = filter(d, !is.na(demog_education)))
 
-anova(null_m, basic_m)
+summary(edu_m)
+anova(null_m, edu_m)
+```
+
+
+## Age 
+
+```{r}
+d %>% 
+  distinct(subject, .keep_all = TRUE) %>% 
+  ggplot(aes(x = demog_age)) + 
+  geom_histogram()
+```
+```{r}
+null_m <- lmer(trial_looking_time ~ 1 + (1|subject), 
+               data = filter(d, !is.na(demog_age)))
+
+age_m <- lmer(trial_looking_time ~ demog_age + (1|subject), 
+     data = filter(d, !is.na(demog_age)))
+
+summary(age_m)
+anova(null_m, age_m)
 ```
 
 
 
-# TODO: 
-- age, SES, gender
 
 # number of background repetition on looking time {.tabset}
 ## full, aggregated, by complexity
@@ -414,7 +448,22 @@ full_aggregated %>%
   facet_wrap(~subject)
 ```
 
-## models 
+# Model
+## linear {.tabset} 
+
+### block  
+```{r}
+null_m <- lmer(trial_looking_time ~ 1 + (1|subject), 
+               data = d)
+
+basic_m <- lmer(trial_looking_time ~ block + (1|subject), 
+     data = d)
+
+summar(basic_m)
+anova(null_m, basic_m)
+```
+
+### stimuli repetition
 ```{r}
 null_m <- lmer(log(trial_looking_time) ~ 1 + (1|subject), 
                data = excluded_sum)
@@ -422,11 +471,122 @@ null_m <- lmer(log(trial_looking_time) ~ 1 + (1|subject),
 rep_m <- lmer(log(trial_looking_time) ~ num_times_stimulus_seen + (1|subject), 
      data = excluded_sum)
 
+summary(rep_m)
+anova(null_m, rep_m)
+```
+
+### stimuli repetition and block interaction
+```{r}
 interaction_m <- lmer(log(trial_looking_time) ~ num_times_stimulus_seen * block + (1|subject), 
      data = excluded_sum)
-anova(rep_m, null_m)
-anova(rep_m, interaction_m)
-summary(rep_m)
+
+summary(interaction_m)
+anova(null_m, interaction_m)
+```
+
+
+
+## GAM {.tabset}
+
+only focusing on looking time at the background 
+```{r}
+library(mgcv)
+gam_d <- full_aggregated %>% 
+  filter(trial_stimulus_type == "background") %>% 
+  mutate(trial_stimulus_complexity = as.factor(trial_stimulus_complexity), 
+         block = as.factor(block))
+```
+### number of repetition
+```{r}
+gam_m <- gam(trial_looking_time ~ s(num_times_stimulus_seen), 
+             data = gam_d, 
+             method = "REML")
+summary(gam_m)
+plot(gam_m, 
+     pages = 1, 
+     se = TRUE, 
+     shade = TRUE)
+gam.check(gam_m)
+concurvity(gam_m, full = TRUE)
+```
+### number of repetition (with log?)
+
+```{r}
+gam_m <- gam(log(trial_looking_time) ~ s(num_times_stimulus_seen), 
+             data = gam_d, 
+             method = "REML")
+summary(gam_m)
+plot(gam_m, 
+     pages = 1, 
+     se = TRUE, 
+     shade = TRUE)
+gam.check(gam_m)
+concurvity(gam_m, full = TRUE)
+```
+
+### number of repetition by stimulus complexity 
+```{r fig.width = 15, fig.height = 15}
+gam_m <- gam(trial_looking_time ~ s(num_times_stimulus_seen, 
+                                    by = trial_stimulus_complexity), 
+             data = gam_d, 
+             method = "REML")
+
+summary(gam_m)
+
+plot(gam_m, 
+     pages = 1, 
+     se = TRUE, 
+     shade = TRUE)
+gam.check(gam_m)
+concurvity(gam_m, full = TRUE)
+```
+### number of repetition by stimulus complexity (log?)
+```{r fig.width = 15, fig.height = 15}
+gam_m <- gam(log(trial_looking_time) ~ s(num_times_stimulus_seen, 
+                                    by = trial_stimulus_complexity), 
+             data = gam_d, 
+             method = "REML")
+
+summary(gam_m)
+
+plot(gam_m, 
+     pages = 1, 
+     se = TRUE, 
+     shade = TRUE)
+gam.check(gam_m)
+concurvity(gam_m, full = TRUE)
+```
+### number of repetition by block 
+```{r}
+gam_m <- gam(trial_looking_time ~ s(num_times_stimulus_seen, by = block), 
+             data = gam_d, 
+             method = "REML")
+
+plot(gam_m, all.terms = TRUE, pages = 1,
+     shade = TRUE,
+     rug = TRUE, 
+     se = TRUE)
+summary(gam_m)
+gam.check(gam_m)
+concurvity(gam_m, full = TRUE)
+```
+
+
+
+### number of repetition by block (log?)
+```{r}
+gam_m <- gam(log(trial_looking_time) ~ s(num_times_stimulus_seen, by = block), 
+             data = gam_d, 
+             method = "REML")
+
+plot(gam_m, all.terms = TRUE, pages = 1,
+     shade = TRUE,
+     rug = TRUE, 
+     se = TRUE)
+summary(gam_m)
+
+gam.check(gam_m)
+concurvity(gam_m, full = TRUE)
 ```
 
 
@@ -434,9 +594,4 @@ summary(rep_m)
 
 
 
-# target reaction time predictive of anything? 
-
-
-
-# import the complexity norm 
 
