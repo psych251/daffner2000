@@ -11,6 +11,11 @@ output:
       collapsed: true
 ---
 
+# todo: 
+- new exclusion criteria 
+- ideal learner stuff 
+- look at target reaction time? 
+- import the complexity norm? 
 
 
 ```{r include=FALSE}
@@ -44,7 +49,7 @@ filtered_data <- filter_spacebar(filtered_data)
 filtered_data <- filter_trial_variation(filtered_data)
 filtered_data <- filter_too_many_outliers(filtered_data)
 #trial level exclusion
-filtered_data <- filter_outlier_trial(filtered_data)  
+# filtered_data <- filter_outlier_trial(filtered_data)  
 
 #### Prepare data for analysis - create columns etc.
 d <- tidy_data(filtered_data,PROCESSED_DATA_PATH) # this also writes
@@ -60,47 +65,236 @@ d_no_target <- d %>%
 
 ## Looking time distribution {.tabset}
 ### RAW 
-```{r fig.height=10, fig.width=10}
+```{r }
 data_with_demog %>% 
   ggplot(aes(x = trial_looking_time)) + 
   geom_histogram(bins = 90) + 
   xlim(0, 9000)
-
+```
+```{r }
 data_with_demog %>% 
   ggplot(aes(x = trial_looking_time)) + 
-  geom_histogram(bins = 90) + 
-  xlim(0, 9000) + 
-  facet_wrap(~subject)
+  geom_histogram() + 
+  scale_x_log10()
 ```
 
 
 ### AFTER EXCLUSION 
-```{r fig.height=10, fig.width=10}
+```{r }
 d %>% 
   ggplot(aes(x = trial_looking_time)) + 
-  geom_histogram(bins = 90) + 
-  xlim(0, 6000)
-
-d %>% 
-  ggplot(aes(x = trial_looking_time)) + 
-  geom_histogram(bins = 90) + 
-  xlim(0, 6000) + 
-  facet_wrap(~subject)
+  geom_histogram() + 
+  scale_x_log10()
+# 
+# d %>% 
+#   ggplot(aes(x = trial_looking_time)) + 
+#   geom_histogram(bins = 90) + 
+#   xlim(0, 6000) + 
+#   facet_wrap(~subject)
 ```
 
-### Exclude the target trial
+# Digging through the second hump
+
+* Something wacky is happening in background trials.
+* Deviant trials are slower
+* target trials are likely a mixture between hits and misses
+
 ```{r}
-d_no_target %>% 
-  ggplot(aes(x = trial_looking_time)) + 
-  geom_histogram(bins = 90) + 
-  xlim(0, 6000)
+d %>% 
+  ggplot(aes(x = trial_looking_time, 
+             fill = trial_pressed_space_bar)) + 
+  geom_histogram() + 
+  scale_x_log10() + 
+  facet_wrap(~trial_stimulus_type)
+```
 
-d_no_target %>% 
-  ggplot(aes(x = trial_looking_time)) + 
-  geom_histogram(bins = 90) + 
-  xlim(0, 6000) + 
+Zoom in on background trials. The "hump" (second mode) is there in all parts of the experiment.
+
+```{r}
+d %>% 
+  mutate(block_num = ceiling(total_trial_num / 48)) %>%
+  filter(trial_stimulus_type == "background") %>%
+  ggplot(aes(x = trial_looking_time, 
+             fill = trial_stimulus_complexity)) + 
+  geom_histogram() + 
+  scale_x_log10() + 
+  facet_wrap(~block_num)
+```
+
+```{r}
+d %>% 
+  filter(trial_stimulus_type == "background") %>%
+  group_by(subject) %>%
+  mutate(mlog = mean(log(trial_looking_time)), 
+         sdlog = sd(log(trial_looking_time)),
+         outlier = log(trial_looking_time) > mlog + 3*sdlog |
+           log(trial_looking_time) < mlog - 3*sdlog) %>%
+  ggplot(aes(x = trial_looking_time, fill = outlier)) + 
+  geom_histogram() + 
+  scale_x_log10() + 
   facet_wrap(~subject)
 ```
+
+We see this pattern within subs to some extent, irrespective of outliers. Is it after target press?
+
+No, it seems that even on background trials where there was not a target beforehand.
+
+```{r}
+d %>% 
+  group_by(subject) %>%
+  mutate(t_to_b = c(FALSE, diff(as.numeric(as.factor(trial_stimulus_type == "target"))) == -1) & trial_stimulus_type == "background",
+         d_to_b = c(FALSE, diff(as.numeric(as.factor(trial_stimulus_type == "deviant"))) == -1) & trial_stimulus_type == "background") %>%
+  filter(trial_stimulus_type == "background") %>%
+  ggplot(aes(x = trial_looking_time)) + 
+  geom_histogram() + 
+  scale_x_log10() + 
+  facet_grid(d_to_b~t_to_b)
+
+```
+
+
+just look at the best of trials of each individual
+
+```{r}
+d %>% 
+  group_by(subject) %>% 
+  mutate(mlog = mean(log(trial_looking_time)), 
+         sdlog = sd(log(trial_looking_time)),
+         best_trials = log(trial_looking_time) < mlog + 2*sdlog &&
+           log(trial_looking_time) > mlog - 2*sdlog) %>%
+  filter(best_trials == TRUE) %>% 
+  ggplot(aes(x = trial_looking_time, fill = trial_stimulus_complexity)) + 
+  geom_histogram() + 
+  scale_x_log10() 
+```
+## block type by complexity
+
+only looking at trials within 2sd of the means 
+```{r}
+d %>% 
+  group_by(subject) %>% 
+  mutate(mlog = mean(log(trial_looking_time)), 
+         sdlog = sd(log(trial_looking_time)),
+         best_trials = log(trial_looking_time) < mlog + 2*sdlog &&
+           log(trial_looking_time) > mlog - 2*sdlog) %>%
+  filter(best_trials == TRUE) %>% 
+  ggplot(aes(x = trial_looking_time)) + 
+  geom_histogram() + 
+  scale_x_log10() +
+  facet_wrap(~block)
+```
+
+doesn't seem to make a huge difference with or without the outlier 
+```{r}
+d %>% 
+  group_by(subject) %>% 
+  ggplot(aes(x = trial_looking_time)) + 
+  geom_histogram() + 
+  scale_x_log10() +
+  facet_wrap(~block)
+```
+
+break down by trial type and stimuli type 
+
+```{r}
+d %>% 
+  ggplot(aes(x = trial_looking_time)) + 
+  geom_histogram()+
+  scale_x_log10() +
+  facet_grid(block~trial_stimulus_type)
+```
+
+ok, maybe it's time to consider number of repetitions. maybe the second hump means participants getting very bored and they started zoning out???
+
+```{r}
+library(mgcv)
+
+rep_d <- d %>% 
+  mutate(
+    number = 1) %>% 
+  group_by(
+  subject, block, trial_stimulus_type
+  ) %>% 
+  mutate(num_times_stimulus_seen = cumsum(number)) %>% 
+  filter(trial_stimulus_type == "background")
+
+gam_d <- rep_d %>% 
+  mutate(trial_stimulus_complexity = as.factor(trial_stimulus_complexity), 
+         block = as.factor(block))
+
+gam_m <- gam(log(trial_looking_time) ~ s(num_times_stimulus_seen), 
+             data = gam_d, 
+             method = "REML")
+summary(gam_m)
+plot(gam_m)
+```
+
+note this is not a very good model
+```{r}
+gam.check(gam_m)
+```
+
+but still let's give it a try: maybe 10 repetitions are the "turning point" 
+
+```{r}
+rep_d %>% 
+  mutate(
+    reptition_type = if_else(num_times_stimulus_seen > 10, "more", "less")
+  ) %>% 
+  ggplot(aes(x = trial_looking_time)) + 
+  geom_histogram()+
+  scale_x_log10() +
+  facet_grid(block~reptition_type)
+```
+umm this really doesn't make any sense to me...
+
+
+
+
+
+
+
+
+
+
+## age really has nothing to do with it 
+```{r}
+d %>% 
+  mutate(
+    m_age = mean(demog_age, na.rm = TRUE), 
+    age_group = if_else(demog_age < m_age | demog_age == m_age, "young", "old")
+  ) %>% 
+  filter(!is.na(age_group)) %>% 
+  ggplot(aes(x = trial_looking_time, fill = age_group)) + 
+  geom_histogram() + 
+  scale_x_log10() 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### complexity difference
 ```{r}
@@ -459,7 +653,7 @@ null_m <- lmer(trial_looking_time ~ 1 + (1|subject),
 basic_m <- lmer(trial_looking_time ~ block + (1|subject), 
      data = d)
 
-summar(basic_m)
+summary(basic_m)
 anova(null_m, basic_m)
 ```
 
@@ -588,6 +782,8 @@ summary(gam_m)
 gam.check(gam_m)
 concurvity(gam_m, full = TRUE)
 ```
+
+within subject difference 
 
 
 
